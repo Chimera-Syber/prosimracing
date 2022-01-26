@@ -5,4 +5,13 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
+
+@import 'fonts';
+@import 'main';
+@import 'header';
+@import 'slider';
+@import 'upcoming-events';
+@import 'main-content';
+@import 'category';
+@import 'footer';

@@ -14,8 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
+    Route::group(['namespace' => 'Main'], function() {
+        Route::get('/', 'IndexController')->name('admin.main.index');
+    });
+
+});
+
+
 
 Auth::routes();
 

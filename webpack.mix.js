@@ -11,6 +11,28 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
+
+ /**
+  * Main site
+  */
+
+mix.js('resources/js/app.js', 'public/assets/js')
+    .sass('resources/sass/app.scss', 'public/assets/css')
     .sourceMaps();
+
+mix.scripts([
+    'resources/js/slider.js',
+    'resources/js/upcoming-slider.js',
+    'resources/js/backgrounds.js',
+], 'public/assets/js/scripts.js');
+
+/**
+ * Admin panel
+ */
+
+mix.copy('node_modules/admin-lte/dist/css/adminlte.min.css', 'public/assets/admin/css');
+mix.copy('node_modules/admin-lte/dist/js/adminlte.min.js', 'public/assets/admin/js');
+mix.copy('node_modules/admin-lte/plugins/fontawesome-free', 'public/assets/admin/plugins/fontawesome-free');
+mix.copy('node_modules/admin-lte/plugins/bootstrap', 'public/assets/admin/plugins/bootstrap');
+mix.copy('node_modules/admin-lte/plugins/jquery', 'public/assets/admin/plugins/jquery');
+mix.copy('node_modules/admin-lte/plugins/jquery-ui', 'public/assets/admin/plugins/jquery-ui');

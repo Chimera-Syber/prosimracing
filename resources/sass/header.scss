@@ -1,0 +1,56 @@
+@import 'variables';
+
+
+/* 
+ * Header section
+ */
+
+.menu {
+    width: $siteWight;
+    height: 56px;
+    position: fixed;
+    z-index: 9999;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $black;
+}
+
+.menu_nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu_site_title {
+    @include logoFont;
+    margin-left: 35px;
+    color: $white;
+    text-decoration: none;
+}
+
+.menu_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.menu_item {
+    @include menuItemFont;
+    text-transform: uppercase;
+    margin-right: 20px;
+    color: $white;
+    text-decoration: none;
+}
+
+.menu_user_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 35px;
+}
+
+.menu_search {
+    margin-right: 10px;
+}

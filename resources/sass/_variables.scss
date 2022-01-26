@@ -5,3 +5,239 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+
+// General colors
+$white: #fff;
+$black: #000;
+$bodyColor: #F4F4F4;
+$searchIcon: #828282;
+$loginIcon: #828282;
+$upcomingEventsWidget: #D3D3D3;
+$borderCategoryPostWrp: #D8D8D8;
+
+// Slider
+$sliderTitleItem: #FF0000;
+
+// Measured
+$siteWight: 1200px;
+$sliderHeight: 400px;
+$upcomingEventsHeight: 70px;
+$upcomingEventsTitleBlock_Width: 171px;
+
+// Fonts mixin
+@mixin logoFont {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+};
+
+@mixin menuItemFont {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+};
+
+@mixin SliderItemTitleText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 41px;
+}
+
+@mixin upcomingEventsTitle {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+};
+
+@mixin UEwidgetRaceLeague {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+@mixin UEwidgetNameRace {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+}
+
+@mixin UEwidgetDate {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+@mixin MainContentPostsTitle {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+@mixin PostCategoryTitle {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+@mixin PostInfoTitle {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@mixin PostInfoDescText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+@mixin PostInfoDateText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+@mixin PostInfoLinkText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+@mixin MainBannerTitleText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+@mixin MainBannerDescText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+@mixin MainBannerButtonText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@mixin BannerSidebarTitleText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+@mixin CategoryPostTitleText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@mixin CategoryPostDescText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@mixin CategoryPostDateText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+@mixin CategoryPostCatText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+@mixin CoveragePostTitleText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+@mixin CoveragePostDateText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 97.68%;
+}
+
+@mixin FooterGridItemTitleText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+@mixin FooterGridItemListText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+@mixin FooterCopyrightText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+@mixin FooterCopyrightLinksText {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+}

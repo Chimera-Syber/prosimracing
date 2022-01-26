@@ -1,4 +1,26 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/assets/js/app.js": "/assets/js/app.js",
+    "/assets/css/app.css": "/assets/css/app.css",
+    "/assets/js/scripts.js": "/assets/js/scripts.js",
+    "/assets/admin/css/adminlte.min.css": "/assets/admin/css/adminlte.min.css",
+    "/assets/admin/js/adminlte.min.js": "/assets/admin/js/adminlte.min.js",
+    "/assets/admin/plugins/jquery/jquery.js": "/assets/admin/plugins/jquery/jquery.js",
+    "/assets/admin/plugins/jquery/jquery.min.js": "/assets/admin/plugins/jquery/jquery.min.js",
+    "/assets/admin/plugins/jquery/jquery.min.map": "/assets/admin/plugins/jquery/jquery.min.map",
+    "/assets/admin/plugins/jquery/jquery.slim.js": "/assets/admin/plugins/jquery/jquery.slim.js",
+    "/assets/admin/plugins/jquery/jquery.slim.min.js": "/assets/admin/plugins/jquery/jquery.slim.min.js",
+    "/assets/admin/plugins/jquery/jquery.slim.min.map": "/assets/admin/plugins/jquery/jquery.slim.min.map",
+    "/assets/admin/plugins/jquery-ui/AUTHORS.txt": "/assets/admin/plugins/jquery-ui/AUTHORS.txt",
+    "/assets/admin/plugins/jquery-ui/LICENSE.txt": "/assets/admin/plugins/jquery-ui/LICENSE.txt",
+    "/assets/admin/plugins/jquery-ui/README.md": "/assets/admin/plugins/jquery-ui/README.md",
+    "/assets/admin/plugins/jquery-ui/index.html": "/assets/admin/plugins/jquery-ui/index.html",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.css": "/assets/admin/plugins/jquery-ui/jquery-ui.css",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.js": "/assets/admin/plugins/jquery-ui/jquery-ui.js",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.min.css": "/assets/admin/plugins/jquery-ui/jquery-ui.min.css",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.min.js": "/assets/admin/plugins/jquery-ui/jquery-ui.min.js",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.structure.css": "/assets/admin/plugins/jquery-ui/jquery-ui.structure.css",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.structure.min.css": "/assets/admin/plugins/jquery-ui/jquery-ui.structure.min.css",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.theme.css": "/assets/admin/plugins/jquery-ui/jquery-ui.theme.css",
+    "/assets/admin/plugins/jquery-ui/jquery-ui.theme.min.css": "/assets/admin/plugins/jquery-ui/jquery-ui.theme.min.css",
+    "/assets/admin/plugins/jquery-ui/package.json": "/assets/admin/plugins/jquery-ui/package.json"
 }
