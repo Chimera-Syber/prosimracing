@@ -1,0 +1,27 @@
+# Folders
+/bootstrap/cache
+/node_modules
+/public/hot
+/public/uploads
+/public/storage
+/storage/*.key
+/vendor
+/tests
+
+# ENV files
+.env
+.env.example
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+
+# Editors settings
+/.idea
+/.vscode
+.editorconfig
+
+# Logs
+npm-debug.log
+yarn-error.log
