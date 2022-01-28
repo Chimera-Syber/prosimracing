@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+ Route::group(['namespace' => 'Main'], function() {
+    Route::get('/', 'IndexController')->name('main.index');
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
@@ -22,10 +22,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
 
+    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function() {
+        Route::get('/', 'IndexController')->name('admin.category.index');
+        Route::get('/create', 'CreateController')->name('admin.category.create');
+        Route::post('/', 'StoreController')->name('admin.category.store');
+    });
+
 });
-
-
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
