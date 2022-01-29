@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Category;
+namespace App\Http\Requests\Admin\Game;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,6 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'icon' => 'required|file',
             'keywords' => 'string|nullable',
             'seo_description' => 'string|nullable',
         ];
@@ -37,6 +38,8 @@ class StoreRequest extends FormRequest
         return [
             'title.required' => 'Название необходимо для заполнения',
             'title.string' => 'Название должно быть строчного типа',
+            'icon.required' => 'Необходимо добавить иконку',
+            'icon.file' => 'Иконка должна быть файлом',
             'keywords.string' => 'Ключевые слова должны быть строчного типа',
             'seo_description' => 'Описание должно быть строчного типа',
         ];

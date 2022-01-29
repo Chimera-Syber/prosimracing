@@ -8,12 +8,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Категории</h1>
+                    <h1 class="m-0">Корзина</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">На главную</a></li>
-                        <li class="breadcrumb-item active">Категории</li>
+                        <li class="breadcrumb-item active">Корзина</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,7 +28,7 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Список категорий</h3>
+                            <h3 class="card-title">Список удаленных категорий</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -52,18 +52,15 @@
                                         <td>{{ $category->keywords }}</td>
                                         <td>{{ $category->seo_description }}</td>
                                         <td>
-                                            <a href="{{ route('admin.category.edit', $category->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
-                                            <form action="{{ route('admin.category.delete', $category->id) }}" method="POST" class="float-left">
+                                            <form action="{{ route('admin.trash.category.restore', ['category' => $category->id]) }}" method="POST">
                                                 @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn bg-gradient-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
+                                                <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                             </table>
-                                <a href="{{ route('admin.category.create') }}" class="btn bg-gradient-primary mt-2">Добавить</a>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">

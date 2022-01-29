@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Trash;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::orderBy('id')->paginate(10);
-        return view('admin.category.index', compact('categories'));
+        $categories = Category::onlyTrashed()->orderBy('id')->paginate(10);
+        return view('admin.trash.index', compact('categories'));
     }
 }

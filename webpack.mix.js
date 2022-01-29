@@ -30,6 +30,8 @@ mix.scripts([
  * Admin panel
  */
 
+mix.sass('resources/admin/sass/app.scss', 'public/assets/admin/css/');
+
 mix.copy('node_modules/admin-lte/dist/css/adminlte.min.css', 'public/assets/admin/css');
 mix.copy('node_modules/admin-lte/dist/js/adminlte.min.js', 'public/assets/admin/js');
 mix.copy('node_modules/admin-lte/plugins/fontawesome-free', 'public/assets/admin/plugins/fontawesome-free');

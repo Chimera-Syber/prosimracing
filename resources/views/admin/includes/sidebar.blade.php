@@ -23,9 +23,10 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
+            <!-- Categories -->
             <li class="nav-item menu-open">
                 <a href="{{ route('admin.category.index') }}" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-book-open"></i>
                     <p>
                     Категории
                     <i class="right fas fa-angle-left"></i>
@@ -33,7 +34,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('admin.category.index') }}" class="nav-link active">
+                        <a href="{{ route('admin.category.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Список категорий</p>
                         </a>
@@ -44,14 +45,40 @@
                             <p>Создать категорию</p>
                         </a>
                     </li>
+                </ul>
+            </li><!-- /.nav-item -->
+            <!-- Games -->
+            <li class="nav-item menu-open">
+                <a href="{{ route('admin.game.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-gamepad"></i>
+                    <p>
+                    Игры
+                    <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index3.html" class="nav-link">
+                        <a href="{{ route('admin.game.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Dashboard v3</p>
+                            <p>Список игр</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.game.create') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Создать игру</p>
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li><!-- /.nav-item -->
+            <li class="nav-item">
+                <a href="{{ route('admin.trash.index') }}" class="nav-link bg-gradient-danger text-white">
+                    <i class="fas fa-recycle nav-icon"></i>
+                    <p>
+                    Корзина
+                    </p>
+                </a>
+            </li><!-- /.nav-item -->
         </ul>
         </nav>
         <!-- /.sidebar-menu -->

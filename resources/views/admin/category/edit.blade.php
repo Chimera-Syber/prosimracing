@@ -26,34 +26,40 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-primary">
+                    <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Создание категории</h3>
+                            <h3 class="card-title">Редактирование категории</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                           <form action="{{ route('admin.category.store') }}" method="POST">
+                           <form action="{{ route('admin.category.update', $category->id) }}" method="POST">
                                @csrf
+                               @METHOD('PATCH')
                                <!-- text input -->
                                 <div class="form-group">
                                     <label>Название категории</label>
-                                    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название категории">
+                                    <input type="text" name="title" id="title" class="form-control" value="{{ $category->title }}">
                                     @error('title')
                                         <div class="text-danger">Это поле необходимо для заполнения</div>
                                     @enderror
                                 </div>
+                                <!-- text input disable -->
+                                <div class="form-group">
+                                    <label>Slug</label>
+                                    <input type="text" name="slug" class="form-control" value="{{ $category->slug }}" disabled>
+                                </div>
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="keywords" id="keywords" class="form-control" placeholder="Введите SEO Keywords">
+                                    <input type="text" name="keywords" id="keywords" class="form-control" value="{{ $category->keywords }}">
                                 </div>
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <input type="text" name="seo_description" id="seo_description" class="form-control" placeholder="Введите SEO описание">
+                                    <input type="text" name="seo_description" id="seo_description" class="form-control" value="{{ $category->seo_description }}">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                                <button type="submit" class="btn btn-primary">Обновить</button>
                            </form>
                     </div>
                 </div>
