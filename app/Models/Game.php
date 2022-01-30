@@ -9,9 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 // Facades
 use Illuminate\Support\Facades\Storage;
 
-// Requests
-use App\Http\Requests\Admin\Game\StoreRequest;
-
 // For slug
 use Cviebrock\EloquentSluggable\Sluggable;
 
@@ -26,9 +23,9 @@ class Game extends Model
     protected $guarded = false;
 
     /**
-     * For icon image upload
+     * For icon image upload (create)
      */
-    public static function uploadImage(StoreRequest $request, $image) // $image - optional parameter
+    public static function uploadImage($request, $image) // $image - optional parameter
     {
         if ($request->hasFile('icon')) {
 
@@ -51,7 +48,7 @@ class Game extends Model
     public function getImage()
     {
         if (!$this->icon) {
-            return asset("no-image.jpg");
+            return asset("assets/img/no-image.png");
         }
 
         return asset("uploads/{$this->icon}");

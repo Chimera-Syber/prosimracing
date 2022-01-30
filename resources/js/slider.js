@@ -46,4 +46,4 @@ function showSlides(n) {
 
 var sliderLoop = setInterval(function() {
     plusSlidesForLoop(1);
-}, 4000);
+}, 5000);

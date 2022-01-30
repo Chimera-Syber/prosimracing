@@ -24,8 +24,8 @@
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
             <!-- Categories -->
-            <li class="nav-item menu-open">
-                <a href="{{ route('admin.category.index') }}" class="nav-link active">
+            <li class="nav-item {{ Request::is('*categories*') ? 'menu-open' : '' }}">
+                <a href="{{ route('admin.category.index') }}" class="nav-link {{ Request::is('*categories*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-book-open"></i>
                     <p>
                     Категории
@@ -34,13 +34,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('admin.category.index') }}" class="nav-link">
+                        <a href="{{ route('admin.category.index') }}" class="nav-link {{ Request::is('*categories') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Список категорий</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.category.create') }}" class="nav-link">
+                        <a href="{{ route('admin.category.create') }}" class="nav-link {{ Request::is('*categories/create') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Создать категорию</p>
                         </a>
@@ -48,8 +48,8 @@
                 </ul>
             </li><!-- /.nav-item -->
             <!-- Games -->
-            <li class="nav-item menu-open">
-                <a href="{{ route('admin.game.index') }}" class="nav-link">
+            <li class="nav-item {{ Request::is('*games*') ? 'menu-open' : '' }}">
+                <a href="{{ route('admin.game.index') }}" class="nav-link {{ Request::is('*games*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-gamepad"></i>
                     <p>
                     Игры
@@ -58,15 +58,38 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('admin.game.index') }}" class="nav-link">
+                        <a href="{{ route('admin.game.index') }}" class="nav-link {{ Request::is('*games') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Список игр</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.game.create') }}" class="nav-link">
+                        <a href="{{ route('admin.game.create') }}" class="nav-link {{ Request::is('*games/create') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Создать игру</p>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- /.nav-item -->
+            <li class="nav-item {{ Request::is('*carousel*') ? 'menu-open' : '' }}">
+                <a href="{{ route('admin.carousel.index') }}" class="nav-link {{ Request::is('*carousel*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-gamepad"></i>
+                    <p>
+                    Слайдер
+                    <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.carousel.index') }}" class="nav-link {{ Request::is('*carousel') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Медиа-контейнеры</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.carousel.create') }}" class="nav-link {{ Request::is('*carousel/create') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Создать медиа-контейнер</p>
                         </a>
                     </li>
                 </ul>

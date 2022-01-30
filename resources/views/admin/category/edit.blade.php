@@ -40,7 +40,7 @@
                                     <label>Название категории</label>
                                     <input type="text" name="title" id="title" class="form-control" value="{{ $category->title }}">
                                     @error('title')
-                                        <div class="text-danger">Это поле необходимо для заполнения</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <!-- text input disable -->
@@ -52,11 +52,17 @@
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
                                     <input type="text" name="keywords" id="keywords" class="form-control" value="{{ $category->keywords }}">
+                                    @error('keywords')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Description</label>
                                     <input type="text" name="seo_description" id="seo_description" class="form-control" value="{{ $category->seo_description }}">
+                                    @error('seo_description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Обновить</button>

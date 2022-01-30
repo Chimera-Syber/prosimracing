@@ -33,8 +33,11 @@ mix.scripts([
 mix.sass('resources/admin/sass/app.scss', 'public/assets/admin/css/');
 
 mix.copy('node_modules/admin-lte/dist/css/adminlte.min.css', 'public/assets/admin/css');
+mix.copy('node_modules/admin-lte/dist/css/adminlte.min.css.map', 'public/assets/admin/css');
 mix.copy('node_modules/admin-lte/dist/js/adminlte.min.js', 'public/assets/admin/js');
+mix.copy('node_modules/admin-lte/dist/js/adminlte.min.js.map', 'public/assets/admin/js');
 mix.copy('node_modules/admin-lte/plugins/fontawesome-free', 'public/assets/admin/plugins/fontawesome-free');
 mix.copy('node_modules/admin-lte/plugins/bootstrap', 'public/assets/admin/plugins/bootstrap');
 mix.copy('node_modules/admin-lte/plugins/jquery', 'public/assets/admin/plugins/jquery');
 mix.copy('node_modules/admin-lte/plugins/jquery-ui', 'public/assets/admin/plugins/jquery-ui');
+mix.copy('node_modules/admin-lte/plugins/bs-custom-file-input', 'public/assets/admin/plugins/bs-custom-file-input');

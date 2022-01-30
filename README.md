@@ -13,3 +13,20 @@ composer require cviebrock/eloquent-sluggable 8.0.8
 ```
 
 You can see version of sluggable package in [this link](https://github.com/cviebrock/eloquent-sluggable/blob/master/CHANGELOG.md). Link for package [GitHub](https://github.com/cviebrock/eloquent-sluggable).
+
+## Settings
+
+file env 
+```
+FILESYSTEM_DRIVER=public
+```
+
+file config->filesystem 
+```
+'public' => [
+            'driver' => 'local',
+            'root' => 'uploads',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+```

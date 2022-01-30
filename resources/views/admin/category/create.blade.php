@@ -37,20 +37,26 @@
                                <!-- text input -->
                                 <div class="form-group">
                                     <label>Название категории</label>
-                                    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название категории">
+                                    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название категории" value="{{ old('title') }}">
                                     @error('title')
-                                        <div class="text-danger">Это поле необходимо для заполнения</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="keywords" id="keywords" class="form-control" placeholder="Введите SEO Keywords">
+                                    <input type="text" name="keywords" id="keywords" class="form-control" placeholder="Введите SEO Keywords" value="{{ old('keywords') }}">
+                                    @error('keywords')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <input type="text" name="seo_description" id="seo_description" class="form-control" placeholder="Введите SEO описание">
+                                    <input type="text" name="seo_description" id="seo_description" class="form-control" placeholder="Введите SEO описание" value="{{ old('seo_description') }}">
+                                    @error('seo_description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Сохранить</button>

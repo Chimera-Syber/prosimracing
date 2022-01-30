@@ -3,10 +3,6 @@
 
 // Variables
 @import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
 @import 'fonts';
 @import 'main';
 @import 'header';
@@ -15,3 +11,6 @@
 @import 'main-content';
 @import 'category';
 @import 'footer';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';

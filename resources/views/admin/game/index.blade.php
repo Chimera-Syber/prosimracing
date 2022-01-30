@@ -38,6 +38,7 @@
                                     <th style="width: 10px">ID</th>
                                     <th>Название</th>
                                     <th>Slug</th>
+                                    <th>Иконка</th>
                                     <th>SEO Keywords</th>
                                     <th>SEO Description</th>
                                     <th>Управление</th>
@@ -49,15 +50,16 @@
                                         <td>{{ $game->id }}</td>
                                         <td>{{ $game->title }}</td>
                                         <td>{{ $game->slug }}</td>
+                                        <td><img src="{{ $game->getImage() }}" alt="" style="width: 22px;"></td>
                                         <td>{{ $game->keywords }}</td>
                                         <td>{{ $game->seo_description }}</td>
                                         <td>
-                                            <!-- <a href=" route('admin.category.edit', $category->id) " class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
-                                            <form action=" route('admin.category.delete', $category->id) " method="POST" class="float-left">
+                                            <a href="{{ route('admin.game.edit', $game->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
+                                            <form action="{{ route('admin.game.delete', $game->id) }}" method="post" class="float-left">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn bg-gradient-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
-                                            </form>-->
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

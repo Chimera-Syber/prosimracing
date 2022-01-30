@@ -74,9 +74,8 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
-
-    <!-- jQuery -->
-    <script src="{{ asset('/assets/admin/plugins/jquery/jquery.min.js') }}"></script>
+     <!-- jQuery -->
+     <script src="{{ asset('/assets/admin/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('/assets/admin/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -85,7 +84,17 @@
     </script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- bs-custom-file-input -->
+    <script src="{{ asset('/assets/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/assets/admin/js/adminlte.min.js') }}"></script>
+
+    <!-- REQUIRED PAGE SCRIPTS -->
+    <script>
+        $(function() {
+            // bs custom file input
+            bsCustomFileInput.init();
+        });
+    </script>
 </body>
 </html>

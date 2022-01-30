@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- End Google Icons -->
 </head>
-<body class="body">
+<body id="body" class="body preload">
     <!-- Main Container -->
     <div class="container">
         <!-- Header -->
@@ -44,46 +44,18 @@
         <section class="slider">
             <div class="slider_wrp">
                 <ul class="slider_image_wrp">
+                    @foreach($carousel as $slide)
                     <li class="slider_item">
-                        <a href="#">
-                            <div data-src="./assets/img/slider/img1.png" class="slider_image"></div>
+                        <a href="{{ $slide->url }}">
+                            <div data-src="{{ asset($slide->getImage()) }}" class="slider_image"></div>
                             <div class="slider_image_bg"></div>
                             <div class="slider_item_info">
-                                <div class="slider_item_info_title">Название материала или статьи #1</div>
+                                <div class="slider_item_info_title">{{ $slide->title }}</div>
                                 <div class="slider_item_info_button"><span class="material-icons-outlined icon-forward-button-slider">arrow_forward_ios</span>Подробнее</div>
                             </div>
                         </a>
                     </li>
-                    <li class="slider_item">
-                        <a href="#">
-                            <div data-src="./assets/img/slider/img2.jpeg" class="slider_image"></div>
-                            <div class="slider_image_bg"></div>
-                            <div class="slider_item_info">
-                                <div class="slider_item_info_title">Название материала или статьи #2</div>
-                                <div class="slider_item_info_button"><span class="material-icons-outlined icon-forward-button-slider">arrow_forward_ios</span>Подробнее</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="slider_item">
-                        <a href="#">
-                            <div data-src="./assets/img/slider/img1.png" class="slider_image"></div>
-                            <div class="slider_image_bg"></div>
-                            <div class="slider_item_info">
-                                <div class="slider_item_info_title">Название материала или статьи #3</div>
-                                <div class="slider_item_info_button"><span class="material-icons-outlined icon-forward-button-slider">arrow_forward_ios</span>Подробнее</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="slider_item">
-                        <a href="#">
-                            <div data-src="./assets/img/slider/img2.jpeg" class="slider_image"></div>
-                            <div class="slider_image_bg"></div>
-                            <div class="slider_item_info">
-                                <div class="slider_item_info_title">Название материала или статьи #4</div>
-                                <div class="slider_item_info_button"><span class="material-icons-outlined icon-forward-button-slider">arrow_forward_ios</span>Подробнее</div>
-                            </div>
-                        </a>
-                    </li>
+                    @endforeach
                 </ul>
                 <div class="slider_nav">
                     <div class="slider_nav_arrows">
@@ -599,6 +571,15 @@
         </footer>
         <!-- End Footer Section -->
     </div>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- PAGE SCRIPTS -->
+    <!-- Script for cancel start animation on loadin page -->
+    <script>
+        $(document).ready(function() {
+            $("#body").removeClass("preload");
+        });
+    </script>
     <!-- End Main Container -->
     <script src="./assets/js/scripts.js" defer></script>
     <script src="./assets/js/app.js" defer></script>

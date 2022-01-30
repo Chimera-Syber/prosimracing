@@ -1,0 +1,1 @@
+{"version":3,"file":"assets/admin/css/app.css","mappings":"AAAA,gBAGA,CAHA,qDACI,iBAEJ,C","sources":["webpack:///./resources/admin/sass/app.scss"],"sourcesContent":[".custom-file-input:lang(en)~.custom-file-label::after {\n    content: \"Открыть\";\n}\n"],"names":[],"sourceRoot":""}

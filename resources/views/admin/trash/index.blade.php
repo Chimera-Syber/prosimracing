@@ -69,6 +69,53 @@
                     </div>
                 </div>
             </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Список удаленных игр</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Название</th>
+                                    <th>Slug</th>
+                                    <th>Иконка</th>
+                                    <th>SEO Keywords</th>
+                                    <th>SEO Description</th>
+                                    <th>Управление</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($games as $game)
+                                    <tr>
+                                        <td>{{ $game->id }}</td>
+                                        <td>{{ $game->title }}</td>
+                                        <td>{{ $game->slug }}</td>
+                                        <td><img src="{{ $game->getImage() }}" alt="" style="width: 22px;"></td>
+                                        <td>{{ $game->keywords }}</td>
+                                        <td>{{ $game->seo_description }}</td>
+                                        <td>
+                                            <form action="{{ route('admin.trash.game.restore', ['game' => $game->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $categories->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
