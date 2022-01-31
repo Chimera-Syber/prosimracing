@@ -73,7 +73,7 @@
             </li><!-- /.nav-item -->
             <li class="nav-item {{ Request::is('*carousel*') ? 'menu-open' : '' }}">
                 <a href="{{ route('admin.carousel.index') }}" class="nav-link {{ Request::is('*carousel*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-gamepad"></i>
+                    <i class="nav-icon fas fa-align-justify"></i>
                     <p>
                     Слайдер
                     <i class="right fas fa-angle-left"></i>

@@ -50,12 +50,12 @@
                                         </td>
                                         <td><img src="{{ $slide->getImage() }}" alt="" style="width: 400px;"></td>
                                         <td>
-                                            <!-- <a href=" route('admin.game.edit', $game->id) " class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
-                                            <form action=" route('admin.game.delete', $game->id) " method="post" class="float-left">
+                                            <a href="{{ route('admin.carousel.edit', $slide->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
+                                            <form action="{{ route('admin.carousel.delete', $slide->id) }}" method="post" class="float-left">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
-                                            </form> -->
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

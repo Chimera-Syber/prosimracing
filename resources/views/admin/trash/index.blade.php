@@ -28,7 +28,9 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Список удаленных категорий</h3>
+                            <h3 class="card-title">
+                            <i class="fas fa-book-open"></i>
+                            Список удаленных категорий</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -71,9 +73,11 @@
             </div><!-- /.row -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-primary">
+                    <div class="card card-secondary">
                         <div class="card-header">
-                            <h3 class="card-title">Список удаленных игр</h3>
+                            <h3 class="card-title">
+                                <i class="fas fa-gamepad"></i>
+                            Список удаленных игр</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -102,6 +106,54 @@
                                             <form action="{{ route('admin.trash.game.restore', ['game' => $game->id]) }}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $categories->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-lightblue">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fas fa-align-justify"></i>
+                            Список удаленных медиа-контейнеров</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Название</th>
+                                    <th>URL</th>
+                                    <th>Картинка</th>
+                                    <th>Управление</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($carousel as $slide)
+                                    <tr>
+                                        <td>{{ $slide->id }}</td>
+                                        <td>{{ $slide->title }}</td>
+                                        <td>{{ $slide->url }}</td>
+                                        <td><img src="{{ $slide->getImage() }}" alt="" style="width: 300px;"></td>
+                                        <td>
+                                            <form action="{{ route('admin.trash.carousel.restore', ['slide' => $slide->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
+                                            </form>
+                                            <form action="{{ route('admin.trash.carousel.destroy', $slide->id) }}" method="post" class="float-left">
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите полное удаление')"><i class="fas fa-trash-alt"></i></button>
                                             </form>
                                         </td>
                                     </tr>

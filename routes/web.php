@@ -44,13 +44,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::get('/', 'IndexController')->name('admin.carousel.index');
         Route::get('/create', 'CreateController')->name('admin.carousel.create');
         Route::post('/', 'StoreController')->name('admin.carousel.store');
-
+        Route::get('/{slide}/edit', 'EditController')->name('admin.carousel.edit');
+        Route::patch('/{slide}', 'UpdateController')->name('admin.carousel.update');
+        Route::delete('/{slide}', 'DeleteController')->name('admin.carousel.delete');
     });
 
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');
         Route::post('/restore/category/{category}', 'RestoreCategoryController')->name('admin.trash.category.restore');
         Route::post('/restore/game/{game}', 'RestoreGameController')->name('admin.trash.game.restore');
+        Route::post('/restore/carousel/{slide}', 'RestoreCarouselController')->name('admin.trash.carousel.restore');
+        Route::post('/destroy/carousel/{slide}', 'DestroyCarouselController')->name('admin.trash.carousel.destroy');
     });
 
 });

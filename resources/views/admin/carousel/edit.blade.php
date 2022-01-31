@@ -28,16 +28,17 @@
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Создание медиа-контейнера</h3>
+                            <h3 class="card-title">Изменение медиа-контейнера</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                           <form action="{{ route('admin.carousel.store') }}" method="POST" enctype="multipart/form-data">
+                           <form action="{{ route('admin.carousel.update', $slide->id) }}" method="POST" enctype="multipart/form-data">
                                @csrf
+                               @method('PATCH')
                                <!-- Text input -->
                                 <div class="form-group">
                                     <label>Название</label>
-                                    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название" value="{{ old('title') }}">
+                                    <input type="text" name="title" id="title" class="form-control" value="{{ $slide->title }}">
                                     @error('title')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -45,7 +46,7 @@
                                 <!-- Url input -->
                                 <div class="form-group">
                                     <label>Ссылка</label>
-                                    <input type="text" name="url" id="url" class="form-control" placeholder="Вставьте ссылку" value="{{ old('url') }}">
+                                    <input type="text" name="url" id="url" class="form-control" value="{{ $slide->url }}">
                                     @error('url')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -53,6 +54,9 @@
                                 <!-- Icon input -->
                                 <div class="form-group">
                                     <label for="image">Превью-картинка</label>
+                                    <div class="input-group">
+                                        <img style="max-width: 1000px; margin-bottom: 10px;" src="{{ $slide->getImage() }}" alt="">
+                                    </div>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="image" id="image">
