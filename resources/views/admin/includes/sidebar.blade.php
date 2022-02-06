@@ -94,6 +94,29 @@
                     </li>
                 </ul>
             </li><!-- /.nav-item -->
+            <li class="nav-item {{ Request::is('*events*') ? 'menu-open' : '' }}">
+                <a href="{{ route('admin.event.index') }}" class="nav-link {{ Request::is('*events*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-align-justify"></i>
+                    <p>
+                    События
+                    <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.event.index') }}" class="nav-link {{ Request::is('*events') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Предстоящие гонки</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.event.create') }}" class="nav-link {{ Request::is('*events/create') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Создать событие</p>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- /.nav-item -->
             <li class="nav-item">
                 <a href="{{ route('admin.trash.index') }}" class="nav-link bg-gradient-danger text-white">
                     <i class="fas fa-recycle nav-icon"></i>

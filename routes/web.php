@@ -49,6 +49,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::delete('/{slide}', 'DeleteController')->name('admin.carousel.delete');
     });
 
+    Route::group(['namespace' => 'Event', 'prefix' => 'events'], function() {
+        Route::get('/', 'IndexController')->name('admin.event.index');
+        Route::get('/create', 'CreateController')->name('admin.event.create');
+    });
+
+
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');
         Route::post('/restore/category/{category}', 'RestoreCategoryController')->name('admin.trash.category.restore');

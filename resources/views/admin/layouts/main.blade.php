@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('/assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }} ">
     <!-- Custom styles -->
@@ -86,6 +88,9 @@
     <script src="{{ asset('/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- bs-custom-file-input -->
     <script src="{{ asset('/assets/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{{ asset('/assets/admin/plugins/moment/moment-with-locales.min.js') }}"></script>
+    <script src="{{ asset('/assets/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/assets/admin/js/adminlte.min.js') }}"></script>
 
@@ -94,6 +99,15 @@
         $(function() {
             // bs custom file input
             bsCustomFileInput.init();
+
+           //Date and time picker
+            $('#reservationdatetime').datetimepicker({
+
+                locale: 'ru',
+                icons: { time: 'far fa-clock' }
+
+            });
+
         });
     </script>
 </body>
