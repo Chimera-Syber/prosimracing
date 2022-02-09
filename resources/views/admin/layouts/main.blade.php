@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }} ">
     <!-- Custom styles -->
@@ -91,6 +94,8 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="{{ asset('/assets/admin/plugins/moment/moment-with-locales.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('/assets/admin/plugins/select2/js/select2.full.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/assets/admin/js/adminlte.min.js') }}"></script>
 
@@ -100,13 +105,19 @@
             // bs custom file input
             bsCustomFileInput.init();
 
+           //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+
            //Date and time picker
             $('#reservationdatetime').datetimepicker({
-
                 locale: 'ru',
-                icons: { time: 'far fa-clock' }
-
+                icons: { time: 'far fa-clock' },
+                defaultDate: ,
             });
+
+            console.log(document.getElementById('start_date').value);
 
         });
     </script>

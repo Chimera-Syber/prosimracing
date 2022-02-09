@@ -96,7 +96,7 @@
             </li><!-- /.nav-item -->
             <li class="nav-item {{ Request::is('*events*') ? 'menu-open' : '' }}">
                 <a href="{{ route('admin.event.index') }}" class="nav-link {{ Request::is('*events*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-align-justify"></i>
+                    <i class="nav-icon far fa-calendar-check"></i>
                     <p>
                     События
                     <i class="right fas fa-angle-left"></i>

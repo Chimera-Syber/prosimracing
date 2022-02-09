@@ -32,7 +32,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                           <form action=" route('admin.category.store') " method="POST">
+                           <form action="{{ route('admin.event.store') }}" method="POST">
                                @csrf
                                <!-- text input -->
                                 <div class="form-group">
@@ -52,15 +52,29 @@
                                 </div>
                                  <!-- Date and time -->
                                 <div class="form-group">
-                                    <label>Date and time:</label>
+                                    <label>Дата и время:</label>
                                     <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
+                                        <input type="text" name="start_date" id="start_date" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
                                         <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
+                                    @error('start_date')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
-
+                                <!-- Game Select -->
+                                <div class="form-group">
+                                    <label>Игра</label>
+                                    <select class="form-control select2bs4" name="game_id" id="game_id" style="width: 100%;">
+                                        @foreach($games as $k => $v)
+                                            <option value="{{ $k }}" {{ old('game_id') == $k ? 'selected' : '' }}>{{ $v }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('game_id')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <button type="submit" class="btn btn-primary">Сохранить</button>
                            </form>
                     </div>

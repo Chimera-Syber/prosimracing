@@ -52,6 +52,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
     Route::group(['namespace' => 'Event', 'prefix' => 'events'], function() {
         Route::get('/', 'IndexController')->name('admin.event.index');
         Route::get('/create', 'CreateController')->name('admin.event.create');
+        Route::post('/', 'StoreController')->name('admin.event.store');
+        Route::get('/{event}/edit', 'EditController')->name('admin.event.edit');
     });
 
 

@@ -15,7 +15,7 @@ class Event extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['title', 'league', 'start_date'];
+    protected $fillable = ['title', 'league', 'start_date', 'game_id'];
     protected $table = 'events';
 
     /**

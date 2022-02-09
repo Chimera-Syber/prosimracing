@@ -43,3 +43,5 @@ mix.copy('node_modules/admin-lte/plugins/jquery-ui', 'public/assets/admin/plugin
 mix.copy('node_modules/admin-lte/plugins/bs-custom-file-input', 'public/assets/admin/plugins/bs-custom-file-input');
 mix.copy('node_modules/admin-lte/plugins/moment', 'public/assets/admin/plugins/moment');
 mix.copy('node_modules/admin-lte/plugins/tempusdominus-bootstrap-4', 'public/assets/admin/plugins/tempusdominus-bootstrap-4');
+mix.copy('node_modules/admin-lte/plugins/select2', 'public/assets/admin/plugins/select2');
+mix.copy('node_modules/admin-lte/plugins/select2-bootstrap4-theme', 'public/assets/admin/plugins/select2-bootstrap4-theme');

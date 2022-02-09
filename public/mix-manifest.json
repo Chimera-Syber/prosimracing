@@ -38,5 +38,7 @@
     "/assets/admin/plugins/moment/moment-with-locales.min.js": "/assets/admin/plugins/moment/moment-with-locales.min.js",
     "/assets/admin/plugins/moment/moment-with-locales.min.js.map": "/assets/admin/plugins/moment/moment-with-locales.min.js.map",
     "/assets/admin/plugins/moment/moment.min.js": "/assets/admin/plugins/moment/moment.min.js",
-    "/assets/admin/plugins/moment/moment.min.js.map": "/assets/admin/plugins/moment/moment.min.js.map"
+    "/assets/admin/plugins/moment/moment.min.js.map": "/assets/admin/plugins/moment/moment.min.js.map",
+    "/assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.css": "/assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.css",
+    "/assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css": "/assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
 }
