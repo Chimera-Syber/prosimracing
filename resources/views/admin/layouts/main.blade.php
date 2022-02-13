@@ -108,17 +108,30 @@
            //Initialize Select2 Elements
             $('.select2bs4').select2({
                 theme: 'bootstrap4'
-            })
+            });
 
            //Date and time picker
             $('#reservationdatetime').datetimepicker({
                 locale: 'ru',
                 icons: { time: 'far fa-clock' },
-                defaultDate: ,
             });
 
-            console.log(document.getElementById('start_date').value);
+            $('#editEventDateTime').datetimepicker({
+                locale: 'ru',
+                icons: { time: 'far fa-clock' },
+                viewDate: new Date(),
+            });
 
+            @isset($event->start_date)
+
+                function pasteDate() {
+
+                    $('#editEventDateTime').datetimepicker('date', moment('{{ $event->dateAsCarbon->format('Y-m-d H:m') }}').format('LLL'));
+                };
+
+                window.onload = setTimeout(pasteDate(), 100);
+
+            @endisset
         });
     </script>
 </body>
