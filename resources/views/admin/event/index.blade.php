@@ -54,11 +54,11 @@
                                         <td><img src="{{ $event->game->getImage() }}"> {{ $event->game->title }}</td>
                                         <td>
                                             <a href="{{ route('admin.event.edit', ['event' => $event->id]) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
-                                            <!-- <form action=" route('admin.category.delete', $category->id) " method="post" class="float-left">
+                                            <form action="{{ route('admin.event.delete', $event->id) }}" method="post" class="float-left">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
-                                            </form> -->
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

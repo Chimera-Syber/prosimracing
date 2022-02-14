@@ -32,8 +32,9 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                           <form action="{{ route('admin.event.store') }}" method="POST">
+                           <form action="{{ route('admin.event.update', $event->id) }}" method="POST">
                                @csrf
+                               @method('PATCH')
                                <!-- text input -->
                                 <div class="form-group">
                                     <label>Название события</label>

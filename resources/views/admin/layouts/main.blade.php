@@ -122,6 +122,7 @@
                 viewDate: new Date(),
             });
 
+            // for Date in Event edit page
             @isset($event->start_date)
 
                 function pasteDate() {

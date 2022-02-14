@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Game;
 use App\Models\Carousel;
+use App\Models\Event;
 
 class IndexController extends Controller
 {
@@ -18,6 +19,7 @@ class IndexController extends Controller
         $categories = Category::onlyTrashed()->orderBy('id')->paginate(10);
         $games = Game::onlyTrashed()->orderBy('id')->paginate(10);
         $carousel = Carousel::onlyTrashed()->orderBy('id')->paginate(10);
-        return view('admin.trash.index', compact('categories', 'games', 'carousel'));
+        $events = Event::onlyTrashed()->orderBy('id')->paginate(10);
+        return view('admin.trash.index', compact('categories', 'games', 'carousel', 'events'));
     }
 }

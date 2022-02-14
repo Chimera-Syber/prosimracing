@@ -56,7 +56,7 @@
                                         <td>
                                             <form action="{{ route('admin.trash.category.restore', ['category' => $category->id]) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -105,7 +105,7 @@
                                         <td>
                                             <form action="{{ route('admin.trash.game.restore', ['game' => $game->id]) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -149,9 +149,59 @@
                                         <td>
                                             <form action="{{ route('admin.trash.carousel.restore', ['slide' => $slide->id]) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-info btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-pencil-alt"></i></button>
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
                                             </form>
                                             <form action="{{ route('admin.trash.carousel.destroy', $slide->id) }}" method="post" class="float-left">
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите полное удаление')"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $categories->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="far fa-calendar-check"></i>
+                            Список удаленных событий</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Название</th>
+                                    <th>Лига</th>
+                                    <th>Дата и время начала</th>
+                                    <th>Игра</th>
+                                    <th>Управление</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($events as $event)
+                                    <tr>
+                                        <td>{{ $event->id }}</td>
+                                        <td>{{ $event->title }}</td>
+                                        <td>{{ $event->league }}</td>
+                                        <td>{{ $event->dateAsCarbon->translatedFormat('j F Y H:m') }} MSK</td>
+                                        <td><img src="{{ $event->game->getImage() }}"> {{ $event->game->title }}</td>
+                                        <td>
+                                            <form action="{{ route('admin.trash.event.restore', ['event' => $event->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
+                                            </form>
+                                            <form action="{{ route('admin.trash.event.destroy', $event->id) }}" method="post" class="float-left">
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите полное удаление')"><i class="fas fa-trash-alt"></i></button>
                                             </form>

@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 // Models
 use App\Models\Carousel;
+use App\Models\Event;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
         $carousel = Carousel::orderBy('id', 'DESC')->paginate(4);
-        return view('main.index', compact('carousel'));
+        $events = Event::orderBy('start_date', 'ASC')->get();
+        return view('main.index', compact('carousel', 'events'));
     }
 }

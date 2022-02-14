@@ -54,6 +54,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::get('/create', 'CreateController')->name('admin.event.create');
         Route::post('/', 'StoreController')->name('admin.event.store');
         Route::get('/{event}/edit', 'EditController')->name('admin.event.edit');
+        Route::patch('/{event}', 'UpdateController')->name('admin.event.update');
+        Route::delete('/{event}', 'DeleteController')->name('admin.event.delete');
     });
 
 
@@ -63,6 +65,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::post('/restore/game/{game}', 'RestoreGameController')->name('admin.trash.game.restore');
         Route::post('/restore/carousel/{slide}', 'RestoreCarouselController')->name('admin.trash.carousel.restore');
         Route::post('/destroy/carousel/{slide}', 'DestroyCarouselController')->name('admin.trash.carousel.destroy');
+        Route::post('/restore/event/{event}', 'RestoreEventController')->name('admin.trash.event.restore');
+        Route::post('/destroy/event/{event}', 'DestroyEventController')->name('admin.trash.event.destroy');
     });
 
 });
