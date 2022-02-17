@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
         return [
             'title' => 'required|string',
             'icon' => 'required|image',
-            'keywords' => 'string|nullable',
+            'seo_keywords' => 'string|nullable',
             'seo_description' => 'string|nullable',
         ];
     }
@@ -40,7 +40,7 @@ class StoreRequest extends FormRequest
             'title.string' => 'Название должно быть строчного типа',
             'icon.required' => 'Необходимо добавить иконку',
             'icon.image' => 'Иконка должна быть файлом',
-            'keywords.string' => 'Ключевые слова должны быть строчного типа',
+            'seo_keywords.string' => 'Ключевые слова должны быть строчного типа',
             'seo_description' => 'Описание должно быть строчного типа',
         ];
     }

@@ -51,7 +51,7 @@
                                         <td>{{ $game->title }}</td>
                                         <td>{{ $game->slug }}</td>
                                         <td><img src="{{ $game->getImage() }}" alt="" style="width: 22px;"></td>
-                                        <td>{{ $game->keywords }}</td>
+                                        <td>{{ $game->seo_keywords }}</td>
                                         <td>{{ $game->seo_description }}</td>
                                         <td>
                                             <a href="{{ route('admin.game.edit', $game->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>

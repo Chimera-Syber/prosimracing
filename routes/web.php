@@ -58,6 +58,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::delete('/{event}', 'DeleteController')->name('admin.event.delete');
     });
 
+    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function() {
+        Route::get('/', 'IndexController')->name('admin.post.index');
+        Route::get('/create', 'CreateController')->name('admin.post.create');
+    });
+
 
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');

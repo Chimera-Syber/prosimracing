@@ -18,7 +18,7 @@ class Game extends Model
     use Sluggable;
     use SoftDeletes;
 
-    protected $fillable = ['title', 'icon', 'seo_description', 'keywords'];
+    protected $fillable = ['title', 'icon', 'seo_description', 'seo_keywords'];
     protected $table = 'games';
     protected $guarded = false;
 

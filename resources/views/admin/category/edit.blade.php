@@ -51,7 +51,7 @@
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="keywords" id="keywords" class="form-control" value="{{ $category->keywords }}">
+                                    <input type="text" name="seo_keywords" id="seo_keywords" class="form-control" value="{{ $category->seo_keywords }}">
                                     @error('keywords')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

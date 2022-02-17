@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('slug')->unique();
             $table->timestamps();
             $table->string('seo_description')->nullable();
-            $table->text('keywords')->nullable();
+            $table->text('seo_keywords')->nullable();
         });
     }
 

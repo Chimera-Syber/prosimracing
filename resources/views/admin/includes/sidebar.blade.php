@@ -117,6 +117,23 @@
                     </li>
                 </ul>
             </li><!-- /.nav-item -->
+            <li class="nav-item {{ Request::is('*posts*') ? 'menu-open' : '' }}">
+                <a href="{{ route('admin.event.index') }}" class="nav-link {{ Request::is('*posts*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-pen-nib"></i>
+                    <p>
+                    Публикации
+                    <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.post.index') }}" class="nav-link {{ Request::is('*posts') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Список публикаций</p>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- /.nav-item -->
             <li class="nav-item">
                 <a href="{{ route('admin.trash.index') }}" class="nav-link bg-gradient-danger text-white">
                     <i class="fas fa-recycle nav-icon"></i>

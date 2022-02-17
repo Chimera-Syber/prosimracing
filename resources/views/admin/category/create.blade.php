@@ -45,8 +45,8 @@
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="keywords" id="keywords" class="form-control" placeholder="Введите SEO Keywords" value="{{ old('keywords') }}">
-                                    @error('keywords')
+                                    <input type="text" name="seo_keywords" id="seo_keywords" class="form-control" placeholder="Введите SEO Keywords" value="{{ old('seo_keywords') }}">
+                                    @error('seo_keywords')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>

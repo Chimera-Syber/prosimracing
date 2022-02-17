@@ -19,7 +19,7 @@ class CreateGamesTable extends Migration
             $table->string('slug')->unique();
             $table->string('icon');
             $table->string('seo_description')->nullable();
-            $table->text('keywords')->nullable();
+            $table->text('seo_keywords')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

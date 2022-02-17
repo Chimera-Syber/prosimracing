@@ -103,7 +103,7 @@
                                 <div class="widget_name_race">{{ $event->title }}</div>
                                 <div class="widget_info">
                                     <span class="widget_date">{{ $event->dateAsCarbon->translatedFormat('j F Y H:m') }} МСК</span>
-                                    <img src="{{ $event->game->getImage() }}" height="22">
+                                    <img src="{{ $event->game->getImage() }}" height="20">
                                 </div>
                             </div>
                             <!-- End Item -->
