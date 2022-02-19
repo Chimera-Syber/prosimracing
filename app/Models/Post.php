@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 // For slug
 use Cviebrock\EloquentSluggable\Sluggable;
 
+// Facades
+use Illuminate\Support\Facades\Storage;
+
 // Models
 use App\Models\Category;
 use App\Models\Game;
@@ -36,13 +39,42 @@ class Post extends Model
         ];
     }
 
+    /**
+     * For preview image upload (create)
+     */
+    public static function uploadImage($request, $image) // $image - optional parameter
+    {
+        if ($request->hasFile('preview_image')) {
+
+            //  Delete old thumbnail if there is new
+
+            if ($image) {
+                Storage::delete($image);
+            }
+
+            $folder = date('Y-m-d');
+            return $request->file('preview_image')->store("images/{$folder}");
+        } else {
+            return $image;
+        }
+    }
+
+    public function getImage()
+    {
+        if (!$this->preview_image) {
+            return asset("no-image.jpg");
+        }
+
+        return asset("uploads/{$this->preview_image}");
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
-    public function game()
+    public function games()
     {
-        return $this->belongsToMany(Game::class, 'post_games', 'post_id', 'game_id');
+        return $this->belongsToMany(Game::class, 'post_games', 'post_id', 'game_id')->withTimestamps();
     }
 }

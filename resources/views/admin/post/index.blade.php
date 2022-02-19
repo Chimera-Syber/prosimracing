@@ -43,7 +43,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach($posts as $post)
+                                    <tr>
+                                        <td>{{ $post->id }}</td>
+                                        <td>{{ $post->title }}</td>
+                                        <td>{{ $post->category->title }}</td>
+                                        <td>0</td>
+                                        <td>
+                                           <a href="{{ route('admin.post.edit', $post->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
+                                            <form action="{{ route('admin.post.delete', $post->id) }}" method="post" class="float-left">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             </table>
                                 <a href="{{ route('admin.post.create') }}" class="btn bg-gradient-primary mt-2">Добавить</a>

@@ -132,6 +132,12 @@
                             <p>Список публикаций</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.post.create') }}" class="nav-link {{ Request::is('*posts/create') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Создать публикацию</p>
+                        </a>
+                    </li>
                 </ul>
             </li><!-- /.nav-item -->
             <li class="nav-item">

@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 // Models
 use App\Models\Post;
 
-class IndexController extends Controller
+class DeleteController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Post $post)
     {
-        $posts = Post::all();
-        return view('admin.post.index', compact('posts'));
+        $post->delete();
+        return redirect()->route('admin.post.index');
     }
 }
