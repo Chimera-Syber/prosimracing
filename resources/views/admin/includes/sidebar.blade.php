@@ -23,6 +23,24 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
+            <!-- Users -->
+            <li class="nav-item {{ Request::is('*users*') ? 'menu-open' : '' }}">
+                <a href="{{ route('admin.user.index') }}" class="nav-link {{ Request::is('*users*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                    Пользователи
+                    <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.user.index') }}" class="nav-link {{ Request::is('*users') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Список пользователей</p>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- /.nav-item -->
             <!-- Categories -->
             <li class="nav-item {{ Request::is('*categories*') ? 'menu-open' : '' }}">
                 <a href="{{ route('admin.category.index') }}" class="nav-link {{ Request::is('*categories*') ? 'active' : '' }}">

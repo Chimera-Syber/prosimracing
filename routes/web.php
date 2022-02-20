@@ -22,6 +22,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox'], function() {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
 
+    Route::group(['namespace' => 'User', 'prefix' => 'users'], function() {
+        Route::get('/', 'IndexController')->name('admin.user.index');
+        Route::get('/create', 'CreateController')->name('admin.user.create');
+        Route::post('/', 'StoreController')->name('admin.user.store');
+        Route::get('/{user}/edit', 'EditController')->name('admin.user.edit');
+        Route::patch('/{user}', 'UpdateController')->name('admin.user.update');
+    });
+
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function() {
         Route::get('/', 'IndexController')->name('admin.category.index');
         Route::get('/create', 'CreateController')->name('admin.category.create');
