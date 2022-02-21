@@ -37,6 +37,7 @@
                                 <tr>
                                     <th style="width: 10px">ID</th>
                                     <th>Имя</th>
+                                    <th>Email</th>
                                     <th>Управление</th>
                                 </tr>
                             </thead>
@@ -45,13 +46,14 @@
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
                                         <td>
                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
-                                           <!-- <form action=" route('admin.post.delete', $post->id) " method="post" class="float-left">
+                                           <form action="{{ route('admin.user.delete', $user->id) }}" method="post" class="float-left">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')"><i class="fas fa-trash-alt"></i></button>
-                                            </form> -->
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

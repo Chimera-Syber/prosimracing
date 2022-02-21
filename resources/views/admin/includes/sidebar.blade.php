@@ -13,7 +13,7 @@
             IMG
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
         </div>
 
@@ -36,7 +36,7 @@
                     <li class="nav-item">
                         <a href="{{ route('admin.user.index') }}" class="nav-link {{ Request::is('*users') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Список пользователей</p>
+                            <p>Управление пользователями</p>
                         </a>
                     </li>
                 </ul>

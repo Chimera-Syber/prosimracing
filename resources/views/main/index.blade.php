@@ -34,6 +34,7 @@
                     <a href="{{ route('login') }}">Войти</a>
                 @endguest()
                 @auth()
+                    <a href="#">{{ auth()->user()->name }}</a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <input type="submit" value="Выйти">

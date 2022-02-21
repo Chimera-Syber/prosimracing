@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Game;
 use App\Models\Carousel;
 use App\Models\Event;
+use App\Models\User;
 
 class IndexController extends Controller
 {
@@ -20,6 +21,7 @@ class IndexController extends Controller
         $games = Game::onlyTrashed()->orderBy('id')->paginate(10);
         $carousel = Carousel::onlyTrashed()->orderBy('id')->paginate(10);
         $events = Event::onlyTrashed()->orderBy('id')->paginate(10);
-        return view('admin.trash.index', compact('categories', 'games', 'carousel', 'events'));
+        $users = User::onlyTrashed()->orderBy('id')->paginate(10);
+        return view('admin.trash.index', compact('categories', 'games', 'carousel', 'events', 'users'));
     }
 }

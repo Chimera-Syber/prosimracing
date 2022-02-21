@@ -24,6 +24,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <!-- Categories -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">
@@ -71,6 +72,7 @@
                     </div>
                 </div>
             </div><!-- /.row -->
+            <!-- Games -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-secondary">
@@ -120,6 +122,7 @@
                     </div>
                 </div>
             </div><!-- /.row -->
+            <!-- Media container -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-lightblue">
@@ -168,6 +171,7 @@
                     </div>
                 </div>
             </div><!-- /.row -->
+            <!-- Events -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-dark">
@@ -204,6 +208,49 @@
                                             <form action="{{ route('admin.trash.event.destroy', $event->id) }}" method="post" class="float-left">
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите полное удаление')"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $categories->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+             <!-- Users -->
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="far fa-calendar-check"></i>
+                            Список удаленных пользователей</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Имя</th>
+                                    <th>Почта</th>
+                                    <th>Управление</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($users as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>
+                                            <form action="{{ route('admin.trash.user.restore', ['user' => $user->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
                                             </form>
                                         </td>
                                     </tr>
