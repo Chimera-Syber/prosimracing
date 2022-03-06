@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/', 'IndexController')->name('main.index');
 });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['auth']], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['auth', 'verified']], function() {
     Route::group(['namespace' => 'Main'], function() {
         Route::get('/', 'IndexController')->name('admin.main.index')->middleware('role:0,1');
     });
@@ -90,5 +90,5 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
 
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 

@@ -24,7 +24,8 @@ class StoreController extends Controller
         $data = $request->validated();
         $password = $data['password'];
         $data['password'] = Hash::make($password);
-        User::firstOrCreate([ 'email' => $data['email']], $data);
+        $user = User::firstOrCreate([ 'email' => $data['email']], $data);
+        event(new \Illuminate\Auth\Events\Registered($user));
         return redirect()->route('admin.user.index');
     }
 }
