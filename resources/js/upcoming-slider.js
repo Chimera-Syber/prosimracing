@@ -1,29 +1,37 @@
-// Upcoming evets on main page
+/** 
+ * Upcoming evets on main page
+ */
 
-var widgetIndex = 1;
-showWidget(widgetIndex);
+var widgets = document.getElementsByClassName('widget_item');
 
-function plusWidget(n) {
-    showWidget(widgetIndex += n);
-}
+if (widgets.length != 0) { // Check element
 
-function showWidget(n) {
-    var i;
-    var widgets = document.getElementsByClassName('widget_item');
-    var widgetWidth = widgets[0].scrollWidth;
-    var widgetList = document.querySelector('.widget_list');
+    var widgetIndex = 1;
+    showWidget(widgetIndex);
 
-
-    if (n > widgets.length) {
-        widgetIndex = 1;
+    function plusWidget(n) {
+        showWidget(widgetIndex += n);
     }
 
-    if (n < 1) {
-        widgetIndex = widgets.length;
+    function showWidget(n) {
+        var i;
+        var widgets = document.getElementsByClassName('widget_item');
+        var widgetWidth = widgets[0].scrollWidth;
+        var widgetList = document.querySelector('.widget_list');
+
+        if (n > widgets.length) {
+            widgetIndex = 1;
+        }
+
+        if (n < 1) {
+            widgetIndex = widgets.length;
+        }
+
+        var x = widgetWidth * (widgetIndex-1);
+        widgetList.style.transform = "translateX(-" + x + "px)";
+
+
     }
 
-    var x = widgetWidth * (widgetIndex-1);
-    widgetList.style.transform = "translateX(-" + x + "px)";
-
-
 }
+

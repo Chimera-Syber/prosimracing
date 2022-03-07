@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+// Carbon
+use Carbon\Carbon;
+
 // For slug
 use Cviebrock\EloquentSluggable\Sluggable;
 
@@ -76,5 +79,11 @@ class Post extends Model
     public function games()
     {
         return $this->belongsToMany(Game::class, 'post_games', 'post_id', 'game_id')->withTimestamps();
+    }
+
+    public function getDateAsCarbonAttribute() {
+
+        return Carbon::parse($this->created_at)->locale('ru');
+        
     }
 }
