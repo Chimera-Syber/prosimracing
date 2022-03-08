@@ -1,9 +1,9 @@
  <!-- Header -->
  <header class="menu">
-    <div class="menu_site_title">ProSimRacing</div>
+    <div class="menu_site_title"><a class="menu_site_title_link" href="{{ route('main.index') }}">ProSimRacing</a></div>
     <nav class="menu_nav">
-        <a href="/category-page.html" class="menu_item">Новости</a>
-        <a href="/category-page.html" class="menu_item">Статьи</a>
+        <a href="{{ route('main.category.singlecategory', ['catSlug' => 'novosti']) }}" class="menu_item">Новости</a>
+        <a href="{{ route('main.category.singlecategory', ['catSlug' => 'stati']) }}" class="menu_item">Статьи</a>
         <a href="/category-page.html" class="menu_item">Календарь</a>
         <a href="/category-page.html" class="menu_item">О нас</a>
         @guest()

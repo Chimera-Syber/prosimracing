@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProSimRacing Main Page</title>
     <!-- CSS -->
-    <link href="assets/css/app.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
     <!-- End CSS -->
 
     <!-- Google Fonts -->
@@ -17,6 +17,9 @@
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- End Google Icons -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body id="body" class="body preload">
      <!-- Main Container -->
@@ -36,8 +39,6 @@
     
     </div>
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- PAGE SCRIPTS -->
     <!-- Script for cancel start animation on loadin page -->
     <script>
@@ -46,7 +47,7 @@
         });
     </script>
     <!-- End Main Container -->
-    <script src="./assets/js/scripts.js" defer></script>
-    <script src="./assets/js/app.js" defer></script>
+    <script src="{{ asset('assets/js/scripts.js') }}" defer></script>
+    <script src="{{ asset('assets/js/app.js') }}" defer></script>
 </body>
 </html>

@@ -47,8 +47,13 @@
 
 .category_post_title {
     display: block;
-    @include CategoryPostTitleText;
     margin-bottom: 3px;
+}
+
+.category_post_title_link {
+    @include CategoryPostTitleText;
+    text-decoration: none;
+    color: $black;
 }
 
 .category_post_desc {
@@ -76,6 +81,24 @@
     flex-direction: row;
     @include CategoryPostCatText;
 }
+
+/**
+ * Category Page
+ */
+
+ .button-load-more {
+    background-color: $buttonsColor;
+    border-color: transparent;
+    border-radius: 5px;
+    border-width: 1px;
+    color: $white;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(0.5em - 1px) 1em;
+    text-align: center;
+    white-space: nowrap;
+}
+
 
 .content_sidebar {
     display: flex;

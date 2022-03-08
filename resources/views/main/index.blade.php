@@ -33,7 +33,7 @@
                     </div>
                     <div class="post_info_date_and_link">
                         <span class="post_date">{{ $post->dateAsCarbon->translatedFormat('j F Y') }}</span>
-                        <a href="" class="post_link">Читать далее</a>
+                        <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}" class="post_link">Читать далее</a>
                     </div>
                 </div><!-- ./post_info_wrp -->
             </div><!-- ./content_post -->

@@ -24,8 +24,11 @@
 }
 
 .menu_site_title {
-    @include logoFont;
     margin-left: 35px;
+}
+
+.menu_site_title_link {
+    @include logoFont;
     color: $white;
     text-decoration: none;
 }

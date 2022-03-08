@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Models
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
- Route::group(['namespace' => 'Main'], function() {
-    Route::get('/', 'IndexController')->name('main.index');
-});
-
 Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['auth', 'verified']], function() {
     Route::group(['namespace' => 'Main'], function() {
         Route::get('/', 'IndexController')->name('admin.main.index')->middleware('role:0,1');
@@ -88,6 +86,30 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/restore/user/{user}', 'RestoreUserController')->name('admin.trash.user.restore');
     });
 
+});
+
+Route::group(['namespace' => 'Main'], function() {
+    Route::get('/', 'IndexController')->name('main.index');
+
+    Route::group(['namespace' => 'Category'], function() {
+        try {
+            $categories = Category::all();
+
+            foreach($categories as $category) {
+                $catSlug = $category->slug;
+                Route::get('/{catSlug}', 'SingleCategoryController')->name('main.category.singlecategory');
+                $loadDataUrl = '/' . $category->slug . '/load_data';
+                Route::post($loadDataUrl, 'SingleCategoryController@load_data')->name('main.category.posts.load_more');
+            }
+
+        } catch (Exception $e) {
+            echo $e;
+        }
+    });
+
+    Route::group(['namespace' => 'Post'], function() {
+        Route::get('/{category:slug}/{post:slug}', 'SinglePostController')->name('main.post.singlepost');
+    });
 });
 
 Auth::routes(['verify' => true]);
