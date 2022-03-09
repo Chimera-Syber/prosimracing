@@ -26,6 +26,10 @@ mix.scripts([
     'resources/js/backgrounds.js',
 ], 'public/assets/js/scripts.js');
 
+mix.scripts([
+    'resources/admin/js/scripts.js',
+], 'public/assets/admin/js/scripts.js')
+
 /**
  * Admin panel
  */

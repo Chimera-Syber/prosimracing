@@ -98,6 +98,8 @@
     <script src="{{ asset('/assets/admin/plugins/select2/js/select2.full.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/assets/admin/js/adminlte.min.js') }}"></script>
+    <!-- Custom JS -->
+    <script src="{{ asset('/assets/admin/js/scripts.js') }}"></script>
 
     <!-- REQUIRED PAGE SCRIPTS -->
     <script>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 // Models
 use App\Models\Category;
@@ -88,6 +89,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
 
 });
 
+// This must be before Main group routes
+Auth::routes(['verify' => true]);
+
 Route::group(['namespace' => 'Main'], function() {
     Route::get('/', 'IndexController')->name('main.index');
 
@@ -108,9 +112,10 @@ Route::group(['namespace' => 'Main'], function() {
     });
 
     Route::group(['namespace' => 'Post'], function() {
+        // This must be in the last place in order
         Route::get('/{category:slug}/{post:slug}', 'SinglePostController')->name('main.post.singlepost');
     });
 });
 
-Auth::routes(['verify' => true]);
+
 
