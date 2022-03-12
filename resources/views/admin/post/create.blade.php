@@ -74,7 +74,8 @@
                                  <!-- Content textarea -->
                                  <div class="form-group">
                                     <label for="content">Текст публикации</label>
-                                    <textarea type="text" name="content" id="content" class="form-control" placeholder="Введите текст публикации">{{ old('content') }}</textarea>
+                                    <div id="contentEditorJs" style="display: block; min-height: 450px;"></div>
+                                    <input type="hidden" name="content" id="content" class="form-control" value="{{ old('content') }}">
                                     @error('content')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

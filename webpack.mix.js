@@ -20,21 +20,29 @@ mix.js('resources/js/app.js', 'public/assets/js')
     .sass('resources/sass/app.scss', 'public/assets/css')
     .sourceMaps();
 
-mix.scripts([
+mix.js([
     'resources/js/slider.js',
     'resources/js/upcoming-slider.js',
     'resources/js/backgrounds.js',
 ], 'public/assets/js/scripts.js');
 
-mix.scripts([
-    'resources/admin/js/scripts.js',
-], 'public/assets/admin/js/scripts.js')
+
 
 /**
  * Admin panel
  */
 
 mix.sass('resources/admin/sass/app.scss', 'public/assets/admin/css/');
+
+// Custom scripts
+
+mix.js('resources/admin/js/scripts.js', 'public/assets/admin/js/');
+
+// Editor JS files
+
+mix.copy('node_modules/@editorjs/list/dist', 'public/assets/admin/js/editorjs/list/dist')
+
+// AdminLTE plugins and dist
 
 mix.copy('node_modules/admin-lte/dist/css/adminlte.min.css', 'public/assets/admin/css');
 mix.copy('node_modules/admin-lte/dist/css/adminlte.min.css.map', 'public/assets/admin/css');

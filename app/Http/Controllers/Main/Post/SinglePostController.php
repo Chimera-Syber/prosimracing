@@ -23,6 +23,32 @@ class SinglePostController extends Controller
         $carousel = Carousel::orderBy('id', 'DESC')->paginate(4);
         $events = Event::where('start_date', '>', Carbon::yesterday())->orderBy('start_date', 'ASC')->get();
         $post = Post::where('slug', $post->slug)->with('category')->firstOrFail();
-        return view('main.post.singlepost', compact('post', 'carousel', 'events'));
+        $content = self::render($post->content);
+        $post->views += 1; 
+        $post->update();
+        return view('main.post.singlepost', compact('post', 'content', 'carousel', 'events'));
+    }
+
+    /**
+     * JSON to HTML parser (for EditorJS)
+     * All addition function for parse are below function render
+     */
+
+    public function render($inputContent)
+    {
+        $blocks = json_decode($inputContent)->blocks;
+
+        $content = '';
+
+        foreach($blocks as $block) {
+
+            switch($block->type) {
+
+                case 'paragraph':
+                    $content .= '<p>' . $block->data->text . '</p>';
+            }
+        }
+
+        return $content;
     }
 }
