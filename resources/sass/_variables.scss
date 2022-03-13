@@ -242,3 +242,29 @@ $upcomingEventsTitleBlock_Width: 171px;
     font-size: 10px;
     line-height: 12px;
 }
+
+// Single post page fonts
+
+@mixin BreadcrumbsLinkText {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@mixin SinglePagePostsTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+@mixin SinglePagePostsText {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+}

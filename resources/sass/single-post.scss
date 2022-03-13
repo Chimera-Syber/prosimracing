@@ -1,0 +1,74 @@
+.breadcrumbs {
+    display: block;
+    width: 100%;
+    & p {
+        @include BreadcrumbsLinkText;
+        padding: 1.5em 0 1.5em 2em;
+    }
+}
+
+.breadcrumbs_link {
+    text-decoration: none;
+}
+
+.singlepost_title {
+    display: block;
+    width: 100%;
+    height: auto;
+    & h1 {
+        @include SinglePagePostsTitle;
+        text-transform: uppercase;
+        margin-left: 1em;
+        margin-top: 0.1em;
+        margin-bottom: 0.5em;
+    }
+}
+
+.singlepost_text {
+    @include SinglePagePostsText;
+    color: $black;
+    padding-bottom: 1em;
+}
+
+.post_content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1em 1em 1.5em;
+}
+
+// Headers 
+
+.singlepost_header_2 {
+    @include SinglePagePostsTitle;
+    font-size: 28px;
+}
+
+.singlepost_header_3 {
+    @include SinglePagePostsTitle;
+    font-size: 25px;
+}
+
+.singlepost_header_4 {
+    @include SinglePagePostsTitle;
+    font-size: 23px;
+}
+
+.singlepost_header_5 {
+    @include SinglePagePostsTitle;
+    font-size: 20px; 
+}
+
+// Lists
+
+.singlepost_list_ol {
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.singlepost_list_ul {
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.singlepost_list_li {
+    @include SinglePagePostsText;
+    color: $black;
+}

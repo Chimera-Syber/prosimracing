@@ -48,7 +48,7 @@
                                         <td>{{ $post->id }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->category->title }}</td>
-                                        <td>0</td>
+                                        <td>{{ $post->views }}</td>
                                         <td>
                                            <a href="{{ route('admin.post.edit', $post->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                             <form action="{{ route('admin.post.delete', $post->id) }}" method="post" class="float-left">
