@@ -73,6 +73,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::get('/{post}/edit', 'EditController')->name('admin.post.edit');
         Route::patch('/{post}', 'UpdateController')->name('admin.post.update');
         Route::delete('/{post}', 'DeleteController')->name('admin.post.delete');
+
+        // Upload images for EditorJS
+        Route::post('/uploadimage', 'UploadImageController@imageUploadEditorJS')->name('admin.post.uploadimage');
     });
 
 

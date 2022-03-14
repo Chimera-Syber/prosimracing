@@ -25,6 +25,7 @@ const Header = require('@editorjs/header');
 const Paragraph = require('@editorjs/paragraph');
 import List from '@editorjs/list';
 import Embed from '@editorjs/embed';
+import ImageTool from '@editorjs/image';
 
 // Loading EditorJS only if content element is available. 
 
@@ -36,6 +37,15 @@ function getContentElement() {
         return false;
     }
 }
+
+// Route for upload image
+
+function uploadFileRoute() {
+    var uploadFile = document.location.origin + '/pitbox/posts/uploadimage';
+    return uploadFile;
+}
+
+var _token = $('input[name="_token"]').val();
 
 // Connenct EditorJS
 
@@ -85,6 +95,19 @@ if (getContentElement()) {
                 class: List,
                 inlineToolbar: true,
             },
+            image: {
+                class: ImageTool,
+                config: {
+                    endpoints: {
+                        byFile: uploadFileRoute(),
+                    },
+                    additionalRequestData: {
+                        enctype: 'multipart/form-data',
+                        '_token': _token,
+                    },
+                    types: 'file',
+                }
+            },
             embed: {
                 class: Embed,
                 config: {
@@ -95,8 +118,8 @@ if (getContentElement()) {
                             regex: /https?:\/\/www.twitch.tv\/([^\/\?\&]*)/,
                             embedUrl: 'https://player.twitch.tv/?channel=<%= remote_id %>&parent=prosimracing.dev',
                             html: "<iframe frameborder='0' allowfullscreen='true' scrolling='no' height='378' width='620'></iframe>",
-                            height: 378,
-                            width: 620,
+                            height: 480,
+                            width: 848,
                             id: (groups) => groups.join('/embed/'),
                         },
                     },
@@ -105,6 +128,6 @@ if (getContentElement()) {
         },
 
         data: grabText(),
-        // <iframe src="https://player.twitch.tv/?channel=blackufa&parent=www.example.com" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+
     });
 }

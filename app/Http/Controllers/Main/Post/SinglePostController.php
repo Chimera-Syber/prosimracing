@@ -45,13 +45,18 @@ class SinglePostController extends Controller
 
             switch($block->type) {
 
+                // Paragraph block
                 case 'paragraph':
                     $content .= '<p class="singlepost_text">' . $block->data->text . '</p>';
                     break;
+
+                // Header block
                 case 'header':
                     $level = $block->data->level + 1;
                     $content .= '<h' . $level . ' class="singlepost_header_' . $level . '">' . $block->data->text . '</h' . $level . '>';
                     break;
+                
+                // List block
                 case 'list':
                     if ($block->data->style == 'ordered') {
                         $styleOpen = '<ol class="singlepost_list_ol">'; 
@@ -66,9 +71,56 @@ class SinglePostController extends Controller
                     }
                     $content .= $styleClose;
                     break;
+                
+                // Embed block (Youtube, Twitch)
+                case 'embed':
+                    switch($block->data->service) {
+                        case 'twitch':
+                            $content .= '<div class="singlepost_twitch"><iframe src="' . $block->data->embed . '&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="848"></iframe></div>';
+                            if ($block->data->caption != '') {
+                                $content .= '<div class="singlepost_caption">' .$block->data->caption . '</div>';
+                            }
+                            break;
+                        case 'youtube':
+                            $content .= '<div class="singlepost_youtube"><iframe width="848" height="480" src="' . $block->data->embed . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+                            if ($block->data->caption != '') {
+                                $content .= '<div class="singlepost_caption">' .$block->data->caption . '</div>';
+                            }
+                            break;
+                    }
+                    break;
+
+                // Images block
+                case 'image':
+
+                    /**
+                     * With additional commands we rewrite domain name for Images url
+                     */
+
+                    $url_array = parse_url($block->data->file->url);
+                    $url_array['host'] = $_SERVER['SERVER_NAME'];
+
+                    $url = self::reverseParseUrl($url_array);
+
+                    $content .= '<div class="singlepost_image_wrp"><img class="singlepost_image" src="' . $url . '"></div>';
+                    if ($block->data->caption != '') {
+                        $content .= '<div class="singlepost_caption">' .$block->data->caption . '</div>';
+                    }
+                    break;
             }
         }
 
         return $content;
     }
+
+
+    /**
+     * Reverse parsed url for Images 
+     */
+
+     public static function reverseParseUrl($url_array)
+     {
+         $url = $url_array['scheme'] . '://' . $url_array['host'] . $url_array['path'];
+         return $url;
+     }
 }

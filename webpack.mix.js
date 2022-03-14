@@ -40,7 +40,13 @@ mix.js('resources/admin/js/scripts.js', 'public/assets/admin/js/');
 
 // Editor JS files
 
-mix.copy('node_modules/@editorjs/list/dist', 'public/assets/admin/js/editorjs/list/dist')
+mix.js([
+    'node_modules/@editorjs/list/dist/bundle.js',
+    'node_modules/@editorjs/image/dist/bundle.js',
+], 'public/assets/admin/js/editorjs/bundle.js');
+
+//mix.copy('node_modules/@editorjs/list/dist', 'public/assets/admin/js/editorjs/list/dist');
+//mix.copy('node_modules/@editorjs/image/dist', 'public/assets/admin/js/editorjs/image/dist');
 
 // AdminLTE plugins and dist
 

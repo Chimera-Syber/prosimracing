@@ -72,3 +72,40 @@
     @include SinglePagePostsText;
     color: $black;
 }
+
+// Images
+
+.singlepost_image_wrp {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.singlepost_image {
+    max-width: 800px;
+}
+
+// Captions
+
+.singlepost_caption {
+    display: flex;
+    justify-content: center;
+    @include SinglePagePostsText;
+    font-style: italic;
+    color: $singlepostCaption;
+    margin-bottom: 1em;
+}
+
+// Video PLayers
+
+.singlepost_twitch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.singlepost_youtube {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}

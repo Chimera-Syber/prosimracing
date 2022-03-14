@@ -99,7 +99,10 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('/assets/admin/js/adminlte.min.js') }}"></script>
     <!-- Editor JS files -->
-    <script src="{{ asset('/assets/admin/js/editorjs/list/dist/bundle.js') }}"></script>
+    <!--<script src="{{ asset('/assets/admin/js/editorjs/list/dist/bundle.js') }}"></script>
+    <script src="{{ asset('/assets/admin/js/editorjs/image/dist/bundle.js') }}"></script>-->
+
+    <script src="{{ asset('/assets/admin/js/editorjs/bundle.js') }}"></script>
     <!-- Custom JS -->
     <script src="{{ asset('/assets/admin/js/scripts.js') }}"></script>
 
