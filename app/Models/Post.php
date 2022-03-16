@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Storage;
 // Models
 use App\Models\Category;
 use App\Models\Game;
+use App\Models\Comment;
 
 class Post extends Model
 {
@@ -41,6 +42,18 @@ class Post extends Model
             ]
         ];
     }
+
+    /**
+     * Comments relationship
+     * 
+     * @return string
+     */
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+    }
+    
 
     /**
      * For preview image upload (create)

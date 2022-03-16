@@ -115,6 +115,7 @@ Route::group(['namespace' => 'Main'], function() {
     });
 
     Route::group(['namespace' => 'Post'], function() {
+        Route::post('/{category:slug}/{post:slug}/comment', 'SinglePostCommentController')->name('main.post.singlepost.comment.store');
         // This must be in the last place in order
         Route::get('/{category:slug}/{post:slug}', 'SinglePostController')->name('main.post.singlepost');
     });

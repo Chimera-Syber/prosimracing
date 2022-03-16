@@ -25,12 +25,14 @@
                     </div>
                 </div><!-- ./post_preview_image -->
                 <div class="post_info_wrp">
-                    <div class="post_info_title">
-                        <span>{{ $post->title }}</span>
-                    </div>
-                    <div class="post_info_desc">
-                        <span>{{ $post->description }}</span>
-                    </div>
+                    <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
+                        <div class="post_info_title">
+                            <span>{{ $post->title }}</span>
+                        </div>
+                        <div class="post_info_desc">
+                            <span>{{ $post->description }}</span>
+                        </div>
+                    </a>
                     <div class="post_info_date_and_link">
                         <span class="post_date">{{ $post->dateAsCarbon->translatedFormat('j F Y') }}</span>
                         <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}" class="post_link">Читать далее</a>

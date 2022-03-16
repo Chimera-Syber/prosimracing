@@ -20,7 +20,7 @@ mix.js('resources/js/app.js', 'public/assets/js')
     .sass('resources/sass/app.scss', 'public/assets/css')
     .sourceMaps();
 
-mix.js([
+mix.scripts([
     'resources/js/slider.js',
     'resources/js/upcoming-slider.js',
     'resources/js/backgrounds.js',

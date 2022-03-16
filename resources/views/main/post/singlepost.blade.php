@@ -11,7 +11,27 @@
     </div>
     <!-- Posts -->
     <div class="content_wrp">
-        <div class="post_content">{!! $content !!}</div>
+        <div class="post_content">
+            {!! $content !!}
+            <div>
+                <h2>Comments</h2>
+                <a id="comments">123</a>
+                @include('main.post.includes.comments-display', ['comments' => $post->comments, 'post_id' => $post->id])
+
+
+                <h4>Add comment</h4>
+                    <form method="post" action="{{ route('main.post.singlepost.comment.store', ['category' => $post->category, 'post' => $post]) }}">
+                        @csrf
+                        <div class="form-group">
+                            <textarea class="form-control" name="comment_body"></textarea>
+                            <input type="hidden" name="post_id" value="{{ $post->id }}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Add Comment" />
+                        </div>
+                    </form>
+            </div>
+        </div>
         <div class="content_sidebar">
             <div class="sidebar_twitch">123</div>
             <div class="sidebar_banner">
@@ -23,7 +43,6 @@
             </div>
         </div>
     </div>
-    <div class="post_content">{!! $content2 !!}</div>
      <!-- Banner -->
      <section class="main_banner">
         <div class="main_banner_wrp">
