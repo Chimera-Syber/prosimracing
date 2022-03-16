@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -230,6 +230,18 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // Custom
+        'User' => App\Models\User::class,
+
+        /**
+         * Custom app config
+         */
+       
+
     ],
+
+    // Image Upload Folder with Editor JS
+
+    'image_upload_editor_js_folder' => env('IMAGE_UPLOAD_EDITOR_JS_FOLDER'),
 
 ];

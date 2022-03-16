@@ -1,0 +1,186 @@
+@import 'variables';
+
+.slider {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 56px 0 0 0;
+    max-width: $siteWight;
+    height: $sliderHeight;
+    background-color: #f5f5f5;
+}
+
+.slider_wrp {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.slider_image_wrp {
+    display: inline-table;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: ease 0.5s;
+}
+
+.slider_item {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.slider_image {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/slider/img1.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.slider_image_bg {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to bottom, $black 3%, transparent 50%, $black 99%);
+}
+
+.slider_item_info {
+    display: block;
+    position: absolute;
+    z-index: 21;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.slider_item_info_title {
+    display: block;
+    margin-left: 24px;
+    position: relative;
+    @include SliderItemTitleText;
+    text-transform: uppercase;
+    color: $white;
+    top: 75%;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 41px;
+        top: 0;
+        left: -31px;
+        border-radius: 5px;
+        background-color: $sliderTitleItem;
+    }
+}
+
+.slider_item_info_button {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 115px;
+    background-color: $white;
+    padding: 5px 10px 5px 10px;
+    @include MainBannerButtonText;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $sliderTitleItem;
+    border-radius: 5px;
+    top: 77%;
+    left: 2%;
+}
+
+.slider_nav {
+    display: block;
+    position: absolute;
+    z-index: 22;
+    width: 100%;
+    height: 70%;
+    top: 30%;
+    left: 0;
+}
+
+.slider_nav_arrows {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: now;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    color: $white;
+}
+
+.slider_nav_arrow_left {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 0 5px 5px 0;
+    width: 40px;
+    height: 60px;
+    & span {
+        margin-left: 10px;
+    }
+}
+
+.slider_nav_arrow_right {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 5px 0 0 5px;
+    width: 40px;
+    height: 60px;
+    & span {
+        margin-left: 10px;
+    }
+}
+
+.prev, .next {
+    cursor: pointer;
+}
+
+.slider_nav_dots {
+    display: flex;
+    position: absolute;
+    z-index: 22;
+    flex-direction: column;
+    width: 15px;
+    height: auto;
+    top: 77%;
+    left: 98%;
+}
+
+.slider_nav_dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin-bottom: 2px;
+    background-color: $white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot {
+    background-color: $sliderTitleItem;
+}
+
+
+// Animation
