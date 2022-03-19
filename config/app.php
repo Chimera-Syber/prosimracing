@@ -232,6 +232,7 @@ return [
 
         // Custom
         'User' => App\Models\User::class,
+        'Comment' => App\Models\Comment::class,
 
         /**
          * Custom app config

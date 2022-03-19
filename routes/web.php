@@ -78,6 +78,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/uploadimage', 'UploadImageController@imageUploadEditorJS')->name('admin.post.uploadimage');
     });
 
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comments', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.comment.index');
+        Route::get('/{post}/show', 'ShowController')->name('admin.comment.show');
+        Route::post('/{id}/delete', 'DeleteController')->name('admin.comment.delete');
+        Route::post('/{id}/restore', 'RestoreController')->name('admin.comment.restore');
+    });
+
 
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash', 'middleware' => 'role:0'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');

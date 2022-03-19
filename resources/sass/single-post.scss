@@ -109,3 +109,95 @@
     justify-content: center;
     margin-bottom: 1em;
 }
+
+// Comments
+
+.singlepost_display_comments {
+    display: block;
+    border-left: 1px solid #eaeaea;
+}
+
+.singlepost_display_comment {
+    margin-left: 5px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.singlepost_comments_title {
+    @include SinglePagePostsTitle;
+    margin-bottom: 0.5em;
+}
+
+.singlepost_comment_author {
+    @include SinglePagePostsText;
+    font-weight: 500;
+    & a {
+        font-weight: 400;
+    }
+}
+
+.singlepost_comment_body {
+    @include SinglePagePostsText;
+}
+
+
+.singlepost_comment_textarea {
+    display: block;
+    height: 5rem;
+    width: 28rem;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    overflow: auto;
+    outline-color: #afafaf;
+    resize: vertical;
+}
+
+.singlepost_comment_button {
+    display: block;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-transform: none;
+    overflow: visible;
+}
+
+.btn-color {
+    background-color: #28a745;
+    border-color: #28a745;
+    box-shadow: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: $white;
+}
+
+.singlepost_form {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.singlepost_comment_form_group {
+    display: block;
+    margin-left: 1em;
+}

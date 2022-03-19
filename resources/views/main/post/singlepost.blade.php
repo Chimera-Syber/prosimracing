@@ -14,22 +14,23 @@
         <div class="post_content">
             {!! $content !!}
             <div>
-                <h2>Comments</h2>
-                <a id="comments">123</a>
+                <span class="singlepost_comments_title">Комментарии ({{ $post->commentsCount() }})</span>
+                <a id="comments"></a>
                 @include('main.post.includes.comments-display', ['comments' => $post->comments, 'post_id' => $post->id])
 
-
-                <h4>Add comment</h4>
-                    <form method="post" action="{{ route('main.post.singlepost.comment.store', ['category' => $post->category, 'post' => $post]) }}">
+                @auth()
+                <span class="singlepost_comments_title">Добавить комментарий</span>
+                    <form class="singlepost_form" method="post" action="{{ route('main.post.singlepost.comment.store', ['category' => $post->category, 'post' => $post]) }}">
                         @csrf
-                        <div class="form-group">
-                            <textarea class="form-control" name="comment_body"></textarea>
+                        <div class="singlepost_comment_form_group">
+                            <textarea class="singlepost_comment_textarea" name="comment_body">Введите комментарий</textarea>
                             <input type="hidden" name="post_id" value="{{ $post->id }}" />
                         </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Add Comment" />
+                        <div class="singlepost_comment_form_group">
+                            <button type="submit" class="singlepost_comment_button btn-color">Отправить</button>
                         </div>
                     </form>
+                @endauth()
             </div>
         </div>
         <div class="content_sidebar">

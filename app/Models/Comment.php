@@ -13,7 +13,10 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'post_id', 'parent_id', 'comment_body'];
+    // Constants
+    const COMMENT_DELETED = 1;
+
+    protected $fillable = ['user_id', 'post_id', 'parent_id', 'comment_body', 'deleted'];
 
     public function user()
     {
