@@ -45,6 +45,11 @@
         $(document).ready(function() {
             $("#body").removeClass("preload");
         });
+
+        // For comments reply form
+        $('.replybutton').click(function() {
+            $(this).next('.reply').toggle();
+        });
     </script>
     <!-- End Main Container -->
     <script src="{{ asset('assets/js/scripts.js') }}" defer></script>

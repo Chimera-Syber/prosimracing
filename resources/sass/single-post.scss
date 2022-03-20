@@ -126,8 +126,14 @@
 }
 
 .singlepost_comments_title {
+    display: block;
     @include SinglePagePostsTitle;
     margin-bottom: 0.5em;
+}
+
+.singlepost_comment_author_info {
+    @include SinglePagePostsText;
+    font-weight: 400;
 }
 
 .singlepost_comment_author {
@@ -138,8 +144,26 @@
     }
 }
 
+.singlepost_comment_date {
+    color: #afafaf;
+}
+
 .singlepost_comment_body {
     @include SinglePagePostsText;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+
+.replybutton {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #afafaf;
+}
+
+.singlepost_reply.reply {
+    margin-left: 0;
+    margin-top: 1em;
 }
 
 
@@ -185,8 +209,8 @@
 }
 
 .btn-color {
-    background-color: #28a745;
-    border-color: #28a745;
+    background-color: $singlepostReplyButton;
+    border-color: $singlepostReplyButton;
     box-shadow: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     color: $white;
@@ -199,5 +223,4 @@
 
 .singlepost_comment_form_group {
     display: block;
-    margin-left: 1em;
 }
