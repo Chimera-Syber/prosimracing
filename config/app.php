@@ -233,6 +233,7 @@ return [
         // Custom
         'User' => App\Models\User::class,
         'Comment' => App\Models\Comment::class,
+        'Banner' => App\Models\Banner::class,
 
         /**
          * Custom app config

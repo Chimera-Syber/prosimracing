@@ -85,6 +85,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/{id}/restore', 'RestoreController')->name('admin.comment.restore');
     });
 
+    Route::group(['namespace' => 'Banner', 'prefix' => 'banners', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.banner.index');
+        Route::get('/create', 'CreateController')->name('admin.banner.create');
+        Route::post('/', 'StoreController')->name('admin.banner.store');
+        Route::get('/{banner}/edit', 'EditController')->name('admin.banner.edit');
+        Route::patch('/{banner}', 'UpdateController')->name('admin.banner.update');
+        Route::delete('/{banner}', 'DeleteController')->name('admin.banner.delete');
+        Route::get('/show', 'ShowController')->name('admin.banner.show');
+        Route::post('/show/update', 'UpdateShowController')->name('admin.banner.updateshow');
+    });
 
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash', 'middleware' => 'role:0'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');
@@ -95,6 +105,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/restore/event/{event}', 'RestoreEventController')->name('admin.trash.event.restore');
         Route::post('/destroy/event/{event}', 'DestroyEventController')->name('admin.trash.event.destroy');
         Route::post('/restore/user/{user}', 'RestoreUserController')->name('admin.trash.user.restore');
+        Route::post('/restore/post/{post}', 'RestorePostController')->name('admin.trash.post.restore');
+        Route::post('/restore/banner/{banner}', 'RestoreBannerController')->name('admin.trash.banner.restore');
     });
 
 });
