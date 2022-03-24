@@ -45,11 +45,11 @@
     <!-- Banner -->
     <section class="main_banner">
         <div class="main_banner_wrp">
-            <a href="#" class="main_banner_link">
-                <div class="main_banner_img" data-img="./assets/img/banners/70.jpeg"></div>
+            <a href="{{ $bannerBetweenSections->url }}" class="main_banner_link">
+                <div class="main_banner_img" data-img="{{ $bannerBetweenSections->getImage() }}"></div>
                 <div class="main_banner_bg"></div>
-                <h1 class="main_banner_title">Баннер чемпионата по виртуальному автоспорту</h1>
-                <div class="main_banner_desc">Подзаголовок</div>
+                <h1 class="main_banner_title">{{ $bannerBetweenSections->title }}</h1>
+                <div class="main_banner_desc">{{ $bannerBetweenSections->subtitle }}</div>
                 <div class="main_banner_button"><span class="material-icons-outlined main-banner-button-color">flag_circle</span>Подробнее
                 </div>
             </a>
@@ -59,6 +59,42 @@
         <h1>Видео и репортажи</h1>
     </div>
     <section class="coverage_posts">
+        @foreach($specialPosts as $post)
+            @if($post->category_id == Category::CAT_COVERAGE)
+                <div class="coverage_post" data-img="{{ $post->getImage() }}">
+                    <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
+                        <div class="coverage_post_bg"></div>
+                        <div class="coverage_post_info">
+                            <div class="coverage_title">{{ $post->title }}</div>
+                            <div class="coverage_date">{{ $post->dateAsCarbon->translatedFormat('j F Y') }}</div>
+                        </div>
+                        <div class="coverage_game_category">
+                            <div class="coverage_game_category_img">
+                                <img src="./assets/img/game_icons/iracing.png" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div><!-- ./coverage_post -->
+            @elseif($post->category_id == Category::CAT_VIDEOS)
+                <div class="coverage_post" data-img="{{ $post->getImage() }}">
+                    <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
+                        <div class="coverage_post_bg"></div>
+                        <div class="coverage_post_video">
+                            <span class="material-icons-outlined icon-video-play">arrow_forward_ios</span>
+                        </div>
+                        <div class="coverage_post_info">
+                            <div class="coverage_title">{{ $post->title }}</div>
+                            <div class="coverage_date">{{ $post->dateAsCarbon->translatedFormat('j F Y') }}</div>
+                        </div>
+                        <div class="coverage_game_category">
+                            <div class="coverage_game_category_img">
+                                <img src="./assets/img/game_icons/iracing.png" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div><!-- ./coverage_post -->
+            @endif
+        @endforeach
         <div class="coverage_post" data-img="./assets/img/slider/img1.png">
             <a href="#">
                 <div class="coverage_post_bg"></div>

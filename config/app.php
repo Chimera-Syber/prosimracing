@@ -234,6 +234,7 @@ return [
         'User' => App\Models\User::class,
         'Comment' => App\Models\Comment::class,
         'Banner' => App\Models\Banner::class,
+        'Category' => App\Models\Category::class,
 
         /**
          * Custom app config

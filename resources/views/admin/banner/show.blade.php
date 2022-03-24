@@ -37,10 +37,11 @@
                                 <!-- Place input -->
                                 <div class="form-group">
                                     <label>Выбор баннера между секциями</label>
+                                    <input type="hidden" name="place" id="place" value="{{ Banner::SITE_PLACE_BETWEEN_SECTION }}">
                                     <select name="toggle" id="toggle" class="form-control">
                                         @foreach($banners as $banner)
                                             @if($banner->place == Banner::SITE_PLACE_BETWEEN_SECTION )
-                                                <option value="{{ $banner->id }}">{{ $banner->title }}</option>
+                                                <option value="{{ $banner->id }}" @if($banner->active == Banner::BANNER_ACTIVE) selected @endif>{{ $banner->title }}</option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -56,10 +57,11 @@
                                 <!-- Place input -->
                                 <div class="form-group">
                                     <label>Выбор баннера в сайдбаре</label>
+                                    <input type="hidden" name="place" id="place" value="{{ Banner::SITE_PLACE_SIDEBAR }}">
                                     <select name="toggle" id="toggle" class="form-control">
                                         @foreach($banners as $banner)
                                             @if($banner->place == Banner::SITE_PLACE_SIDEBAR )
-                                                <option value="{{ $banner->id }}">{{ $banner->title }}</option>
+                                                <option value="{{ $banner->id }}" @if($banner->active == Banner::BANNER_ACTIVE) selected @endif>{{ $banner->title }}</option>
                                             @endif
                                         @endforeach
                                     </select>
