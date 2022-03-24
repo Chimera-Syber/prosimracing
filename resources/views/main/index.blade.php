@@ -70,7 +70,9 @@
                         </div>
                         <div class="coverage_game_category">
                             <div class="coverage_game_category_img">
-                                <img src="./assets/img/game_icons/iracing.png" alt="">
+                                @foreach($post->games as $game)
+                                    <img width="22" src="{{ $game->getImage() }}" alt="{{ $game->title }}">
+                                @endforeach
                             </div>
                         </div>
                     </a>
@@ -88,127 +90,15 @@
                         </div>
                         <div class="coverage_game_category">
                             <div class="coverage_game_category_img">
-                                <img src="./assets/img/game_icons/iracing.png" alt="">
+                                @foreach($post->games as $game)
+                                    <img width="22" src="{{ $game->getImage() }}" alt="{{ $game->title }}">
+                                @endforeach
                             </div>
                         </div>
                     </a>
                 </div><!-- ./coverage_post -->
             @endif
         @endforeach
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <a href="#">
-                <div class="coverage_post_bg"></div>
-                <div class="coverage_post_info">
-                    <div class="coverage_title">Этап виртуальной формулы 1</div>
-                    <div class="coverage_date">12 Января 2022 г.</div>
-                </div>
-                <div class="coverage_game_category">
-                    <div class="coverage_game_category_img">
-                        <img src="./assets/img/game_icons/iracing.png" alt="">
-                    </div>
-                </div>
-            </a>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <a href="#">
-                <div class="coverage_post_bg"></div>
-                <div class="coverage_post_video">
-                    <span class="material-icons-outlined icon-video-play">arrow_forward_ios</span>
-                </div>
-                <div class="coverage_post_info">
-                    <div class="coverage_title">Этап виртуальной формулы 1</div>
-                    <div class="coverage_date">12 Января 2022 г.</div>
-                </div>
-                <div class="coverage_game_category">
-                    <div class="coverage_game_category_img">
-                        <img src="./assets/img/game_icons/iracing.png" alt="">
-                    </div>
-                </div>
-            </a>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <div class="coverage_post_bg"></div>
-            <div class="coverage_post_info">
-                <div class="coverage_title">Этап виртуальной формулы 1</div>
-                <div class="coverage_date">12 Января 2022 г.</div>
-            </div>
-            <div class="coverage_game_category">
-                <div class="coverage_game_category_img">
-                    <img src="./assets/img/game_icons/iracing.png" alt="">
-                </div>
-            </div>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <div class="coverage_post_bg"></div>
-            <div class="coverage_post_video">
-                <span class="material-icons-outlined icon-video-play">arrow_forward_ios</span>
-            </div>
-            <div class="coverage_post_info">
-                <div class="coverage_title">Этап виртуальной формулы 1</div>
-                <div class="coverage_date">12 Января 2022 г.</div>
-            </div>
-            <div class="coverage_game_category">
-                <div class="coverage_game_category_img">
-                    <img src="./assets/img/game_icons/iracing.png" alt="">
-                </div>
-            </div>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <div class="coverage_post_bg"></div>
-            <div class="coverage_post_info">
-                <div class="coverage_title">Этап виртуальной формулы 1</div>
-                <div class="coverage_date">12 Января 2022 г.</div>
-            </div>
-            <div class="coverage_game_category">
-                <div class="coverage_game_category_img">
-                    <img src="./assets/img/game_icons/iracing.png" alt="">
-                </div>
-            </div>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <a href="#">
-                <div class="coverage_post_bg"></div>
-                <div class="coverage_post_video">
-                    <span class="material-icons-outlined icon-video-play">arrow_forward_ios</span>
-                </div>
-                <div class="coverage_post_info">
-                    <div class="coverage_title">Этап виртуальной формулы 1</div>
-                    <div class="coverage_date">12 Января 2022 г.</div>
-                </div>
-                <div class="coverage_game_category">
-                    <div class="coverage_game_category_img">
-                        <img src="./assets/img/game_icons/iracing.png" alt="">
-                    </div>
-                </div>
-            </a>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <div class="coverage_post_bg"></div>
-            <div class="coverage_post_info">
-                <div class="coverage_title">Этап виртуальной формулы 1</div>
-                <div class="coverage_date">12 Января 2022 г.</div>
-            </div>
-            <div class="coverage_game_category">
-                <div class="coverage_game_category_img">
-                    <img src="./assets/img/game_icons/iracing.png" alt="">
-                </div>
-            </div>
-        </div><!-- ./coverage_post -->
-        <div class="coverage_post" data-img="./assets/img/slider/img1.png">
-            <div class="coverage_post_bg"></div>
-            <div class="coverage_post_video">
-                <span class="material-icons-outlined icon-video-play">arrow_forward_ios</span>
-            </div>
-            <div class="coverage_post_info">
-                <div class="coverage_title">Этап виртуальной формулы 1</div>
-                <div class="coverage_date">12 Января 2022 г.</div>
-            </div>
-            <div class="coverage_game_category">
-                <div class="coverage_game_category_img">
-                    <img src="./assets/img/game_icons/iracing.png" alt="">
-                </div>
-            </div>
-        </div><!-- ./coverage_post -->
     </section>
 
 @endsection
