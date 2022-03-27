@@ -220,6 +220,26 @@
                 </li><!-- /.nav-item -->
             @endif
             @if(Auth::user()->role == User::ROLE_ADMIN)
+                <!-- Posts -->
+                <li class="nav-item {{ Request::is('*footer*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.footer.index') }}" class="nav-link {{ Request::is('*footer*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-columns"></i>
+                        <p>
+                        Настройки футера
+                        <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.footer.index') }}" class="nav-link {{ Request::is('*footer') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Список</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- /.nav-item -->
+            @endif
+            @if(Auth::user()->role == User::ROLE_ADMIN)
                 <!-- Trash box -->
                 <li class="nav-item">
                     <a href="{{ route('admin.trash.index') }}" class="nav-link bg-gradient-danger text-white">

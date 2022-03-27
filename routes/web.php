@@ -96,6 +96,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/show/update', 'UpdateShowController')->name('admin.banner.updateshow');
     });
 
+    Route::group(['namespace' => 'Footer', 'prefix' => 'footer', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.footer.index');
+        Route::get('/create/{place}', 'CreateController')->name('admin.footer.create');
+        Route::post('/', 'StoreController')->name('admin.footer.store');
+        Route::get('/{footer}/edit', 'EditController')->name('admin.footer.edit');
+        Route::patch('/{footer}', 'UpdateController')->name('admin.footer.update');
+        Route::delete('/{footer}', 'DeleteController')->name('admin.footer.delete');
+    });
+
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash', 'middleware' => 'role:0'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');
         Route::post('/restore/category/{category}', 'RestoreCategoryController')->name('admin.trash.category.restore');

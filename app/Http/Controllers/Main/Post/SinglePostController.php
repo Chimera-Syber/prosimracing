@@ -15,6 +15,7 @@ use App\Models\Category;
 use App\Models\Game;
 use App\Models\Carousel;
 use App\Models\Event;
+use App\Models\Footer;
 
 class SinglePostController extends Controller
 {
@@ -27,7 +28,8 @@ class SinglePostController extends Controller
         $content2 = $post->content; // for test
         $post->views += 1; 
         $post->update();
-        return view('main.post.singlepost', compact('post', 'content', 'content2', 'carousel', 'events'));
+        $footers = Footer::all();
+        return view('main.post.singlepost', compact('post', 'content', 'content2', 'carousel', 'events', 'footers'));
     }
 
     /**

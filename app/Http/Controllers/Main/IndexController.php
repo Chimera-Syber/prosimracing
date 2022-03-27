@@ -14,6 +14,7 @@ use App\Models\Event;
 use App\Models\Post;
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\Footer;
 
 class IndexController extends Controller
 {
@@ -24,6 +25,7 @@ class IndexController extends Controller
         $posts = Post::orderBy('created_at', 'DESC')->with('category')->with('games')->paginate(8);
         $bannerBetweenSections = Banner::where('place', '=', Banner::SITE_PLACE_BETWEEN_SECTION)->where('active', '=', Banner::BANNER_ACTIVE)->first();
         $specialPosts = Post::where('category_id', '=', Category::CAT_VIDEOS)->orWhere('category_id', '=', Category::CAT_COVERAGE)->orderBy('created_at', 'DESC')->with('category')->with('games')->paginate(8);
-        return view('main.index', compact('carousel', 'events', 'posts', 'bannerBetweenSections', 'specialPosts'));
+        $footers = Footer::all();
+        return view('main.index', compact('carousel', 'events', 'posts', 'bannerBetweenSections', 'specialPosts', 'footers'));
     }
 }
