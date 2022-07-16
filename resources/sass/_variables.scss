@@ -20,18 +20,29 @@ $buttonsColor: #FF0000;
 // Slider
 $sliderTitleItem: #FF0000;
 
+// Single Post Captions
+$singlepostCaption: #828282;
+$singlepostReplyButton: #FF0000;
+
+// Category page
+$categoryDateText: rgb(165, 165, 165);
+$categoryCatText: rgb(165, 165, 165);
+
 // Measured
 $siteWight: 1200px;
 $sliderHeight: 400px;
 $upcomingEventsHeight: 70px;
 $upcomingEventsTitleBlock_Width: 171px;
 
-// Single Post Captions
-$singlepostCaption: #828282;
 
-// Fonts mixin
+/** 
+ * Fonts mixin
+ */
+
+// Main menu 
+
 @mixin logoFont {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -39,23 +50,59 @@ $singlepostCaption: #828282;
 };
 
 @mixin menuItemFont {
-    font-family: Open Sans;
+    font-family: 'Jost';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 19px;
 };
 
+@mixin menuLoginLink {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@mixin menuSubmenuText {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@mixin menuUserName {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+// Slider on main page
+
 @mixin SliderItemTitleText {
-    font-family: Open Sans;
+    font-family: 'Jost';
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
     line-height: 41px;
 }
 
+@mixin SliderItemButtonText {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+// Upcoming widget
+
 @mixin upcomingEventsTitle {
-    font-family: Inter;
+    font-family: 'Jost';
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -63,15 +110,15 @@ $singlepostCaption: #828282;
 };
 
 @mixin UEwidgetRaceLeague {
-    font-family: Open Sans;
+    font-family: 'Jost';
     font-style: normal;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 15px;
 }
 
 @mixin UEwidgetNameRace {
-    font-family: Open Sans;
+    font-family: Jost;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -79,12 +126,14 @@ $singlepostCaption: #828282;
 }
 
 @mixin UEwidgetDate {
-    font-family: Open Sans;
+    font-family: Jost;
     font-style: normal;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 15px;
 }
+
+// Main page content
 
 @mixin MainContentPostsTitle {
     font-family: Inter;
@@ -111,10 +160,10 @@ $singlepostCaption: #828282;
 }
 
 @mixin PostInfoDescText {
-    font-family: Inter;
+    font-family: Jost;
     font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 15px;
 }
 
@@ -133,6 +182,8 @@ $singlepostCaption: #828282;
     font-size: 11px;
     line-height: 13px;
 }
+
+// Banners
 
 @mixin MainBannerTitleText {
     font-family: Open Sans;
@@ -166,8 +217,10 @@ $singlepostCaption: #828282;
     line-height: 27px;
 }
 
+// Category page
+
 @mixin CategoryPostTitleText {
-    font-family: Inter;
+    font-family: 'Jost';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -175,28 +228,36 @@ $singlepostCaption: #828282;
 }
 
 @mixin CategoryPostDescText {
-    font-family: Inter;
+    font-family: 'Jost';
     font-style: normal;
-    font-weight: 300;
-    font-size: 13px;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 16px;
 }
 
 @mixin CategoryPostDateText {
-    font-family: Inter;
+    font-family: 'Jost';
     font-style: normal;
-    font-weight: 200;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 15px;
     line-height: 15px;
 }
 
 @mixin CategoryPostCatText {
-    font-family: Inter;
+    font-family: 'Jost';
     font-style: normal;
-    font-weight: 200;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 15px;
     line-height: 15px;
 }
+
+// Load More button
+
+@mixin LoadMoreButtonText {
+    font-family: 'Jost';
+}
+
+// Coverage block
 
 @mixin CoveragePostTitleText {
     font-family: Open Sans;
@@ -213,6 +274,8 @@ $singlepostCaption: #828282;
     font-size: 12px;
     line-height: 97.68%;
 }
+
+// Footer
 
 @mixin FooterGridItemTitleText {
     font-family: Open Sans;
@@ -249,15 +312,15 @@ $singlepostCaption: #828282;
 // Single post page fonts
 
 @mixin BreadcrumbsLinkText {
-    font-family: 'Inter';
+    font-family: 'Jost';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
 }
 
 @mixin SinglePagePostsTitle {
-    font-family: 'Inter';
+    font-family: 'Jost';
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
@@ -265,9 +328,9 @@ $singlepostCaption: #828282;
 }
 
 @mixin SinglePagePostsText {
-    font-family: 'Segoe UI';
+    font-family: 'Jost', sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 16px;
     line-height: 24px;
 }

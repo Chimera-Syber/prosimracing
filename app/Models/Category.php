@@ -20,6 +20,9 @@ class Category extends Model
     protected $table = 'categories';
     protected $guarded = false;
 
+    const CAT_VIDEOS = 10;
+    const CAT_COVERAGE = 11;
+
     /**
      * Return the sluggable configuration array for this model.
      *

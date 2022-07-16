@@ -6,24 +6,34 @@
         <a href="{{ route('main.category.singlecategory', ['catSlug' => 'articles']) }}" class="menu_item">Статьи</a>
         <a href="/category-page.html" class="menu_item">Календарь</a>
         <a href="/category-page.html" class="menu_item">О нас</a>
-        @guest()
-            <a href="{{ route('register') }}">Регистрация</a>
-            <a href="{{ route('login') }}">Войти</a>
-        @endguest()
-        @auth()
-            <a href="#">{{ auth()->user()->name }}</a>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <input type="submit" value="Выйти">
-            </form>
-        @endauth()
     </nav>
     <div class="menu_user_section">
         <div class="menu_search">
             <span class="material-icons-outlined search-color">search</span>
         </div>
         <div class="menu_login">
-            <span class="material-icons-outlined login-color">account_circle</span>
+            @guest()
+                <div class="menu_main_submenu">
+                    <span class="material-icons-outlined login-color">account_circle</span>
+                    <a href="{{ route('login') }}" class="menu_login_link">{{ __('Login') }}</a>
+                </div>
+            @endguest()
+            @auth()
+                <div class="menu_wrp">
+                    <div class="menu_main_submenu">
+                        <span class="material-icons-outlined login-color">account_circle</span>
+                        <a href="#" class="menu_user_name">{{ auth()->user()->name }}</a>
+                    </div>
+                    <div class="menu_submenu">
+                        <div class="menu_submenu_item">
+                            <form class="menu_user_logout" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <input type="submit" value="Выйти">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endauth()
         </div>
     </div>
 </header>

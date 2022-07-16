@@ -78,6 +78,32 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/uploadimage', 'UploadImageController@imageUploadEditorJS')->name('admin.post.uploadimage');
     });
 
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comments', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.comment.index');
+        Route::get('/{post}/show', 'ShowController')->name('admin.comment.show');
+        Route::post('/{id}/delete', 'DeleteController')->name('admin.comment.delete');
+        Route::post('/{id}/restore', 'RestoreController')->name('admin.comment.restore');
+    });
+
+    Route::group(['namespace' => 'Banner', 'prefix' => 'banners', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.banner.index');
+        Route::get('/create', 'CreateController')->name('admin.banner.create');
+        Route::post('/', 'StoreController')->name('admin.banner.store');
+        Route::get('/{banner}/edit', 'EditController')->name('admin.banner.edit');
+        Route::patch('/{banner}', 'UpdateController')->name('admin.banner.update');
+        Route::delete('/{banner}', 'DeleteController')->name('admin.banner.delete');
+        Route::get('/show', 'ShowController')->name('admin.banner.show');
+        Route::post('/show/update', 'UpdateShowController')->name('admin.banner.updateshow');
+    });
+
+    Route::group(['namespace' => 'Footer', 'prefix' => 'footer', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.footer.index');
+        Route::get('/create/{place}', 'CreateController')->name('admin.footer.create');
+        Route::post('/', 'StoreController')->name('admin.footer.store');
+        Route::get('/{footer}/edit', 'EditController')->name('admin.footer.edit');
+        Route::patch('/{footer}', 'UpdateController')->name('admin.footer.update');
+        Route::delete('/{footer}', 'DeleteController')->name('admin.footer.delete');
+    });
 
     Route::group(['namespace' => 'Trash', 'prefix' => 'trash', 'middleware' => 'role:0'], function() {
         Route::get('/', 'IndexController')->name('admin.trash.index');
@@ -88,6 +114,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::post('/restore/event/{event}', 'RestoreEventController')->name('admin.trash.event.restore');
         Route::post('/destroy/event/{event}', 'DestroyEventController')->name('admin.trash.event.destroy');
         Route::post('/restore/user/{user}', 'RestoreUserController')->name('admin.trash.user.restore');
+        Route::post('/restore/post/{post}', 'RestorePostController')->name('admin.trash.post.restore');
+        Route::post('/restore/banner/{banner}', 'RestoreBannerController')->name('admin.trash.banner.restore');
     });
 
 });
@@ -97,6 +125,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['namespace' => 'Main'], function() {
     Route::get('/', 'IndexController')->name('main.index');
+    Route::post('/posts/load_more', 'IndexController@load_more')->name('main.index.load_more');
 
     Route::group(['namespace' => 'Category'], function() {
         try {

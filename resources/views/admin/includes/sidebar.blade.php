@@ -174,6 +174,72 @@
                 </li><!-- /.nav-item -->
             @endif
             @if(Auth::user()->role == User::ROLE_ADMIN)
+                <!-- Posts -->
+                <li class="nav-item {{ Request::is('*comments*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.comment.index') }}" class="nav-link {{ Request::is('*comments*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-comments"></i>
+                        <p>
+                        Комментарии
+                        <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.comment.index') }}" class="nav-link {{ Request::is('*comments') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Список публикаций и комментариев</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- /.nav-item -->
+            @endif
+            @if(Auth::user()->role == User::ROLE_ADMIN)
+                <!-- Posts -->
+                <li class="nav-item {{ Request::is('*banners*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.banner.index') }}" class="nav-link {{ Request::is('*banners*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-ad"></i>
+                        <p>
+                        Баннеры
+                        <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.banner.index') }}" class="nav-link {{ Request::is('*banners') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Список баннеров</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.banner.show') }}" class="nav-link {{ Request::is('*banners/show') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Настройки отображения</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- /.nav-item -->
+            @endif
+            @if(Auth::user()->role == User::ROLE_ADMIN)
+                <!-- Posts -->
+                <li class="nav-item {{ Request::is('*footer*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.footer.index') }}" class="nav-link {{ Request::is('*footer*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-columns"></i>
+                        <p>
+                        Настройки футера
+                        <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.footer.index') }}" class="nav-link {{ Request::is('*footer') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Список</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- /.nav-item -->
+            @endif
+            @if(Auth::user()->role == User::ROLE_ADMIN)
                 <!-- Trash box -->
                 <li class="nav-item">
                     <a href="{{ route('admin.trash.index') }}" class="nav-link bg-gradient-danger text-white">

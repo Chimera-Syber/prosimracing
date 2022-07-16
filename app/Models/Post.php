@@ -54,6 +54,16 @@ class Post extends Model
         return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
     
+    /**
+     * Comments count
+     * 
+     * @return string
+     */
+
+     public function commentsCount() 
+     {
+         return Comment::where('post_id', $this->id)->count();
+     }
 
     /**
      * For preview image upload (create)

@@ -6,7 +6,7 @@ var widgets = document.getElementsByClassName('widget_item');
 
 if (widgets.length != 0) { // Check element
 
-    var widgetIndex = 1;
+    let widgetIndex = 1;
     showWidget(widgetIndex);
 
     function plusWidget(n) {
@@ -14,10 +14,10 @@ if (widgets.length != 0) { // Check element
     }
 
     function showWidget(n) {
-        var i;
-        var widgets = document.getElementsByClassName('widget_item');
-        var widgetWidth = widgets[0].scrollWidth;
-        var widgetList = document.querySelector('.widget_list');
+        let i;
+        let widgets = document.getElementsByClassName('widget_item');
+        let widgetWidth = widgets[0].scrollWidth + 3;
+        let widgetList = document.querySelector('.widget_list');
 
         if (n > widgets.length) {
             widgetIndex = 1;
@@ -27,7 +27,7 @@ if (widgets.length != 0) { // Check element
             widgetIndex = widgets.length;
         }
 
-        var x = widgetWidth * (widgetIndex-1);
+        let x = widgetWidth * (widgetIndex-1);
         widgetList.style.transform = "translateX(-" + x + "px)";
 
 

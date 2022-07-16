@@ -265,6 +265,100 @@
                     </div>
                 </div>
             </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Список удаленных публикаций</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Название</th>
+                                    <th>Категория</th>
+                                    <th>Просмотры</th>
+                                    <th>Управление</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($posts as $post)
+                                    <tr>
+                                        <td>{{ $post->id }}</td>
+                                        <td>{{ $post->title }}</td>
+                                        <td>{{ $post->category->title }}</td>
+                                        <td>{{ $post->views }}</td>
+                                        <td>
+                                            <form action="{{ route('admin.trash.post.restore', ['post' => $post->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $posts->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Список удаленных баннеров</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Картинка</th>
+                                    <th>Название и подзаголовок</th>
+                                    <th>Ссылка</th>
+                                    <th>Место размещения</th>
+                                    <th>Управление</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($banners as $banner)
+                                    <tr>
+                                        <td>{{ $banner->id }}</td>
+                                        <td><img src="{{ $banner->getImage() }}" alt="" style="width: 400px;"></td>
+                                        <td>{{ $banner->title }}<br>{{ $banner->subtitle }}</td>
+                                        <td><a href="{{ $banner->url }}">{{ $banner->url }}</a></td>
+                                        <td>
+                                            @foreach($places as $id => $place)
+                                                @if($id == $banner->place) 
+                                                    {{ $place }}
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('admin.trash.banner.restore', ['banner' => $banner->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-warning btn-sm float-left mr-1" onclick="return confirm('Подтвердите восстановление')"><i class="fas fa-trash-restore"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $banners->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

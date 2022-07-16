@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -232,6 +232,10 @@ return [
 
         // Custom
         'User' => App\Models\User::class,
+        'Comment' => App\Models\Comment::class,
+        'Banner' => App\Models\Banner::class,
+        'Category' => App\Models\Category::class,
+        'Footer' => App\Models\Footer::class,
 
         /**
          * Custom app config

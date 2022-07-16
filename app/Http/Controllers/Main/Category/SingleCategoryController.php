@@ -15,6 +15,8 @@ use App\Models\Category;
 use App\Models\Game;
 use App\Models\Carousel;
 use App\Models\Event;
+use App\Models\Footer;
+use App\Models\Banner;
 
 class SingleCategoryController extends Controller
 {
@@ -24,7 +26,11 @@ class SingleCategoryController extends Controller
         $events = Event::where('start_date', '>', Carbon::yesterday())->orderBy('start_date', 'ASC')->get();
         $slug = $catSlug;
         $category = Category::where('slug', $slug)->firstOrFail(); 
-        return view('main.category.singlecategory', compact('slug', 'category', 'carousel', 'events'));
+        $footers = Footer::all();
+        $bannerBetweenSections = Banner::where('place', '=', Banner::SITE_PLACE_BETWEEN_SECTION)->where('active', '=', Banner::BANNER_ACTIVE)->first();
+        $bannerSidebar = Banner::where('place', '=', Banner::SITE_PLACE_SIDEBAR)->where('active', '=', Banner::BANNER_ACTIVE)->first();
+        $specialPosts = Post::where('category_id', '=', Category::CAT_VIDEOS)->orWhere('category_id', '=', Category::CAT_COVERAGE)->orderBy('created_at', 'DESC')->with('category')->with('games')->paginate(8);
+        return view('main.category.singlecategory', compact('slug', 'category', 'carousel', 'events', 'footers', 'bannerBetweenSections', 'bannerSidebar', 'specialPosts'));
     }
 
     public function load_data(Request $request) {
@@ -51,7 +57,7 @@ class SingleCategoryController extends Controller
                     $gamesIcon = '';
 
                     foreach($post->games as $game) {
-                        $gamesIcon .= '<img width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
+                        $gamesIcon .= '<img class="category_post_icon" width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
                     }
 
                     $output .= '

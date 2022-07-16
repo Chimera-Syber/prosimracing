@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>ProSimRacing Main Page</title>
     <!-- CSS -->
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" type="text/css">
@@ -44,6 +48,11 @@
     <script>
         $(document).ready(function() {
             $("#body").removeClass("preload");
+        });
+
+        // For comments reply form
+        $('.replybutton').click(function() {
+            $(this).next('.reply').toggle();
         });
     </script>
     <!-- End Main Container -->
