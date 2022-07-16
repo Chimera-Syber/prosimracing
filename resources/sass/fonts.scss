@@ -2,6 +2,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+
+$JostFontPath: '/public/assets/fonts/Jost';
+$JostFontFamily: 'Jost';
+$JostFontVersion: 3.7;
+
+// Mixin
+@mixin font-face-jost($fontFamily, $fileName, $fontWeight, $fontStyle, $fontPath: $JostFontPath) {
+    @font-face {
+        font-family: $fontFamily;
+        src: url('#{$fontPath}/#{$fileName}.eot');
+        src: local('^'),
+        url('#{$fontPath}/#{$fileName}.eot?#iefix') format('embedded-opentype'),
+        url('#{$fontPath}/#{$fileName}.woff2?v=#{$JostFontVersion}') format('woff2'),
+        url('#{$fontPath}/#{$fileName}.woff?v=#{$JostFontVersion}') format('woff'),
+        url('#{$fontPath}/#{$fileName}.ttf?v=#{$JostFontVersion}') format('truetype');
+        font-weight: $fontWeight;
+        font-style: $fontStyle;
+    }
+}
+
+// Add Jost fonts
+@include font-face-jost($JostFontFamily, 'jost-extralight', 200, normal);
+@include font-face-jost($JostFontFamily, 'jost-light', 300, normal);
+@include font-face-jost($JostFontFamily, 'jost-regular', 400, normal);
+@include font-face-jost($JostFontFamily, 'jost-medium', 500, normal);
+@include font-face-jost($JostFontFamily, 'jost-semibold', 600, normal);
+@include font-face-jost($JostFontFamily, 'jost-bold', 700, normal);
+
+$RobotoFontPath: '/public/assets/fonts/Jost';
+$RobotoFontFamily: 'Roboto';
+$RobotoFontVersion: 2.0;
+
+// Mixin
+@mixin font-face-roboto($fontFamily, $fileName, $fontWeight, $fontStyle, $fontPath: $RobotoFontPath) {
+    @font-face {
+        font-family: $fontFamily;
+        src: url('#{$fontPath}/#{$fileName}.eot');
+        src: local('^'),
+        url('#{$fontPath}/#{$fileName}.eot?#iefix') format('embedded-opentype'),
+        url('#{$fontPath}/#{$fileName}.woff2?v=#{$RobotoFontVersion}') format('woff2'),
+        url('#{$fontPath}/#{$fileName}.woff?v=#{$RobotoFontVersion}') format('woff'),
+        url('#{$fontPath}/#{$fileName}.ttf?v=#{$RobotoFontVersion}') format('truetype');
+        font-weight: $fontWeight;
+        font-style: $fontStyle;
+    }
+}
+
+
 // Google Material Icons
 
 .material-icons, .material-icons-outlined {

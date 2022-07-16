@@ -6,41 +6,73 @@
         <h1>Новости, статьи, репортажи и видео</h1>
     </div>
     <!-- Posts -->
+    @csrf
     <div class="content_posts">
-        @foreach($posts as $post)
-            <!-- Single Post -->
-            <div class="content_post">
-                <div class="post_preview_image" data-img="{{ $post->getImage() }}">
-                    <div class="post_game_category_wrp">
-                        <div class="post_game_category">       
-                            @foreach($post->games as $game)
-                                <img width="22" src="{{ $game->getImage() }}" alt="{{ $game->title }}">
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="post_category_wrp">
-                        <div class="post_category">
-                            <span>{{ $post->category->title }}</span>
-                        </div>
-                    </div>
-                </div><!-- ./post_preview_image -->
-                <div class="post_info_wrp">
-                    <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
-                        <div class="post_info_title">
-                            <span>{{ $post->title }}</span>
-                        </div>
-                        <div class="post_info_desc">
-                            <span>{{ $post->description }}</span>
-                        </div>
-                    </a>
-                    <div class="post_info_date_and_link">
-                        <span class="post_date">{{ $post->dateAsCarbon->translatedFormat('j F Y') }}</span>
-                        <a href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}" class="post_link">Читать далее</a>
-                    </div>
-                </div><!-- ./post_info_wrp -->
-            </div><!-- ./content_post -->
-            <!-- ./ Single Post -->
-        @endforeach
+        
+        <script>
+            $(document).ready(function(){
+
+                var _token = $('input[name="_token"]').val();
+
+                load_data('', _token);
+
+
+                function load_data(id="", _token)
+                {
+                    $.ajax({
+                        url:"{{ route('main.index.load_more') }}",
+                        method:"POST",
+                        data:{id:id, _token:_token},
+                        success:function(data)
+                        {
+                            $('#load_more_button').remove();
+                            $('.content_posts').append(data);
+                            showBackgrounds();
+                        }
+                    })
+                }
+
+
+                $(document).on('click', '#load_more_button', function(){
+                    var id = $(this).data('id');
+                    $('#load_more_button').html('Загрузка...');
+                    load_data(id, _token);
+                });
+
+                
+
+                function showBackgrounds() {
+                    var postPreviewImage = document.querySelectorAll('.post_preview_image');
+                    var coveragePostImage = document.querySelectorAll('.coverage_post');
+                    var mainBannerImage = document.querySelector('.main_banner_img');
+                    var sidebarBannerImage = document.querySelector('.sidebar_banner');
+
+                    for (i = 0; i < postPreviewImage.length; i++) {
+                        var src = postPreviewImage[i].getAttribute('data-img');
+                        postPreviewImage[i].style.backgroundImage = "url('" + src + "')";
+                    }
+
+                    for (i = 0; i < coveragePostImage.length; i++) {
+                        var src = coveragePostImage[i].getAttribute('data-img');
+                        coveragePostImage[i].style.backgroundImage = "url('" + src + "')";
+                    }
+
+                    if (mainBannerImage != undefined) {
+                        var src = mainBannerImage.getAttribute('data-img');
+                        mainBannerImage.style.backgroundImage = "url('" + src + "')";
+                    }
+
+                    if (sidebarBannerImage != undefined) {
+                        var src = sidebarBannerImage.getAttribute('data-img');
+                        sidebarBannerImage.style.backgroundImage = "url('" + src + "')";
+                    }
+
+                }
+
+            });
+        </script>
+
+
     </div><!-- ./content_posts -->
     <!-- Banner -->
     <section class="main_banner">

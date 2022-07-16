@@ -57,7 +57,7 @@ class SingleCategoryController extends Controller
                     $gamesIcon = '';
 
                     foreach($post->games as $game) {
-                        $gamesIcon .= '<img width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
+                        $gamesIcon .= '<img class="category_post_icon" width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
                     }
 
                     $output .= '

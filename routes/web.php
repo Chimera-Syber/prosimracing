@@ -125,6 +125,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['namespace' => 'Main'], function() {
     Route::get('/', 'IndexController')->name('main.index');
+    Route::post('/posts/load_more', 'IndexController@load_more')->name('main.index.load_more');
 
     Route::group(['namespace' => 'Category'], function() {
         try {

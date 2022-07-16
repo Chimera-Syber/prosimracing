@@ -97,7 +97,7 @@
     width: 115px;
     background-color: $white;
     padding: 5px 10px 5px 10px;
-    @include MainBannerButtonText;
+    @include SliderItemButtonText;
     text-transform: uppercase;
     color: $white;
     background-color: $sliderTitleItem;
@@ -118,9 +118,11 @@
 
 .slider_nav_arrows {
     display: flex;
-    position: relative;
+    position: absolute;
+    z-index: 22;
     flex-direction: row;
-    flex-wrap: now;
+    flex-wrap: nowrap;
+    top: 36%;
     justify-content: space-between;
     align-items: center;
     width: 100%;
