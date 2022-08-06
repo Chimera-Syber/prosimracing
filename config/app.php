@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -230,6 +230,22 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // Custom
+        'User' => App\Models\User::class,
+        'Comment' => App\Models\Comment::class,
+        'Banner' => App\Models\Banner::class,
+        'Category' => App\Models\Category::class,
+        'Footer' => App\Models\Footer::class,
+
+        /**
+         * Custom app config
+         */
+       
+
     ],
+
+    // Image Upload Folder with Editor JS
+
+    'image_upload_editor_js_folder' => env('IMAGE_UPLOAD_EDITOR_JS_FOLDER'),
 
 ];

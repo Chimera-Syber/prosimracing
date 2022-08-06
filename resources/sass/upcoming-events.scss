@@ -1,0 +1,104 @@
+@import 'variables';
+
+.upcoming_events {
+    display: block;
+    max-width: $siteWight;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.upcoming_events_widget {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    height: 100%;
+    margin: 0;
+    width: $siteWight;
+    height: $upcomingEventsHeight;
+    background-color: $upcomingEventsWidget;
+}
+
+.upcoming_events_title {
+    display: block;
+    width: $upcomingEventsTitleBlock_Width;
+    text-align: center;
+    background-color: $white;
+    border: 1px solid $upcomingEventsWidget;
+    & span {
+        display: block;
+        position: relative;
+        @include upcomingEventsTitle;
+        padding: 13px 16px 13px 15px;
+        text-transform: uppercase;
+    }
+}
+
+.widget_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    background-color: $white;
+    border: 1px solid $upcomingEventsWidget;
+}
+
+.widget_container {
+    display: block;
+    width: 2300px;
+    overflow: hidden;
+}
+
+.widget_list {
+    display: inline-flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(0px);
+    transition: ease-out 1s;
+}
+
+.widget_item {
+    display: block;
+    width: 203px;
+    padding: 3px;
+    margin: 0;
+    border-top: 2px solid $upcomingEventsWidget;
+    border-left: 2px solid $upcomingEventsWidget;
+    border-bottom: 2px solid $upcomingEventsWidget;
+    background-color: $white;
+}
+
+.widget_race_league {
+    @include UEwidgetRaceLeague;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.widget_name_race {
+    display: block;
+    @include UEwidgetNameRace;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.widget_info {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.widget_date {
+    @include UEwidgetDate;
+}
+
+.material_icons_widget_arrow {
+    font-size: 30px;
+    margin-left: 12px;
+    cursor: pointer;
+}
