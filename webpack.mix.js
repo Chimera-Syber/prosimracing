@@ -21,8 +21,8 @@ mix.js('resources/js/app.js', 'public/assets/js')
     .sourceMaps();
 
 mix.scripts([
-    //'resources/js/libraries/jquery-3.6.0.js',
     'resources/js/common-blocks/page-header/page-header.js',
+    'resources/js/common-blocks/slider/slider.js',
     //'resources/js/slider.js',
     //'resources/js/upcoming-slider.js',
     //'resources/js/backgrounds.js',
