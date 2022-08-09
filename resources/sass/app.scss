@@ -1,7 +1,45 @@
+/* Prosimracing portal 
+ * Main Sass file
+*/
+
+/* Z-INDEX MAP
+ * 
+ * page-header__login-submenu-item: 9991
+ * page-header: 9990
+ * 
+ *
+ */
+
+/* Libraries */
+
+@import './libraries/variables.scss';
+@import './libraries/fonts.scss';
+
+/* Common blocks */
+
+// Body
+
+@import './common-blocks/body/body.scss';
+
+// Container
+
+@import './common-blocks/container/container.scss';
+
+// Page header
+
+@import './common-blocks/page-header/page-header.scss';
+
+// Slider
+
+@import './common-blocks/slider/slider.scss';
+
+
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
+
+/*
 @import 'variables';
 @import 'fonts';
 @import 'main';
@@ -12,6 +50,7 @@
 @import 'single-post';
 @import 'category';
 @import 'footer';
+*/
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
