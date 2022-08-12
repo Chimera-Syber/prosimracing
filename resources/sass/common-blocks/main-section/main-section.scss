@@ -1,0 +1,181 @@
+.main-section {
+    margin: 0;
+}
+
+.main-section__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $main-section-container-background;
+}
+
+.main-section__title {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    height: auto;
+    padding: 26px 20px 10px 17px;
+}
+
+.main-section__posts-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.main-section__post-item {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 350px;
+    border: 1px solid $main-section-post-item-border;
+    overflow: hidden;
+}
+
+.main-section__post-item_margin {
+    margin-bottom: 10px;
+}
+
+.main-section__post-preview-image {
+    width: 280px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.main-section__post-game-category {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    background-color: $main-section-post-game-category-background;
+    padding-top: 3px;
+    padding-left: 6px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.main-section__post_category {
+    display: block;
+    position: absolute;
+    z-index: 21;
+    bottom: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background-color: $main-section-post-category-background;
+    border-radius: 0px 5px 0px 0px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-section-post-category;
+}
+
+.main-section__post-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 5px;
+    height: 100%;
+}
+
+.main-section__post-item-link {
+    text-decoration: none;
+}
+
+.main-section__post-info-title {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $main-section-post-info-title;
+}
+
+.main-section__post-info-title_margin {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.main-section__post-info-desc {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: $main-section-post-info-desc;
+}
+
+.main-section__post-info-desc_margin {
+    margin-bottom: 43px;
+}
+
+.main-section__post-info-date-link-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.main-section__post-date {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13px;
+    color: $main-section-post-date;
+}
+
+.main-section__post-link {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13px;
+    color: $main-section-post-link;
+    text-decoration: none;
+}
+
+.main-section__button-load-more {
+    font-family: 'Jost';
+    background-color: $load-more-button-background;
+    border-color: transparent;
+    border-radius: 5px;
+    border-width: 1px;
+    color: $button-load-more-color;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(0.5em - 1px) 1em;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.main-section__full-width-banner {
+    padding: 40px 10px 40px 10px;
+}

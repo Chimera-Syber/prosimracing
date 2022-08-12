@@ -28,6 +28,12 @@
     @include('includes.slider')
     @include('includes.events')
 
+    <main class="main-section">
+        <div class="container main-section__container">
+            @yield('content')
+        </div>
+    </main>
+
     <script src="{{ asset('assets/js/scripts.js') }}" defer></script>
     <script src="{{ asset('assets/js/app.js') }}" defer></script>
 </body>

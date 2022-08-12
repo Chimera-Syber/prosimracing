@@ -1,0 +1,94 @@
+.full-width-banner {
+    display: block;
+    position: relative;
+    margin: 0;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.full-width-banner__link {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    transition: filter 150ms ease-in-out;
+    height: 150px;
+    text-decoration: none;
+}
+
+.full-width-banner__banner_bg {
+    display: block;
+    position: absolute;
+    z-index: 30;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $full-width-banner-bg;
+}
+
+.full-width-banner__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 31;
+    top: 0;
+    left: 55%;
+    height: 150px;
+}
+
+.full-width-banner__title {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: $full-width-banner-title;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+.full-width-banner__desc {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 20px;
+    color: $full-width-banner-desc;
+}
+
+.full-width-banner__desc_margin {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.full-width-banner__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 115px;
+    background-color: $full-width-banner-button-bg;
+    padding: 5px 10px 5px 10px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $full-width-banner-button;
+}
+
+.full-width-banner__button-icon-color {
+    color: $full-width-banner-button-icon;
+}

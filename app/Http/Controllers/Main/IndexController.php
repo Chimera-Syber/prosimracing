@@ -34,11 +34,11 @@ class IndexController extends Controller
         {
             if($request->id > 0)
             {
-                $data = Post::where('id', '<', $request->id)->orderBy('id', 'DESC')->with('games')->limit(4)->get();
+                $data = Post::where('id', '<', $request->id)->orderBy('id', 'DESC')->with('games')->limit(8)->get();
             }
             else
             {
-                $data = Post::orderBy('id', 'DESC')->with('games')->limit(4)->get();
+                $data = Post::orderBy('id', 'DESC')->with('games')->limit(8)->get();
             }
 
              $output = '';
@@ -55,29 +55,21 @@ class IndexController extends Controller
                     }
 
                     $output .= '
-                    <div class="content_post">
-                        <div class="post_preview_image" data-img="'. $post->getImage() .'">
-                            <div class="post_game_category_wrp">
-                                <div class="post_game_category">' . $gamesIcon . '</div>
+                    <div class="main-section__post-item main-section__post-item_margin">
+                        <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '">
+                            <div class="main-section__post-preview-image" data-img="'. $post->getImage() .'">
+                                <div class="main-section__post-game-category">' . $gamesIcon . '</div>
+                                <div class="main-section__post_category">' . $post->category->title . '</div>
                             </div>
-                            <div class="post_category_wrp">
-                                <div class="post_category">
-                                    <span>' . $post->category->title . '</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post_info_wrp">
-                            <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '">
-                                <div class="post_info_title">
-                                    <span>' . $post->title . '</span>
-                                </div>
-                                <div class="post_info_desc">
-                                    <span>' . $post->description . '</span>
-                                </div>
+                        </a>
+                        <div class="main-section__post-info-container">
+                            <a class="main-section__post-item-link" href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '">
+                                <div class="main-section__post-info-title main-section__post-info-title_margin">' . $post->title . '</div>
+                                <div class="main-section__post-info-desc main-section__post-info-desc_margin"> ' . $post->description . '</div>
                             </a>
-                            <div class="post_info_date_and_link">
-                                <span class="post_date">' . $post->dateAsCarbon->translatedFormat("j F Y") . '</span>
-                                <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '" class="post_link">Читать далее</a>
+                            <div class="main-section__post-info-date-link-container">
+                                <span class="main-section__post-date">' . $post->dateAsCarbon->translatedFormat("j F Y") . '</span>
+                                <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '" class="main-section__post-link">Читать далее</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +79,7 @@ class IndexController extends Controller
 
                 $output .= '
                     <div id="load_more" style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
-                        <button type="button" class="button-load-more" name="load_more_button" data-id="'.$last_id.'" id="load_more_button">Загрузить больше</button>
+                        <button type="button" class="main-section__button-load-more" name="load_more_button" data-id="'.$last_id.'" id="load_more_button">Загрузить больше</button>
                     </div>
                 ';
 
@@ -97,7 +89,7 @@ class IndexController extends Controller
              {
                 $output .= '
                     <div id="load_more">
-                        <button type="button" class="button-load-more" name="load_more_button">Все посты загружены</button>
+                        <button type="button" class="main-section__button-load-more" name="load_more_button">Все посты загружены</button>
                     </div>
 
                 ';

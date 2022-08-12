@@ -14,7 +14,6 @@ if (widgets.length != 0) { // Check element
         let widgets = document.getElementsByClassName('upcoming-events__widget-item');
 
         let widgetWidth = widgets[0].offsetWidth;
-        console.log(widgetWidth);
         let widgetList = document.querySelector('.upcoming-events__widget-container');
 
         if (n > widgets.length) {

@@ -6,6 +6,11 @@
  * 
  * page-header__login-submenu-item: 9991
  * page-header: 9990
+ * coverages__post-item-bg: 40
+ * full-width-banner__text-container: 31
+ * full-width-banner__banner_bg: 30
+ * main-section__post_category: 21
+ * main-section__post-game-category: 20
  * slider__nav-dots: 13
  * slider__item-info: 12
  * slider__nav-arrows: 11
@@ -39,6 +44,18 @@
 // Events
 
 @import './common-blocks/upcoming-events/upcoming-events.scss';
+
+// Main section
+
+@import './common-blocks/main-section/main-section.scss';
+
+// Full width banner 
+
+@import './common-blocks/full-width-banner/full-width-banner.scss';
+
+// Coverages 
+
+@import './common-blocks/coverages/coverages.scss';
 
 
 // Fonts
