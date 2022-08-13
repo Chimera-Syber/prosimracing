@@ -39,6 +39,12 @@
 
 .coverages__post-link {
     text-decoration: none;
+    &:hover > .coverages__post-info > .coverages__post-title {
+        color: $coverages-post-title-hover;
+    }
+    &:hover > .coverages__post-video > .coverages__icon-video-play {
+        color: $coverages-icon-video-play-hover;
+    }
 }
 
 .coverages__post-bg {

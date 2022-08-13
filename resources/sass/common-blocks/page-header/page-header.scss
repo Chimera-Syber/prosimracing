@@ -48,6 +48,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $nav-link;
+    &:hover {
+        color: $nav-link-hover;
+    }
 }
 
 .page-header__login-menu {

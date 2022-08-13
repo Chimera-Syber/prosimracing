@@ -60,3 +60,22 @@ let sliderLoop = setInterval(function() {
     plusSlidesForLoop(1);
 }, 5000);
 
+// Resize 
+
+function resizeSlider() {
+
+    let container = document.querySelector('.slider__container'),
+        sliderImages = document.querySelectorAll('.slider__image'),
+        i,
+        width = container.offsetWidth,
+        sliderList = document.querySelector('.slider__list');
+
+    sliderList.style.maxWidth = width + 'px';
+
+    for (i = 0; i < sliderImages.length; i++) {
+        sliderImages[i].style.width = width + 'px';
+    }  
+
+}
+
+window.addEventListener('resize', resizeSlider);

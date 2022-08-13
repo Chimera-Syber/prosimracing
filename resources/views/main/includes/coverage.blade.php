@@ -18,7 +18,7 @@
                             </div>
                         </div>
                     </a>
-                </div><!-- ./coverage_post -->
+                </div>
             @elseif($post->category_id == Category::CAT_VIDEOS)
                 <div class="coverages__post-item" data-img="{{ $post->getImage() }}">
                     <a class="coverages__post-link" href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </a>
-                </div><!-- ./coverage_post -->
+                </div>
             @endif
         @endforeach
     </div>
