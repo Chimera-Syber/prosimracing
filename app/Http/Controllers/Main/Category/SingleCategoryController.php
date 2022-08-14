@@ -67,11 +67,11 @@ class SingleCategoryController extends Controller
                             <img class="main-section__category-post-img" src="'.  $post->getImage()  .'">
                         </a>
                         <div class="main-section__category-post-info-wrp">
-                            <div class="category_post_title"><a class="category_post_title_link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
-                            <div class="category_post_desc">'. $post->description .'</div>
-                            <div class="category_post_info">
-                                <div class="category_post_date">'. $post->dateAsCarbon->translatedFormat('j F Y') .'</div>
-                                <div class="category_post_cat">'. $post->category->title .' | '. $gamesIcon .'</div>
+                            <div class="main-section__category-post-title main-section__category-post-tile_margin"><a class="main-section__category-post-title-link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
+                            <div class="main-section__category-post-desc">'. $post->description .'</div>
+                            <div class="main-section__category-post-info">
+                                <div class="main-section__category-post-date">'. $post->dateAsCarbon->translatedFormat('j F Y') .'</div>
+                                <div class="main-section__category-post-cat">'. $post->category->title .' | '. $gamesIcon .'</div>
                             </div>
                         </div>
                     </div>

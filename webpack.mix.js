@@ -25,6 +25,7 @@ mix.scripts([
     'resources/js/common-blocks/slider/slider.js',
     'resources/js/common-blocks/upcoming-events/upcoming-events.js',
     'resources/js/common-blocks/full-width-banner/full-width-banner.js',
+    'resources/js/common-blocks/sidebar-banner/sidebar-banner.js',
     'resources/js/common-blocks/coverages/coverages.js',
     //'resources/js/slider.js',
     //'resources/js/upcoming-slider.js',

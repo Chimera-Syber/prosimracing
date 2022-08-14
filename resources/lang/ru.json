@@ -1,4 +1,8 @@
 {
     "Login" : "Войти",
-    "E-Mail Address" : "Адрес e-mail"
+    "Register" : "Зарегистрироваться",
+    "Password" : "Пароль",
+    "E-Mail Address" : "Адрес e-mail",
+    "Remember Me" : "Запомнить",
+    "Forgot Your Password?" : "Забыли ваш пароль?"
 }

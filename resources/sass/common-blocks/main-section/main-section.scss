@@ -202,23 +202,13 @@
     box-sizing: border-box;
 }
 
-.main-section__sidebar {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30%;
-    box-sizing: border-box;
-}
-
 .main-section__category-post-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #D8D8D8;
+    border: 1px solid $main-section-category-post-container;
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -243,6 +233,84 @@
     flex-wrap: nowrap;
     padding: 5px;
     width: 100%;
+    height: 100%;
     justify-content: space-between;
     box-sizing: border-box;
+}
+
+.main-section__category-post-title {
+    display: block;
+}
+
+.main-section__category-post-tile_margin {
+    margin-bottom: 3px;
+}
+
+.main-section__category-post-title-link {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: $main-section-category-post-title-link;
+    &:hover {
+        color: $main-section-category-post-title-link-hover;
+    }
+}
+
+.main-section__category-post-desc {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.main-section__category-post-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.main-section__category-post-date {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    color: $main-section-category-post-info-color;
+}
+
+.main-section__category-post-cat {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    color: $main-section-category-post-info-color;
+}
+
+.main-section__sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.main-section__sidebar-twitch {
+    width: 280px;
+    height: 310px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main-section__sidebar-banner {
+    margin-top: 5px;
 }

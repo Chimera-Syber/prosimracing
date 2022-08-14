@@ -6,6 +6,7 @@
  * 
  * page-header__login-submenu-item: 9991
  * page-header: 9990
+ * sidebar-banner__bg: 50
  * coverages__post-item-bg: 40
  * full-width-banner__text-container: 31
  * full-width-banner__banner_bg: 30
@@ -22,6 +23,10 @@
 
 @import './libraries/variables.scss';
 @import './libraries/fonts.scss';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
 
 /* Common blocks */
 
@@ -53,6 +58,10 @@
 
 @import './common-blocks/full-width-banner/full-width-banner.scss';
 
+// Sidebar banner
+
+@import './common-blocks/sibebar-banner/sidebar-banner.scss';
+
 // Coverages 
 
 @import './common-blocks/coverages/coverages.scss';
@@ -60,6 +69,10 @@
 // Footer
 
 @import './common-blocks/footer/footer.scss';
+
+/* Login page */
+
+@import './common-blocks/login/login.scss';
 
 
 // Fonts
@@ -79,6 +92,3 @@
 @import 'category';
 @import 'footer';
 */
-
-// Bootstrap
-//@import '~bootstrap/scss/bootstrap';

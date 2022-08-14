@@ -45,12 +45,12 @@
     
     </div>
     <div class="main-section__sidebar">
-            <div class="sidebar_twitch">123</div>
-            <div class="sidebar_banner" data-img="{{ $bannerSidebar->getImage() }}">
-                <a href="{{ $bannerSidebar->url }}">
-                    <div class="sidebar_banner_bg"></div>
-                    <div class="sidebar_banner_title">{{ $bannerSidebar->title }}</div>
-                    <div class="sidebar_banner_button"><span class="material-icons-outlined main-banner-button-color">flag_circle</span>Подробнее</div>
+            <div class="main-section__sidebar-twitch">123</div>
+            <div class="sidebar-banner main-section__sidebar-banner" data-img="{{ $bannerSidebar->getImage() }}">
+                <a class="sidebar-banner__link" href="{{ $bannerSidebar->url }}">
+                    <div class="sidebar-banner__bg"></div>
+                    <div class="sidebar-banner__title sidebar-banner__title_position">{{ $bannerSidebar->title }}</div>
+                    <div class="sidebar-banner__button sidebar-banner__button_position"><span class="material-icons-outlined main-banner-button-color">flag_circle</span>Подробнее</div>
                 </a>
             </div>
     </div>
