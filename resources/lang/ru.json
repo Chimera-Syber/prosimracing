@@ -22,5 +22,20 @@
     "A fresh verification link has been sent to your email address." : "Ссылка на подтверждение почты была выслана на указанный вами адрес e-mail",
     "Before proceeding, please check your email for a verification link." : "Для продолжения проверьте, пожалуйста, вашу почту. На нее должна придти ссылка для подтверждения.",
     "If you did not receive the email click below to request another" : "Если вы не получили письма с подтверждением вашей электронной почты, то кликните на кнопку ниже.",
-    "Send verification email" : "Выслать письмо с подтверждением E-mail"
+    "Send verification email" : "Выслать письмо с подтверждением E-mail",
+    "Mail: Verify Email Address" : "Подтверждение электронной почты",
+    "Hello!" : "Приветствуем!",
+    "Please click the button below to verify your email address." : "Пожалуйста, кликните на кнопку ниже для подтверждения своего адреса электронной почты.",
+    "Mail Button: Verify Email Address" : "Подтвердить электронную почту",
+    "If you did not create an account, no further action is required." : "Если вы не создавали аккаунт на нашем сайте, то никаких действий производить не нужно.",
+    "Regards" : "С уважением",
+    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Если у вас проблемы с нажатием на кнопку \":actionText\" , то скопируйте и вставте URL ниже\nв адрессную строку вашего браузера:",
+    "Team" : "Команда",
+    "All rights reserved." : "Все права защищены.",
+    "Send Password Reset Link" : "Выслать ссылку на восстановление пароля",
+    "Reset Password Notification" : "Восстановление пароля",
+    "You are receiving this email because we received a password reset request for your account." : "Вы получили это письмо потому, что мы получили запрос на восстановление пароля для вашего аккаунта.",
+    "This password reset link will expire in :count minutes." : "Ссылка на восстановление пароля будет действительна в течение :count минут.",
+    "If you did not request a password reset, no further action is required." : "Если вы не оставляли запрос на изменение пароля, то игнорируйте это письмо."
+
 }

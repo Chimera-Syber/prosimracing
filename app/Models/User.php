@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 // Notification
 use App\Notifications\SendVerifyWithQueueNotification;
+use App\Notifications\SendResetPasswordMailWithQueueNotification;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -60,8 +61,25 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+     /**
+     * Send the verifitaction email
+     *
+     * @param  string  $token
+     * @return void
+     */
     public function sendEmailVerificationNotification()
     {
         $this->notify(new SendVerifyWithQueueNotification());
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new SendResetPasswordMailWithQueueNotification($token));
     }
 }
