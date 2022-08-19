@@ -33,15 +33,11 @@
 
                 @guest
                     @if (Route::has('login'))
-                        
                             <a class="page-header__nav-item" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        
                     @endif
 
                     @if (Route::has('register'))
-                        
                             <a class="page-header__nav-item" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        
                     @endif
                 @else
                     <div class="page-header__login-menu-item">
@@ -69,5 +65,8 @@
             @yield('content')
         </div>
     </main>
+
+    <script src="{{ asset('assets/js/scripts.js') }}" defer></script>
+    <script src="{{ asset('assets/js/app.js') }}" defer></script>
 </body>
 </html>

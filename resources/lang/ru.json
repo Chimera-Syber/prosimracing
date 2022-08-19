@@ -1,8 +1,26 @@
 {
     "Login" : "Войти",
     "Register" : "Зарегистрироваться",
+    "Register success" : "Регистрация прошла успешно",
+    "Name" : "Имя",
+    "Name placeholder" : "Введите имя",
     "Password" : "Пароль",
+    "Confirm Password" : "Подтвердить пароль",
+    "Password placeholder" : "Введите пароль",
+    "Password confirm placeholder" : "Введите пароль повторно",
     "E-Mail Address" : "Адрес e-mail",
+    "Email placeholder" : "Введите e-mail",
     "Remember Me" : "Запомнить",
-    "Forgot Your Password?" : "Забыли ваш пароль?"
+    "Forgot Your Password?" : "Забыли ваш пароль?",
+    "Reset Password": "Восстановить пароль",
+    "Please confirm your password before continuing." : "Пожалуйста, подтвердите пароль прежде чем продолжить.",
+    "Password new reset placeholder" : "Введите новый пароль",
+    "Password new reset confirm placeholder" : "Повторно введите новый пароль",
+    "Verify Your Email Address" : "Подтверждение вашего адреса почты",
+    "Verify Email Success" : "Почта успешно подтверждена",
+    "Verify Email Success Text" : "Ваша почта успешно подтверждена. Можете продолжать пользоваться сайтом с полным функционалом.",
+    "A fresh verification link has been sent to your email address." : "Ссылка на подтверждение почты была выслана на указанный вами адрес e-mail",
+    "Before proceeding, please check your email for a verification link." : "Для продолжения проверьте, пожалуйста, вашу почту. На нее должна придти ссылка для подтверждения.",
+    "If you did not receive the email click below to request another" : "Если вы не получили письма с подтверждением вашей электронной почты, то кликните на кнопку ниже.",
+    "Send verification email" : "Выслать письмо с подтверждением E-mail"
 }

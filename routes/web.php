@@ -123,8 +123,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
 // This must be before Main group routes
 Auth::routes(['verify' => true]);
 
+Route::group(['namespace' => 'Auth', 'middleware' => 'auth'], function() {
+    Route::get('/register/notify', 'RegisterController@notify')->withoutMiddleware('guest')->name('register.notify');
+
+    Route::get('/register/successverify', 'VerificationController@notifysuccessverify')->withoutMiddleware('guest')->name('register.success.verify');
+});
+
 Route::group(['namespace' => 'Main'], function() {
     Route::get('/', 'IndexController')->name('main.index');
+
     Route::post('/posts/load_more', 'IndexController@load_more')->name('main.index.load_more');
 
     Route::group(['namespace' => 'Category'], function() {

@@ -8,6 +8,12 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Mail;
+
+use Illuminate\Auth\Events\Registered;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -29,7 +35,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/register/notify';
+    //protected $redirectPath = '/registered/notify';
+    
 
     /**
      * Create a new controller instance.
@@ -38,7 +47,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest')->except('logout');
     }
 
     /**
@@ -71,4 +80,47 @@ class RegisterController extends Controller
             'role' => User::ROLE_READER,
         ]);
     }
+
+    /* 
+    protected function redirectTo()
+    {
+        return route('register.notify');
+
+    } */
+
+    protected function notify() {
+
+        return view('auth.verify');
+
+    }
+
+    /*
+    public function register(Request $request) {
+
+        $this->validator($request->all());
+    
+        $user = $this->create($request->all());
+
+        $user->sendEmailVerificationNotification();
+
+        return redirect()->route('register.notify');
+    
+    } */
+
+    /*
+    public function register(Request $request)
+   {
+      $this->validator($request->all())->validate();
+
+      event(new Registered($user = $this->create($request->all())));
+
+      $user->sendEmailVerificationNotification();
+
+      $this->guard()->login($user);
+
+      return $this->registered($request, $user)
+        ?: redirect()->route('register.notify');
+   } */
+
+    
 }
