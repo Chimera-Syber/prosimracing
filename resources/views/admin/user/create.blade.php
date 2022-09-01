@@ -66,6 +66,14 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <!-- About user -->
+                                <div class="form-group">
+                                    <label for="about_user">О себе</label>
+                                    <textarea name="about_user" id="about_user" class="form-control" placeholder="О пользователе"></textarea>
+                                    @error('about_user')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <!-- Role input -->
                                 <div class="form-group">
                                     <label>Выберите роль</label>

@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: $login-container-background-color;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 10px;
@@ -101,36 +101,36 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
+    color: $login-form-control-color;
+    background-color: $login-form-control-background-color;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid $login-form-control-border;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     &:focus {
-        color: #212529;
-        background-color: #fff;
-        border-color: #86b7fe;
+        color: $login-form-control-focus-color;
+        background-color: $login-form-control-focus-bcolor;
+        border-color: $login-form-control-focus-border;
         outline: 0;
-        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+        box-shadow: $login-form-control-focus-box-shadow;
     }
 }
 
 .login_form-control-is-invalid {
-    color: #212529;
-    background-color: #fff;
-    border-color: #FF0000;
+    color: $login-form-control-is-invalid-color;
+    background-color: $login-form-control-is-invalid-bcolor;
+    border-color: $login-form-control-is-invalid-border;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+    box-shadow: $login-form-control-is-invalid-box-shadow;
     &:focus {
-        color: #212529;
-        background-color: #fff;
-        border-color: #FF0000;
+        color: $login-form-control-is-invalid-focus-color;
+        background-color: $login-form-control-is-invalid-focus-bgcolor;
+        border-color: $login-form-control-is-invalid-focus-border;
         outline: 0;
-        box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+        box-shadow: $login-form-control-is-invalid-focus-box-shadow;
     }
 }
 
@@ -140,7 +140,7 @@
     font-weight: bold;
     font-size: 15px;
     line-height: 1;
-    color: #FF0000;
+    color: $login-form-invalid-feedback-color;
 }
 
 .login__form-invalid-feedback_margin {
@@ -150,7 +150,7 @@
 
 .login__form-check-input {
     box-sizing: border-box;
-    border: 1px solid #ced4da;
+    border: 1px solid $login-form-check-input-border;
 }
 
 .login__form-check-label {
@@ -170,11 +170,11 @@
     border-radius: 5px;
     border: 0px;
     padding: 10px 20px;
-    background-color: #FF0000;
-    color: #fff;
+    background-color: $login-btn-submit-bcolor;
+    color: $login-btn-submit-color;
     transition: background-color 0.3s ease;
     &:hover {
-        background-color: #ca0303;
+        background-color: $login-btn-submit-hover-bcolor;
     }
 }
 
@@ -188,9 +188,9 @@
     font-weight: 400;
     line-height: 1;
     text-decoration: none;
-    color: #000;
+    color: $login-forgot-password-link-color;
     &:hover {
-        color: #FF0000;
+        color: $login-forgot-password-link-hover-color;
     }
 }
 
@@ -200,8 +200,8 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid #ccc;
+    background-color: $login-alert-bgcolor;
+    border: 1px solid $login-alert-border-color;
     border-radius: 5px;
     box-sizing: border-box;
     padding: 10px 20px;
@@ -212,7 +212,7 @@
 }
 
 .login__alert_success {
-    color: rgb(40, 173, 0);
+    color: $login-alert-success-color;
 }
 
 .login__alert_margin {

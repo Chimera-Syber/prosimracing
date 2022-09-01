@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users,email,' . $this->user_id,
             'user_id' => 'required|integer|exists:users,id',
             'password' => 'nullable|string|min:8',
+            'about_user' => 'string|nullable|max:250',
             'role' => 'required|string',
         ];
     }
@@ -46,6 +47,8 @@ class UpdateRequest extends FormRequest
             'email.unique' => 'Пользователь с таким email уже существует',
             'password.string' => 'Пароль должен быть строкой',
             'password.min' => 'Должен быть 8',
+            'about_user.string' => 'Должно быть строкой',
+            'about_user.max' => 'Максимальное количество символов - 250',
             'role.required' => 'Необходимо выбрать роль',
             'role.string' => '123',
         ];

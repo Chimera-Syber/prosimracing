@@ -38,6 +38,7 @@
                                     <th style="width: 10px">ID</th>
                                     <th>Имя</th>
                                     <th>Email</th>
+                                    <th>О себе</th>
                                     <th>Управление</th>
                                 </tr>
                             </thead>
@@ -47,6 +48,7 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
+                                        <td>{{ $user->about_user }}</td>
                                         <td>
                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                            <form action="{{ route('admin.user.delete', $user->id) }}" method="post" class="float-left">

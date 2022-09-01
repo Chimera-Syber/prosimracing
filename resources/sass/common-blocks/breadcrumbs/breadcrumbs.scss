@@ -1,0 +1,22 @@
+.breadcrumbs {
+    display: block;
+    width: 100%;
+}
+
+.breadcrums__par {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.breadcrums__par_padding {
+    margin: 0;
+    padding: 1.5em 0 1.5em 2em;
+}
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #000;
+}

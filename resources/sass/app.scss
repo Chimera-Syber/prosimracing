@@ -34,6 +34,10 @@
 
 @import './common-blocks/body/body.scss';
 
+// Breadcrumbs
+
+@import './common-blocks/breadcrumbs/breadcrumbs.scss';
+
 // Container
 
 @import './common-blocks/container/container.scss';
@@ -61,6 +65,14 @@
 // Sidebar banner
 
 @import './common-blocks/sibebar-banner/sidebar-banner.scss';
+
+// Single post
+
+@import './common-blocks/singlepost/singlepost.scss';
+
+// Single post title
+
+@import './common-blocks/singlepost-title/singlepost-title.scss';
 
 // Coverages 
 

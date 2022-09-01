@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
+            'about_user' => 'string|nullable|max:250',
             'role' => 'required|string',
         ];
     }
@@ -46,6 +47,8 @@ class StoreRequest extends FormRequest
             'password.required' => 'Это поле необходимо для заполнения',
             'password.string' => 'Пароль должен быть строкой',
             'password.min' => 'Должен быть 8',
+            'about_user.string' => 'Должно быть строкой',
+            'about_user.max' => 'Максимальное количество символов - 250',
             'role.required' => 'Необходимо выбрать роль',
             'role.string' => '123',
         ];
