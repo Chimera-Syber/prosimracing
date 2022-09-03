@@ -17,6 +17,7 @@ use App\Models\Carousel;
 use App\Models\Event;
 use App\Models\Footer;
 use App\Models\Banner;
+use App\Models\User;
 
 class SinglePostController extends Controller
 {
@@ -28,10 +29,14 @@ class SinglePostController extends Controller
         $content = self::render($post->content);
         //$content2 = $post->content; // for test
         $bannerBetweenSections = Banner::where('place', '=', Banner::SITE_PLACE_BETWEEN_SECTION)->where('active', '=', Banner::BANNER_ACTIVE)->first();
+        $bannerSidebar = Banner::where('place', '=', Banner::SITE_PLACE_SIDEBAR)->where('active', '=', Banner::BANNER_ACTIVE)->first();
         $post->views += 1; 
         $post->update();
         $footers = Footer::all();
-        return view('main.post.singlepost', compact('post', 'content', 'bannerBetweenSections', 'carousel', 'events', 'footers'));
+
+        $author = User::find($post->user_id);
+
+        return view('main.post.singlepost', compact('author', 'post', 'content', 'bannerBetweenSections', 'bannerSidebar', 'carousel', 'events', 'footers'));
     }
 
     /**
@@ -80,13 +85,13 @@ class SinglePostController extends Controller
                 case 'embed':
                     switch($block->data->service) {
                         case 'twitch':
-                            $content .= '<div class="singlepost__twitch singlepost__twitch_margin"><iframe src="' . $block->data->embed . '&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="848"></iframe></div>';
+                            $content .= '<div class="singlepost__twitch singlepost__twitch_margin"><iframe src="' . $block->data->embed . '&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="800"></iframe></div>';
                             if ($block->data->caption != '') {
                                 $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
                             }
                             break;
                         case 'youtube':
-                            $content .= '<div class="singlepost__youtube singlepost__youtube_margin"><iframe width="848" height="480" src="' . $block->data->embed . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+                            $content .= '<div class="singlepost__youtube singlepost__youtube_margin"><iframe width="800" height="480" src="' . $block->data->embed . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
                             if ($block->data->caption != '') {
                                 $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
                             }

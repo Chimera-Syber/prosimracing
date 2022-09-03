@@ -184,11 +184,8 @@
 }
 
 .main-section__category-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 300px;
 }
 
 .main-section__category-posts {
@@ -197,7 +194,6 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 70%;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -295,20 +291,7 @@
 }
 
 .main-section__sidebar {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30%;
-    box-sizing: border-box;
-}
-
-.main-section__sidebar-twitch {
-    width: 280px;
-    height: 310px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    
 }
 
 .main-section__sidebar-banner {

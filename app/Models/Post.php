@@ -85,6 +85,12 @@ class Post extends Model
         }
     }
 
+    /**
+     * 
+     * Get preview image
+     * 
+     */
+
     public function getImage()
     {
         if (!$this->preview_image) {

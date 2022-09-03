@@ -28,6 +28,8 @@ class UpdateController extends Controller
             $data['password'] = Hash::make($password);
         }
 
+        $data['user_avatar'] = User::uploadUserAvatar($request, $user->user_avatar);
+
         if (!$request->password) {
             unset($data['password']);
         }

@@ -81,9 +81,9 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <!-- Icon input -->
+                                <!-- Preview image input -->
                                 <div class="form-group">
-                                    <label for="icon">Превью-картинка</label>
+                                    <label for="preview_image">Превью-картинка</label>
                                     <div class="input-group mb-3">
                                         <img style="max-width: 500px;" src="{{ $post->getImage() }}">
                                     </div>

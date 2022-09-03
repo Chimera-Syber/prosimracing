@@ -80,13 +80,13 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <!-- Icon input -->
+                                <!-- Preview Image input -->
                                 <div class="form-group">
                                     <label for="icon">Превью-картинка</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="preview_image" id="preview_image">
-                                            <label class="custom-file-label" for="preview_image">Выбрать файл</label>
+                                            <label class="custom-file-label" for="preview_image">Выбрать картинку</label>
                                         </div>
                                     </div>
                                     @error('preview_image')

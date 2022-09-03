@@ -22,10 +22,17 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
+
         $password = $data['password'];
+
         $data['password'] = Hash::make($password);
+
+        $data['user_avatar'] = User::uploadUserAvatar($request, null);
+
         $user = User::firstOrCreate([ 'email' => $data['email']], $data);
+
         event(new \Illuminate\Auth\Events\Registered($user));
+        
         return redirect()->route('admin.user.index');
     }
 }

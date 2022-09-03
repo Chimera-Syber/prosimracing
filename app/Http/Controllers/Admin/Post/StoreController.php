@@ -14,6 +14,7 @@ use App\Models\Post;
 
 // Facades
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Controller
 {
@@ -36,6 +37,8 @@ class StoreController extends Controller
             }
 
             $data['preview_image'] = Post::uploadImage($request, null);
+
+            $data['user_id'] = Auth::user()->id;
 
             $post = Post::firstOrCreate($data);
 

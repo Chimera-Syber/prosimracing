@@ -13,20 +13,12 @@
     </div>
     <!-- Posts -->
     <div class="singlepost singlepost-container">
-        <div class="singlepost-content">
+        <div class="singlepost-content singlepost-content_padding">
             {!! $content !!}
+            @include('main.post.includes.author-display')
             @include('main.post.includes.comments-section')
         </div>
-        <div class="content_sidebar">
-            <div class="sidebar_twitch">123</div>
-            <div class="sidebar_banner">
-                <a href="#">
-                    <div class="sidebar_banner_bg"></div>
-                    <div class="sidebar_banner_title">Баннер чемпионата по виртуальному автоспорту</div>
-                    <div class="sidebar_banner_button"><span class="material-icons-outlined main-banner-button-color">flag_circle</span>Подробнее</div>
-                </a>
-            </div>
-        </div>
+        @include('main.post.includes.singlepost-sidebar')
     </div>
     @include('main.includes.main-banner')
 @endsection

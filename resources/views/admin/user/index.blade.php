@@ -46,9 +46,9 @@
                                 @foreach($users as $user)
                                     <tr>
                                         <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
+                                        <td><img style="height: 32px; width: 32px; border-radius: 50%;" src="{{ $user->getAvatarImage() }}" alt="{{ $user->name }}"> {{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->about_user }}</td>
+                                        <td>{{ Str::limit($user->about_user, 50, $end='...') }}</td>
                                         <td>
                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                            <form action="{{ route('admin.user.delete', $user->id) }}" method="post" class="float-left">

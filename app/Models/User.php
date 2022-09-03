@@ -13,6 +13,9 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Notifications\SendVerifyWithQueueNotification;
 use App\Notifications\SendResetPasswordMailWithQueueNotification;
 
+// Facades 
+use Illuminate\Support\Facades\Storage;
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
@@ -20,6 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
     const ROLE_ADMIN = 0;
     const ROLE_WRITER = 1;
     const ROLE_READER = 2;
+
+    protected $tadle = 'users';
 
     public static function getRoles()
     {
@@ -40,6 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'about_user',
+        'user_avatar',
         'role',
     ];
 
@@ -62,7 +68,44 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-     /**
+    /**
+     * 
+     * User avatar upload (create)
+     * 
+     */
+
+    public static function uploadUserAvatar($request, $avatar)
+    {
+        if ($request->hasFile('user_avatar')) {
+
+            // Delete old avatar if there is new
+
+            if ($avatar) {
+                Storage::delete($avatar);
+            }
+
+            return $request->file('user_avatar')->store("avatars");
+        } else {
+            return $avatar;
+        }
+    }
+
+    /**
+     * 
+     * Get avatar image
+     * 
+     */
+
+    public function getAvatarImage() 
+    {
+        if (!$this->user_avatar) {
+            return asset("no-image.jpg");
+        }
+
+        return asset("uploads/{$this->user_avatar}");
+    }
+
+    /**
      * Send the verifitaction email
      *
      * @param  string  $token

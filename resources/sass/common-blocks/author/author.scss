@@ -1,0 +1,46 @@
+.author {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 40px;
+    width: 100%;
+    background-color: $author-background-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.author__image {
+    display: block;
+    width: 103px;
+    height: 103px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.author__image_margin {
+    margin-right: 26px;
+}
+
+.author__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.author__name {
+    display: block;
+    font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.author__about {
+    display: block;
+    font-family: 'Jost';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+}

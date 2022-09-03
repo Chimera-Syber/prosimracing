@@ -1,4 +1,12 @@
-.sidebar-banner {
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.sidebar__banner {
     width: 280px;
     height: 310px;
     display: block;
@@ -9,11 +17,18 @@
     position: relative;
 }
 
-.sidebar-banner__link {
+.sidebar__twitch {
+    width: 280px;
+    height: 310px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sidebar__banner-link {
     text-decoration: none;
 }
 
-.sidebar-banner__bg {
+.sidebar__banner-bg {
     display: block;
     position: absolute;
     z-index: 50;
@@ -25,28 +40,36 @@
     background-color: $sidebar-banner-background;
 }
 
-.sidebar-banner__title {
-    display: block;
+.sidebar__info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     position: absolute;
+    z-index: 51;
+}
+
+.sidebar__info_position {
+    left: 10px;
+    bottom: 5%;
+}
+
+.sidebar__banner-title {
+    display: block;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 27px;
-    z-index: 51;
     color: $sidebar-banner-title;
     text-transform: uppercase;
 }
 
-.sidebar-banner__title_position {
-    top: 60%;
-    left: 10px; 
+.sidebar__banner-title_margin {
+    margin-bottom: 10px;
 }
 
-.sidebar-banner__button {
+.sidebar__banner-button {
     display: flex;
-    position: absolute;
-    z-index: 51;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -62,7 +85,6 @@
     color: $sidebar-banner-button-color;
 }
 
-.sidebar-banner__button_position {
-    top: 80%;
-    left: 10px; 
+.sidebar__banner-button_margin {
+    margin-bottom: 5px;
 }

@@ -34,6 +34,10 @@
 
 @import './common-blocks/body/body.scss';
 
+// Author
+
+@import './common-blocks/author/author.scss';
+
 // Breadcrumbs
 
 @import './common-blocks/breadcrumbs/breadcrumbs.scss';
@@ -62,9 +66,9 @@
 
 @import './common-blocks/full-width-banner/full-width-banner.scss';
 
-// Sidebar banner
+// Sidebar
 
-@import './common-blocks/sibebar-banner/sidebar-banner.scss';
+@import './common-blocks/sibebar/sidebar.scss';
 
 // Single post
 
