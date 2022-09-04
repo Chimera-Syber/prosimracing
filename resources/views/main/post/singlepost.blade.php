@@ -13,9 +13,10 @@
     </div>
     <!-- Posts -->
     <div class="singlepost singlepost-container">
-        <div class="singlepost-content singlepost-content_padding">
+        <div class="singlepost__content singlepost__content_padding">
             {!! $content !!}
             @include('main.post.includes.author-display')
+            <div class="singlepost__tags singlepost__tags_margin">{!! $tagsHTML !!}</div>
             @include('main.post.includes.comments-section')
         </div>
         @include('main.post.includes.singlepost-sidebar')

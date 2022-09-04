@@ -31,6 +31,8 @@ class StoreRequest extends FormRequest
             'preview_image' => 'required|image',
             'game_ids' => 'nullable|array',
             'game_ids.*' => 'nullable|integer|exists:games,id',
+            'tag_ids' => 'nullable|array',
+            'tag_ids.*' => 'nullable|integer|exists:tags,id',
             'seo_keywords' => 'string|nullable',
             'seo_description' => 'string|nullable',
         ];
@@ -53,6 +55,7 @@ class StoreRequest extends FormRequest
             'preview_image.required' => 'Необходимо добавить превью-картинку',
             'preview_image.image' => 'Превью-изображение должна быть изображением',
             'game_ids.array' => 'Необходимо отправить массив данных',
+            'tag_ids.array' => 'Необходимо отправить массив данных',
             'seo_keywords.string' => 'Ключевые слова должны быть строчного типа',
             'seo_description' => 'Описание должно быть строчного типа',
         ];

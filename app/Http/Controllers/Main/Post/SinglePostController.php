@@ -36,7 +36,16 @@ class SinglePostController extends Controller
 
         $author = User::find($post->user_id);
 
-        return view('main.post.singlepost', compact('author', 'post', 'content', 'bannerBetweenSections', 'bannerSidebar', 'carousel', 'events', 'footers'));
+        // Tags Render
+
+        $tagsHTML = '';
+
+        foreach($post->tags as $tag) {
+            $route = route('main.tag.singletag', ['tagSlug' => $tag->slug]);
+            $tagsHTML .= '<a href="'. $route . '" class="singlepost__tag">' . $tag->title . '</a>';
+        } 
+
+        return view('main.post.singlepost', compact('author', 'post', 'content', 'bannerBetweenSections', 'bannerSidebar', 'carousel', 'events', 'tagsHTML', 'footers'));
     }
 
     /**

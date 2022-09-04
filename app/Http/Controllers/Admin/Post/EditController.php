@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Game;
 use App\Models\Category;
+use App\Models\Tag;
 
 class EditController extends Controller
 {
@@ -17,6 +18,7 @@ class EditController extends Controller
     {
         $games = Game::all();
         $categories = Category::all();
-        return view('admin.post.edit', compact('post', 'games', 'categories'));
+        $tags = Tag::all();
+        return view('admin.post.edit', compact('post', 'games', 'categories', 'tags'));
     }
 }

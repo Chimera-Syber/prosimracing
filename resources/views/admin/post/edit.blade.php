@@ -72,6 +72,18 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <!-- Tag select area -->
+                                <div class="form-group">
+                                    <label>Теги</label>
+                                    <select class="select2"  multiple="multiple" name="tag_ids[]" data-placeholder="Выберите теги" style="width: 100%;">
+                                        @foreach($tags as $tag)
+                                            <option {{ is_array( $post->tags->pluck('id')->toArray()) && in_array( $tag->id, $post->tags->pluck('id')->toArray()) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('tag_ids')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                  <!-- Content textarea -->
                                  <div class="form-group">
                                     <label for="content">Текст публикации</label>

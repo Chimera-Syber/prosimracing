@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Category;
 use App\Models\Game;
 use App\Models\Comment;
+use App\Models\Tag;
 
 class Post extends Model
 {
@@ -105,10 +106,21 @@ class Post extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
+    // Games
+    
     public function games()
     {
         return $this->belongsToMany(Game::class, 'post_games', 'post_id', 'game_id')->withTimestamps();
     }
+
+    // Tags
+
+    public function tags() 
+    {
+        return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id')->withTimestamps();
+    }
+
+    // Carbon Russian
 
     public function getDateAsCarbonAttribute() {
 

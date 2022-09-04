@@ -95,6 +95,32 @@
                     </ul>
                 </li><!-- /.nav-item -->
             @endif
+            @if(Auth::user()->role == User::ROLE_ADMIN)
+                <!-- Tags -->
+                <li class="nav-item {{ Request::is('*tags*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.tag.index') }}" class="nav-link {{ Request::is('*tags*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>
+                        Теги
+                        <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.tag.index') }}" class="nav-link {{ Request::is('*tags') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Список тегов</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.tag.create') }}" class="nav-link {{ Request::is('*tags/create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Создать тег</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- /.nav-item -->
+            @endif
             @if(Auth::user()->role == User::ROLE_ADMIN or Auth::user()->role == User::ROLE_WRITER)
                 <!-- Carousel -->
                 <li class="nav-item {{ Request::is('*carousel*') ? 'menu-open' : '' }}">

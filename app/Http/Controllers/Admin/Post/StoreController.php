@@ -36,6 +36,11 @@ class StoreController extends Controller
                 unset($data['game_ids']);
             }
 
+            if (isset($data['tag_ids'])) {
+                $tagIds = $data['tag_ids'];
+                unset($data['tag_ids']);
+            }
+
             $data['preview_image'] = Post::uploadImage($request, null);
 
             $data['user_id'] = Auth::user()->id;
@@ -44,6 +49,10 @@ class StoreController extends Controller
 
             if (isset($gameIds)) {
                 $post->games()->attach($gameIds);
+            }
+
+            if (isset($tagIds)) {
+                $post->tags()->attach($tagIds);
             }
 
             Db::commit();
