@@ -34,17 +34,20 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 10px;
-}
-
-.coverages__post-link {
     text-decoration: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
     &:hover > .coverages__post-info > .coverages__post-title {
         color: $coverages-post-title-hover;
     }
     &:hover > .coverages__post-video > .coverages__icon-video-play {
         color: $coverages-icon-video-play-hover;
     }
+}
+
+.coverages__post-item_margin {
+    margin-bottom: 10px;
 }
 
 .coverages__post-bg {
@@ -103,7 +106,7 @@
     padding-left: 10px;
     padding-bottom: 5px;
     background-color: $coverages-game-category-img;
-    border-radius: 5px 0px 0px 0px;
+    border-radius: 5px 0px 10px 0px;
 }
 
 .coverages__post-video {

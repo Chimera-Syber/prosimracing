@@ -3,8 +3,7 @@
     <div class="coverages__posts-container">
         @foreach($specialPosts as $post)
             @if($post->category_id == Category::CAT_COVERAGE)
-                <div class="coverages__post-item" data-img="{{ $post->getImage() }}">
-                    <a class="coverages__post-link" href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
+                <a class="coverages__post-item coverages__post-item_margin cards_animation" href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}" data-img="{{ $post->getImage() }}">
                         <div class="coverages__post-bg"></div>
                         <div class="coverages__post-info">
                             <div class="coverages__post-title">{{ $post->title }}</div>
@@ -17,11 +16,9 @@
                                 @endforeach
                             </div>
                         </div>
-                    </a>
-                </div>
+                </a>
             @elseif($post->category_id == Category::CAT_VIDEOS)
-                <div class="coverages__post-item" data-img="{{ $post->getImage() }}">
-                    <a class="coverages__post-link" href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}">
+                <a class="coverages__post-item coverages__post-item_margin cards_animation" href="{{ route('main.post.singlepost', ['category' => $post->category, 'post' => $post]) }}" data-img="{{ $post->getImage() }}">
                         <div class="coverages__post-bg"></div>
                         <div class="coverages__post-video">
                             <span class="material-icons-outlined coverages__icon-video-play">arrow_forward_ios</span>
@@ -37,8 +34,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    </a>
-                </div>
+                </a>
             @endif
         @endforeach
     </div>

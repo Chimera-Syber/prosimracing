@@ -9,7 +9,7 @@ $login-menu-width: 150px;
 
 // Backgrounds colors
 
-$body-background-color: #F4F4F4;
+$body-background-color: #E9ECEF;
 $header-color: #000;
 $login-submenu-background: #1e1f21;
 $gradient-in-slider-for-items: #000;
@@ -20,15 +20,17 @@ $slider-dots-background: #fff;
 $slider-dots-active-background: #FF0000;
 $upcoming-events-arrows-background: #fff;
 $main-section-container-background: #fff;
-$main-section-post-game-category-background: #fff;
-$main-section-post-category-background: #fff;
+$main-section-post-item: #E9ECEF;
+$main-section-post-game-category-background: #E9ECEF;
+$main-section-post-category-background: #E9ECEF;
+$main-section-category-post-cont-bg: #E9ECEF;
 $load-more-button-background: #FF0000;
 $full-width-banner-bg: rgba(0,0,0,.4);
 $full-width-banner-button-bg: #fff;
 $sidebar-banner-background: rgba(0,0,0,.4);
 $sidebar-banner-button-bg: #fff;
 $coverages-post-bg: rgba(0,0,0,.4);
-$coverages-game-category-img: #EBE9E9;
+$coverages-game-category-img: #E9ECEF;
 $coverages-post-video: rgba(255,255,255,.4);
 $footer-container: #F1F1F1;
 $footer-copyright-background: #000;
@@ -59,11 +61,11 @@ $main-section-post-category: #000;
 $main-section-post-info-title: #000;
 $main-section-post-info-title-hover: #FF0000;
 $main-section-post-info-desc: #000;
-$main-section-post-date: #000;
-$main-section-post-link: #FF0000;
+$main-section-post-date: #757575;
+$main-section-post-link: #757575;
 $main-section-category-post-title-link: #000;
 $main-section-category-post-title-link-hover: #FF0000;
-$main-section-category-post-info-color: #a5a5a5;
+$main-section-category-post-info-color: #828282;
 $button-load-more-color: #fff;
 $full-width-banner-title: #fff;
 $full-width-banner-desc: #fff;
@@ -95,7 +97,6 @@ $login-alert-success-color: #28ad00;
 // Borders color 
 
 $main-section-post-item-border: #D8D8D8;
-$main-section-category-post-container: #D8D8D8;
 
 $login-form-control-border: #ced4da;
 $login-form-control-is-invalid-border: #FF0000;

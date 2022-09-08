@@ -55,30 +55,28 @@ class IndexController extends Controller
                     }
 
                     $output .= '
-                    <div class="main-section__post-item main-section__post-item_margin">
-                        <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '">
-                            <div class="main-section__post-preview-image" data-img="'. $post->getImage() .'">
+                    <div class="main-section__post-item main-section__post-item_margin cards_animation">
+                        <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '" class="main-section__post-preview-image" data-img="'. $post->getImage() .'">
                                 <div class="main-section__post-game-category">' . $gamesIcon . '</div>
                                 <div class="main-section__post_category">' . $post->category->title . '</div>
-                            </div>
                         </a>
-                        <div class="main-section__post-info-container">
-                            <a class="main-section__post-item-link" href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '">
+                        <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '" class="main-section__post-info-container main-section__post-info-container_margin">
+                            <div class="main-section__post-item-link">
                                 <div class="main-section__post-info-title main-section__post-info-title_margin">' . $post->title . '</div>
-                                <div class="main-section__post-info-desc main-section__post-info-desc_margin"> ' . $post->description . '</div>
-                            </a>
+                                <div class="main-section__post-info-desc"> ' . $post->description . '</div>
+                            </div>
                             <div class="main-section__post-info-date-link-container">
                                 <span class="main-section__post-date">' . $post->dateAsCarbon->translatedFormat("j F Y") . '</span>
-                                <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '" class="main-section__post-link">Читать далее</a>
+                                <span class="main-section__post-link">Читать далее</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     ';
                     $last_id = $post->id;
                 }
 
                 $output .= '
-                    <div id="load_more" style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
+                    <div id="load_more" class="main-section__button-container main-section__button-container_margin">
                         <button type="button" class="main-section__button-load-more" name="load_more_button" data-id="'.$last_id.'" id="load_more_button">Загрузить больше</button>
                     </div>
                 ';

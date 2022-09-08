@@ -23,6 +23,7 @@
 
 @import './libraries/variables.scss';
 @import './libraries/fonts.scss';
+@import './libraries/animations.scss';
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
@@ -89,22 +90,3 @@
 /* Login page */
 
 @import './common-blocks/login/login.scss';
-
-
-// Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-
-/*
-@import 'variables';
-@import 'fonts';
-@import 'main';
-@import 'header';
-@import 'slider';
-@import 'upcoming-events';
-@import 'main-content';
-@import 'single-post';
-@import 'category';
-@import 'footer';
-*/

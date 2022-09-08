@@ -62,11 +62,11 @@ class SingleCategoryController extends Controller
 
                     $output .= '
 
-                    <div class="main-section__category-post-container main-section__category-post-container-margin">
+                    <div class="main-section__category-post-container main-section__category-post-container-margin cards_animation">
                         <a href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">
                             <img class="main-section__category-post-img" src="'.  $post->getImage()  .'">
                         </a>
-                        <div class="main-section__category-post-info-wrp">
+                        <div class="main-section__category-post-info-wrp main-section__category-post-info-wrp_padding">
                             <div class="main-section__category-post-title main-section__category-post-tile_margin"><a class="main-section__category-post-title-link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
                             <div class="main-section__category-post-desc">'. $post->description .'</div>
                             <div class="main-section__category-post-info">
