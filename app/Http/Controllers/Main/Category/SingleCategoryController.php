@@ -67,7 +67,7 @@ class SingleCategoryController extends Controller
                             <img class="main-section__category-post-img" src="'.  $post->getImage()  .'">
                         </a>
                         <div class="main-section__category-post-info-wrp main-section__category-post-info-wrp_padding">
-                            <div class="main-section__category-post-title main-section__category-post-tile_margin"><a class="main-section__category-post-title-link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
+                            <div class="main-section__category-post-title main-section__category-post-title_margin"><a class="main-section__category-post-title-link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
                             <div class="main-section__category-post-desc">'. $post->description .'</div>
                             <div class="main-section__category-post-info">
                                 <div class="main-section__category-post-date">'. $post->dateAsCarbon->translatedFormat('j F Y') .'</div>

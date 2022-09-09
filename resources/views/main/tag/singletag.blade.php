@@ -1,8 +1,16 @@
 @extends('layouts.main')
 
+@section('title'){{ $tag->title }}@endsection
+@section('seo_description'){{ $tag->seo_description }}@endsection
+@section('keywords'){{ $tag->seo_keywords }}@endsection
+@section('og_title'){{ $tag->title }}@endsection
+@section('og_description'){{ $tag->description }}@endsection
+@section('og_image'){{ $tag->title }}@endsection
+
 @section('content')
 
-<h1 class="main-section__title">{{ $tag->title }}</h1>
+<h1 class="main-section__title main-section__title_tag-margin">#{{ $tag->title }}</h1>
+<div class="main-section__tag-description">{{ $tag->description }}</div>
 
 <div class="main-section__category-container">
     @csrf

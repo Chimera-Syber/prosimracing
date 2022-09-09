@@ -1,8 +1,15 @@
 @extends('layouts.main')
 
+@section('title'){{ $category->title }}@endsection
+@section('seo_description'){{ $category->seo_description }}@endsection
+@section('keywords'){{ $category->seo_keywords }}@endsection
+@section('og_title'){{ $category->title }}@endsection
+@section('og_description'){{ $category->description }}@endsection
+@section('og_image'){{ $category->title }}@endsection
+
 @section('content')
 
-<h1 class="main-section__title">{{ $category->title }}</h1>
+<h1 class="main-section__title main-section__title_category-margin">Категория: {{ $category->title }}</h1>
 
 <div class="main-section__category-container">
     @csrf

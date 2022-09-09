@@ -19,7 +19,28 @@
     line-height: 29px;
     text-transform: uppercase;
     height: auto;
-    padding: 26px 20px 10px 17px;
+    padding: 26px 20px 10px 20px;
+    margin: 0;
+}
+
+.main-section__title_tag-margin {
+    margin-top: 16px;
+}
+
+.main-section__title_category-margin {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.main-section__tag-description {
+    display: block;
+    text-align: left;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    color: #ccc;
+    padding: 10px 20px;
 }
 
 .main-section__posts-container {
@@ -256,7 +277,7 @@
     display: block;
 }
 
-.main-section__category-post-tile_margin {
+.main-section__category-post-title_margin {
     margin-bottom: 3px;
 }
 

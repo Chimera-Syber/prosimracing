@@ -142,6 +142,13 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'auth'], function() {
 Route::group(['namespace' => 'Main'], function() {
     Route::get('/', 'IndexController')->name('main.index');
 
+    Route::group(['namespace' => 'Sitemap'], function() {
+        Route::get('/sitemap', 'SitemapController@index')->name('main.sitemap.sitemap');
+        Route::get('/sitemap/posts', 'SitemapController@posts')->name('main.sitemap.posts');
+        Route::get('/sitemap/categories', 'SitemapController@categories')->name('main.sitemap.categories');
+        Route::get('/sitemap/tags', 'SitemapController@tags')->name('main.sitemap.tags');
+    });
+
     Route::post('/posts/load_more', 'IndexController@load_more')->name('main.index.load_more');
 
     Route::group(['namespace' => 'Category'], function() {

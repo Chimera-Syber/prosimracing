@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', 'ProSimRacing')
+@section('seo_description', 'ProSimRacing.Ru - портал, посвященный виртуальному спорту (симрейсингу), на котором вы найдете новости, статьи, рукодства, освящение турниров и чемпионатов, статьи о прокатном картинге и автоспорту')
+@section('keywords', 'prosimracing, iRacing, ACC, Assetto Corsa, Assetto Corsa Competizione, simracing, виртуальный автоспорт, новости, киберспорт')
+@section('og_title', 'ProSimracing')
+@section('og_description', 'ProSimRacing.Ru - портал, посвященный виртуальному спорту (симрейсингу), на котором вы найдете новости, статьи, рукодства, освящение турниров и чемпионатов, статьи о прокатном картинге и автоспорту')
+
 @section('content')
 
     <h1 class="main-section__title">Новости, статьи, репортажи и видео</h1>

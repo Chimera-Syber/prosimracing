@@ -1,5 +1,12 @@
 @extends('layouts.singlepost')
 
+@section('title'){{ $post->title }}@endsection
+@section('seo_description'){{ $post->seo_description }}@endsection
+@section('keywords'){{ $post->seo_keywords }}@endsection
+@section('og_title'){{ $post->title }}@endsection
+@section('og_description'){{ $post->description }}@endsection
+@section('og_image'){{ $post->getImage() }}@endsection
+
 @section('content')
 
     <div class="breadcrumbs">
