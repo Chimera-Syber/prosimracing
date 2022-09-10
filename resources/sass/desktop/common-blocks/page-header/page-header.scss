@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.page-header__burger {
+    display: none;
+}
+
 .page-header__logo {
     display: block;
 }
@@ -58,7 +62,7 @@
     width: $login-menu-width;
 }
 
-.page-header__login-menu_margin-left {
+.page-header__login-menu_margin {
     margin-left: 10px;
 }
 

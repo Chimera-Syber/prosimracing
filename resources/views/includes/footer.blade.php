@@ -1,3 +1,5 @@
+ <!-- Popups -->
+ @include('includes.popups')
  <!-- Footer Section -->
  <footer class="footer">
     <div class="container footer__container">

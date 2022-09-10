@@ -1,0 +1,11 @@
+@media screen and (max-width: 992px) {
+
+    .singlepost {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+}

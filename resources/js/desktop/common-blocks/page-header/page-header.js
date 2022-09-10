@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         submenu = document.querySelector('.page-header__login-submenu');
 
 
-    document.addEventListener('click', function(event) {
-        if (event.target !== dropdown && !dropdown.contains(event.target)) {
-            submenu.classList.remove('page-header__login-submenu_active');
-        }
-    });
-    
+    if (dropdown) {    
+        document.addEventListener('click', function(event) {
+            if (event.target !== dropdown && !dropdown.contains(event.target)) {
+                submenu.classList.remove('page-header__login-submenu_active');
+            }
+        });
+    }
 });

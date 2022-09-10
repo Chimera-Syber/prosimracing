@@ -5,6 +5,7 @@
 @section('keywords', 'prosimracing, iRacing, ACC, Assetto Corsa, Assetto Corsa Competizione, simracing, виртуальный автоспорт, новости, киберспорт')
 @section('og_title', 'ProSimracing')
 @section('og_description', 'ProSimRacing.Ru - портал, посвященный виртуальному спорту (симрейсингу), на котором вы найдете новости, статьи, рукодства, освящение турниров и чемпионатов, статьи о прокатном картинге и автоспорту')
+@section('og_image'){{ asset('assets/img/preview.jpg') }}@endsection
 
 @section('content')
 

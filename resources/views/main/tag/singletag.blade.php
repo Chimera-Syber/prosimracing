@@ -5,7 +5,7 @@
 @section('keywords'){{ $tag->seo_keywords }}@endsection
 @section('og_title'){{ $tag->title }}@endsection
 @section('og_description'){{ $tag->description }}@endsection
-@section('og_image'){{ $tag->title }}@endsection
+@section('og_image'){{ asset('assets/img/preview.jpg') }}@endsection
 
 @section('content')
 

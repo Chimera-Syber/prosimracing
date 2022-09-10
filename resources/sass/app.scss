@@ -28,65 +28,91 @@
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
 
+/**
+ * DESKTOP VERSION
+ */
 
 /* Common blocks */
 
 // Body
 
-@import './common-blocks/body/body.scss';
+@import './desktop/common-blocks/body/body.scss';
 
 // Author
 
-@import './common-blocks/author/author.scss';
+@import './desktop/common-blocks/author/author.scss';
 
 // Breadcrumbs
 
-@import './common-blocks/breadcrumbs/breadcrumbs.scss';
+@import './desktop/common-blocks/breadcrumbs/breadcrumbs.scss';
 
 // Container
 
-@import './common-blocks/container/container.scss';
+@import './desktop/common-blocks/container/container.scss';
 
 // Page header
 
-@import './common-blocks/page-header/page-header.scss';
+@import './desktop/common-blocks/page-header/page-header.scss';
 
 // Slider
 
-@import './common-blocks/slider/slider.scss';
+@import './desktop/common-blocks/slider/slider.scss';
 
 // Events
 
-@import './common-blocks/upcoming-events/upcoming-events.scss';
+@import './desktop/common-blocks/upcoming-events/upcoming-events.scss';
 
 // Main section
 
-@import './common-blocks/main-section/main-section.scss';
+@import './desktop/common-blocks/main-section/main-section.scss';
 
 // Full width banner 
 
-@import './common-blocks/full-width-banner/full-width-banner.scss';
+@import './desktop/common-blocks/full-width-banner/full-width-banner.scss';
 
 // Sidebar
 
-@import './common-blocks/sibebar/sidebar.scss';
+@import './desktop/common-blocks/sibebar/sidebar.scss';
 
 // Single post
 
-@import './common-blocks/singlepost/singlepost.scss';
+@import './desktop/common-blocks/singlepost/singlepost.scss';
 
 // Single post title
 
-@import './common-blocks/singlepost-title/singlepost-title.scss';
+@import './desktop/common-blocks/singlepost-title/singlepost-title.scss';
 
 // Coverages 
 
-@import './common-blocks/coverages/coverages.scss';
+@import './desktop/common-blocks/coverages/coverages.scss';
 
 // Footer
 
-@import './common-blocks/footer/footer.scss';
+@import './desktop/common-blocks/footer/footer.scss';
 
-/* Login page */
+/* Login page */ 
 
-@import './common-blocks/login/login.scss';
+@import './desktop/login/login.scss';
+
+/**
+ * MODILE VERSION
+ */
+
+/* Common block */
+
+// Container 
+
+@import './mobile/common-blocks/container/container.scss';
+
+// Page-header 
+
+@import './mobile/common-blocks/page-header/page-header.scss';
+
+// Singlepost
+
+@import './mobile/common-blocks/singlepost/singlepost.scss';
+
+/* Popup Nav Menu */
+
+@import './mobile/popup-nav-menu/popup-nav-menu.scss';
+

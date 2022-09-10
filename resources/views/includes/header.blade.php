@@ -1,6 +1,13 @@
 <!-- Header -->
-<header class="page-header">
+<header class="page-header lock_padding">
     <div class="container page-header__container">
+        <div class="page-header__burger page-header__burder_margin">
+            <svg class="popup-nav-menu-link" id="popup-nav-menu-link" width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="23" height="3" rx="1.5" fill="white"/>
+                <rect y="7" width="23" height="3" rx="1.5" fill="white"/>
+                <rect y="14" width="23" height="3" rx="1.5" fill="white"/>
+            </svg>
+        </div>
         <div class="page-header__logo page-header__logo_position">
             <a href="{{ route('main.index') }}" class="page-header__logo-link">ProSimRacing</a>
         </div>
@@ -10,7 +17,7 @@
             <a href="/category-page.html" class="page-header__nav-item">Календарь</a>
             <a href="/category-page.html" class="page-header__nav-item">О нас</a>
         </nav>
-        <div class="page-header__login-menu page-header__login-menu_margin-left">
+        <div class="page-header__login-menu page-header__login-menu_margin">
             @guest()
                 <a href="{{ route('login') }}" class="page-header__login-link">
                     <svg class="page-header__login-icon" width="28" height="28" viewBox="0 0 28 28" fill="#828282" xmlns="http://www.w3.org/2000/svg">
