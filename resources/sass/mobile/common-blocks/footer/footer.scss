@@ -1,0 +1,18 @@
+@media screen and (max-width: 440px) {
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "footer";
+        gap: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .footer__gird-item-title {
+        text-align: center;
+    }
+
+    .footer__grid-list {
+        text-align: center;
+    }
+
+}

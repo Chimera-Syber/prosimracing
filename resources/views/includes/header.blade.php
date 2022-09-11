@@ -15,7 +15,7 @@
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'news']) }}" class="page-header__nav-item">Новости</a>
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'articles']) }}" class="page-header__nav-item">Статьи</a>
             <a href="/category-page.html" class="page-header__nav-item">Календарь</a>
-            <a href="/category-page.html" class="page-header__nav-item">О нас</a>
+            <a href="{{ route('main.staticpages.aboutus') }}" class="page-header__nav-item">О нас</a>
         </nav>
         <div class="page-header__login-menu page-header__login-menu_margin">
             @guest()

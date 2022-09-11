@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 // Carbon
 use Carbon\Carbon;
 
+// Helpers
+use Illuminate\Support\Str;
+
 // Models
 use App\Models\Post;
 use App\Models\Category;
@@ -28,7 +31,7 @@ class SingleTagController extends Controller
         $slug = $tagSlug;
         $tag = Tag::where('slug', $slug)->firstOrFail(); 
 
-        $footers = Footer::all();
+        $footers = Footer::orderBy('orders', 'ASC')->get();
 
         $bannerBetweenSections = Banner::where('place', '=', Banner::SITE_PLACE_BETWEEN_SECTION)->where('active', '=', Banner::BANNER_ACTIVE)->first();
 
@@ -66,6 +69,8 @@ class SingleTagController extends Controller
                         $gamesIcon .= '<img class="category_post_icon" width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
                     }
 
+                    $description = Str::limit($post->description, 140, '...');
+
                     $output .= '
 
                     <div class="main-section__category-post-container main-section__category-post-container-margin cards_animation">
@@ -74,7 +79,7 @@ class SingleTagController extends Controller
                         </a>
                         <div class="main-section__category-post-info-wrp main-section__category-post-info-wrp_padding">
                             <div class="main-section__category-post-title main-section__category-post-title_margin"><a class="main-section__category-post-title-link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
-                            <div class="main-section__category-post-desc">'. $post->description .'</div>
+                            <div class="main-section__category-post-desc">'. $description .'</div>
                             <div class="main-section__category-post-info">
                                 <div class="main-section__category-post-date">'. $post->dateAsCarbon->translatedFormat('j F Y') .'</div>
                                 <div class="main-section__category-post-cat">'. $post->category->title .' | '. $gamesIcon .'</div>

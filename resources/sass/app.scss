@@ -104,6 +104,18 @@
 
 @import './mobile/common-blocks/container/container.scss';
 
+// Coverages
+
+@import './mobile/common-blocks/coverages/coverages.scss';
+
+// Footer
+
+@import './mobile/common-blocks/footer/footer.scss';
+
+// Main Section
+
+@import './mobile/common-blocks/main-section/main-section.scss';
+
 // Page-header 
 
 @import './mobile/common-blocks/page-header/page-header.scss';
@@ -111,6 +123,10 @@
 // Singlepost
 
 @import './mobile/common-blocks/singlepost/singlepost.scss';
+
+// Slider 
+
+@import './mobile/common-blocks/slider/slider.scss';
 
 /* Popup Nav Menu */
 

@@ -32,7 +32,7 @@ class SinglePostController extends Controller
         $bannerSidebar = Banner::where('place', '=', Banner::SITE_PLACE_SIDEBAR)->where('active', '=', Banner::BANNER_ACTIVE)->first();
         $post->views += 1; 
         $post->update();
-        $footers = Footer::all();
+        $footers = Footer::orderBy('orders', 'ASC')->get();
 
         $author = User::find($post->user_id);
 

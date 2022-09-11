@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $footers = Footer::all();
+        $footers = Footer::orderBy('orders', 'ASC')->get();
         return view('admin.footer.index', compact('footers'));
     }
 }

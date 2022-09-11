@@ -149,6 +149,17 @@ Route::group(['namespace' => 'Main'], function() {
         Route::get('/sitemap/tags', 'SitemapController@tags')->name('main.sitemap.tags');
     });
 
+    // Static pages
+
+    Route::group(['namespace' => 'StaticPages'], function() {
+        Route::group(['namespace' => 'AboutUs'], function() {
+            Route::get('/about-us', 'AboutUsController@index')->name('main.staticpages.aboutus');
+        });
+        Route::group(['namespace' => 'Contacts'], function() {
+            Route::get('/contacts', 'ContactsController@index')->name('main.staticpages.contacts');
+        });
+    });
+
     Route::post('/posts/load_more', 'IndexController@load_more')->name('main.index.load_more');
 
     Route::group(['namespace' => 'Category'], function() {
