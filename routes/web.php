@@ -131,7 +131,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
 });
 
 // This must be before Main group routes
-Auth::routes(['verify' => true]);
+Auth::routes(['register' => false, 'verify' => true]);
 
 Route::group(['namespace' => 'Auth', 'middleware' => 'auth'], function() {
     Route::get('/register/notify', 'RegisterController@notify')->withoutMiddleware('guest')->name('register.notify');

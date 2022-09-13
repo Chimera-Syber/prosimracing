@@ -9,11 +9,17 @@
 
 @section('content')
 
-<h1 class="main-section__title main-section__title_tag-margin">About Us</h1>
-<div class="main-section__tag-description">About Us</div>
+<h1 class="main-section__title main-section__title_tag-margin">О нас</h1>
 
-<div class="main-section__category-container">
-   <h2>Test page</h2>
+<div class="about-us__container">
+   <p class="about-us__p">ProSimRacing.Ru - портал, посвященный виртуальному автоспорту или, как его часто называют, симрейсингу, на котором вы найдете новости, различные руководства и статьи по популярным гоночным симуляторам, новости с турниров и чемпионатов, проходящих на территориях СНГ и Российской Федерации.</p>
+   <p class="about-us__p">Нашими целями являются:</p>
+   <ul class="about-us__ul">
+      <li class="about-us__li-item">популяризация виртуального автоспорта, как кибердисциплины, на территориях СНГ и Российской Федерации;</li>
+      <li class="about-us__li-item">популяризация прокатного картинга, как доступного способа для любого желающего ощутить себя автоспортменом и поучаствовать в реальных гоночных соревнованиях;</li>
+      <li class="about-us__li-item">популяризация различного программного обеспечения для виртуального автоспорта и прокатного картинга;</li>
+      <li class="about-us__li-item">обучение новичков азам настройки клиентом симуляторов, проведению собственных трансляций, использованию телеметрии, дашбордов, программ и так далее;</li>
+   </ul>
 </div>
 <!-- End Content wrapper--> 
 

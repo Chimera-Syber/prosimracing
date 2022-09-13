@@ -32,6 +32,10 @@
  * DESKTOP VERSION
  */
 
+/* About Us Page */
+
+@import './desktop/aboutus-page/aboutus-page.scss';
+
 /* Common blocks */
 
 // Body
@@ -89,6 +93,10 @@
 // Footer
 
 @import './desktop/common-blocks/footer/footer.scss';
+
+/* Contacts page */
+
+@import './desktop/contacts-page/contacts-page.scss';
 
 /* Login page */ 
 
