@@ -1,0 +1,134 @@
+.upcoming-events {
+    padding: 0;
+}
+
+.upcoming-events__container {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    box-sizing: border-box;
+    border: 1px solid $upcoming-events-border;
+}
+
+.upcoming-events__title {
+    display: inline-flex;
+    align-items: center;
+    background-color: $upcoming-events-title-bg;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 22px;
+    text-align: center;
+}
+
+.upcoming-events__widget-arrow-left {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    border-left: 1px solid $upcoming-events-border;
+    border-right: 1px solid $upcoming-events-border;
+    background-color: $upcoming-events-arrows-background;
+    user-select: none;
+}
+
+.upcoming-events__material-icons-widget-arrow-left {
+    width: 20px;
+}
+
+.upcoming-events__widget-arrow-right {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    border-left: 1px solid $upcoming-events-border;
+    background-color: $upcoming-events-arrows-background;
+    user-select: none;
+}
+
+
+.upcoming-events__widget-list {
+    display: block;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    max-width: 921px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $upcoming-events-widget-list-bg;
+}
+
+.upcoming-events__widget-container {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.upcoming-events__widget-item {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 250px;
+    max-height: 70px;
+    background-color: $upcoming-events-widget-item-bg;
+    &:first-child {
+        border-right: 1px solid $upcoming-events-border;
+    }
+    &:not(:first-child) {
+        border-left: 1px solid $upcoming-events-border;
+        border-right: 1px solid $upcoming-events-border;
+    }
+}
+
+.upcoming-events__widget-race-league {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.upcoming-events__widget-name-race {
+    display: block;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 13px;
+}
+
+.upcoming-events__widget-name-race_margin {
+    margin-top: 5px;
+}
+
+.upcoming-events__widget-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upcoming-events__widget-info_margin {
+    margin-top: 5px;
+}
+
+.upcoming-events__widget-date {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.upcoming-events__widget-date_margin {
+    margin-right: 10px;
+}

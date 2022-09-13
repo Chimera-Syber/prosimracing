@@ -71,6 +71,18 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <!-- Tags select area -->
+                                <div class="form-group">
+                                    <label>Теги</label>
+                                    <select class="select2"  multiple="multiple" name="tag_ids[]" data-placeholder="Выберите теги" style="width: 100%;">
+                                        @foreach($tags as $tag)
+                                            <option {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('tag_ids')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                  <!-- Content textarea -->
                                  <div class="form-group">
                                     <label for="content">Текст публикации</label>
@@ -80,13 +92,13 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <!-- Icon input -->
+                                <!-- Preview Image input -->
                                 <div class="form-group">
-                                    <label for="icon">Превью-картинка</label>
+                                    <label for="preview_image">Превью-картинка</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="preview_image" id="preview_image">
-                                            <label class="custom-file-label" for="preview_image">Выбрать файл</label>
+                                            <label class="custom-file-label" for="preview_image">Выбрать картинку</label>
                                         </div>
                                     </div>
                                     @error('preview_image')

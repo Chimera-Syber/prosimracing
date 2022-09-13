@@ -10,10 +10,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            IMG
+            <img style="max-width: 64px; border-radius: 50%;" src="{{ auth()->user()->getAvatarImage() }}">
         </div>
         <div class="info">
-            <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+            <a href="{{ route('admin.user.edit', auth()->user()->id) }}" class="d-block">{{ auth()->user()->name }}</a>
         </div>
         </div>
 
@@ -90,6 +90,32 @@
                             <a href="{{ route('admin.game.create') }}" class="nav-link {{ Request::is('*games/create') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Создать игру</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- /.nav-item -->
+            @endif
+            @if(Auth::user()->role == User::ROLE_ADMIN)
+                <!-- Tags -->
+                <li class="nav-item {{ Request::is('*tags*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.tag.index') }}" class="nav-link {{ Request::is('*tags*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>
+                        Теги
+                        <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.tag.index') }}" class="nav-link {{ Request::is('*tags') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Список тегов</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.tag.create') }}" class="nav-link {{ Request::is('*tags/create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Создать тег</p>
                             </a>
                         </li>
                     </ul>

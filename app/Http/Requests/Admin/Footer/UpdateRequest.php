@@ -26,6 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required|string',
             'url' => 'required|string',
+            'orders' => 'required|integer',
             'place' => 'required|integer',
         ];
     }
@@ -39,6 +40,8 @@ class UpdateRequest extends FormRequest
             'title.string' => 'Заголовок должен быть строчного типа',
             'url.required' => 'Ссылка необходима для заполнения',
             'url.string' => 'Ссылка должна быть строчного типа',
+            'orders.required' => 'Число порядка необходимо для заполнения',
+            'orders.integer' => 'Число порядка должно быть числом',
             'place.required' => 'Место размещения необходимо для заполнения',
             'place.integer' => 'Место размещения должно быть числового типа',
         ];

@@ -1,13 +1,18 @@
 @extends('layouts.main')
 
+@section('title', 'ProSimRacing')
+@section('seo_description', 'ProSimRacing.Ru - портал, посвященный виртуальному спорту (симрейсингу), на котором вы найдете новости, статьи, рукодства, освящение турниров и чемпионатов, статьи о прокатном картинге и автоспорту')
+@section('keywords', 'prosimracing, iRacing, ACC, Assetto Corsa, Assetto Corsa Competizione, simracing, виртуальный автоспорт, новости, киберспорт')
+@section('og_title', 'ProSimracing')
+@section('og_description', 'ProSimRacing.Ru - портал, посвященный виртуальному спорту (симрейсингу), на котором вы найдете новости, статьи, рукодства, освящение турниров и чемпионатов, статьи о прокатном картинге и автоспорту')
+@section('og_image'){{ asset('assets/img/preview.jpg') }}@endsection
+
 @section('content')
 
-    <div class="section_content_title">
-        <h1>Новости, статьи, репортажи и видео</h1>
-    </div>
+    <h1 class="main-section__title">Новости, статьи, репортажи и видео</h1>
     <!-- Posts -->
     @csrf
-    <div class="content_posts">
+    <div class="main-section__posts-container">
         
         <script>
             $(document).ready(function(){
@@ -26,8 +31,8 @@
                         success:function(data)
                         {
                             $('#load_more_button').remove();
-                            $('.content_posts').append(data);
-                            showBackgrounds();
+                            $('.main-section__posts-container').append(data);
+                            showPostsBackgrounds();
                         }
                     })
                 }
@@ -39,54 +44,20 @@
                     load_data(id, _token);
                 });
 
-                
-
-                function showBackgrounds() {
-                    var postPreviewImage = document.querySelectorAll('.post_preview_image');
-                    var coveragePostImage = document.querySelectorAll('.coverage_post');
-                    var mainBannerImage = document.querySelector('.main_banner_img');
-                    var sidebarBannerImage = document.querySelector('.sidebar_banner');
+                function showPostsBackgrounds() {
+                    let postPreviewImage = document.querySelectorAll('.main-section__post-preview-image');
 
                     for (i = 0; i < postPreviewImage.length; i++) {
                         var src = postPreviewImage[i].getAttribute('data-img');
                         postPreviewImage[i].style.backgroundImage = "url('" + src + "')";
                     }
-
-                    for (i = 0; i < coveragePostImage.length; i++) {
-                        var src = coveragePostImage[i].getAttribute('data-img');
-                        coveragePostImage[i].style.backgroundImage = "url('" + src + "')";
-                    }
-
-                    if (mainBannerImage != undefined) {
-                        var src = mainBannerImage.getAttribute('data-img');
-                        mainBannerImage.style.backgroundImage = "url('" + src + "')";
-                    }
-
-                    if (sidebarBannerImage != undefined) {
-                        var src = sidebarBannerImage.getAttribute('data-img');
-                        sidebarBannerImage.style.backgroundImage = "url('" + src + "')";
-                    }
-
                 }
-
+                
             });
         </script>
+    </div>
 
-
-    </div><!-- ./content_posts -->
-    <!-- Banner -->
-    <section class="main_banner">
-        <div class="main_banner_wrp">
-            <a href="{{ $bannerBetweenSections->url }}" class="main_banner_link">
-                <div class="main_banner_img" data-img="{{ $bannerBetweenSections->getImage() }}"></div>
-                <div class="main_banner_bg"></div>
-                <h1 class="main_banner_title">{{ $bannerBetweenSections->title }}</h1>
-                <div class="main_banner_desc">{{ $bannerBetweenSections->subtitle }}</div>
-                <div class="main_banner_button"><span class="material-icons-outlined main-banner-button-color">flag_circle</span>Подробнее
-                </div>
-            </a>
-        </div>
-    </section><!-- ./main_banner -->
+    @include('main.includes.main-banner')
     @include('main.includes.coverage')
 
 @endsection

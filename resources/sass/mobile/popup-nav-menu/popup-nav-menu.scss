@@ -1,0 +1,124 @@
+.popup-nav-menu {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.popup-nav-menu_open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-nav-menu__main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+}
+
+.popup-nav-menu__close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.popup-nav-menu__logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.popup-nav-menu__burger {
+    display: block;
+}
+
+.popup-nav-menu__burger_margin {
+    margin-left: 10px;
+}
+
+.popup-nav-menu__logo {
+    display: block;
+    font-family: "Jost";
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #000;
+}
+
+.popup-nav-menu__nav {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.popup-nav-menu__nav_margin {
+    margin-top: 10px;
+}
+
+.popup-nav-menu__nav-item {
+    display: block;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+}
+
+.popup-nav-menu__separator {
+    height: 1px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+}
+
+.popup-nav-menu__pages {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.popup-nav-menu__pages-item {
+    display: block;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    color: #9d9d9d;
+}
+
+.popup-nav-menu__copyright {
+    display: block;
+    width: 100%;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #000;
+}

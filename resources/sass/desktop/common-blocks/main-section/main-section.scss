@@ -1,0 +1,344 @@
+.main-section {
+    margin: 0;
+}
+
+.main-section__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $main-section-container-background;
+}
+
+.main-section__title {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    height: auto;
+    padding: 26px 20px 10px 20px;
+    margin: 0;
+}
+
+.main-section__title_tag-margin {
+    margin-top: 16px;
+}
+
+.main-section__title_category-margin {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.main-section__tag-description {
+    display: block;
+    text-align: left;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    color: #ccc;
+    padding: 10px 20px;
+}
+
+.main-section__posts-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.main-section__post-item { 
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 350px;
+    background-color: $main-section-post-item;
+    //border: 1px solid $main-section-post-item-border;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-section__post-item_margin {
+    margin-bottom: 10px;
+}
+
+.main-section__post-preview-image {
+    width: 280px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.main-section__post-game-category {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    background-color: $main-section-post-game-category-background;
+    padding-top: 6px;
+    padding-left: 9px;
+    padding-bottom: 6px;
+    padding-right: 9px;
+    border-radius: 0px 10px 0px 5px;
+}
+
+.main-section__post_category {
+    display: block;
+    position: absolute;
+    z-index: 21;
+    bottom: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background-color: $main-section-post-category-background;
+    border-radius: 0px 5px 0px 0px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-section-post-category;
+}
+
+.main-section__post-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-grow: 2;
+    justify-content: space-between;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.main-section__post-info-container_margin {
+    margin: 9px;
+}
+
+.main-section__post-item-link {
+    text-decoration: none;
+    &:hover > .main-section__post-info-title {
+        color: $main-section-post-info-title-hover;
+    }
+}
+
+.main-section__post-info-title {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $main-section-post-info-title;
+}
+
+.main-section__post-info-title_margin {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.main-section__post-info-desc {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: $main-section-post-info-desc;
+}
+
+.main-section__post-info-date-link-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.main-section__post-date {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    color: $main-section-post-date;
+}
+
+.main-section__post-link {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    color: $main-section-post-link;
+    text-decoration: none;
+}
+
+.main-section__button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main-section__button-container_margin {
+    margin-top: 5px;
+}
+
+.main-section__button-load-more {
+    font-family: 'Jost';
+    background-color: $load-more-button-background;
+    border-color: transparent;
+    border-radius: 5px;
+    border-width: 1px;
+    color: $button-load-more-color;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(0.5em - 1px) 1em;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.main-section__full-width-banner {
+    padding: 40px 10px 40px 10px;
+}
+
+.main-section__category-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+}
+
+.main-section__category-posts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.main-section__category-post-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $main-section-category-post-cont-bg;
+    width: 100%;
+    max-height: 140px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-section__category-post-container-margin {
+    margin-bottom: 10px;
+}
+
+.main-section__category-post-img {
+    display: block;
+    width: 226px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.main-section__category-post-info-wrp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.main-section__category-post-info-wrp_padding {
+    padding: 13px 17px;
+}
+
+.main-section__category-post-title {
+    display: block;
+}
+
+.main-section__category-post-title_margin {
+    margin-bottom: 3px;
+}
+
+.main-section__category-post-title-link {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 27px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-section-category-post-title-link;
+    &:hover {
+        color: $main-section-category-post-title-link-hover;
+    }
+}
+
+.main-section__category-post-desc {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.main-section__category-post-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.main-section__category-post-date {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: $main-section-category-post-info-color;
+}
+
+.main-section__category-post-cat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    color: $main-section-category-post-info-color;
+}
+
+.main-section__sidebar {
+    
+}
+
+.main-section__sidebar-banner {
+    margin-top: 5px;
+}

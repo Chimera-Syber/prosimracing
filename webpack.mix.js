@@ -21,9 +21,13 @@ mix.js('resources/js/app.js', 'public/assets/js')
     .sourceMaps();
 
 mix.scripts([
-    'resources/js/slider.js',
-    'resources/js/upcoming-slider.js',
-    'resources/js/backgrounds.js',
+    'resources/js/desktop/common-blocks/page-header/page-header.js',
+    'resources/js/desktop/common-blocks/slider/slider.js',
+    'resources/js/desktop/common-blocks/upcoming-events/upcoming-events.js',
+    'resources/js/desktop/common-blocks/full-width-banner/full-width-banner.js',
+    'resources/js/desktop/common-blocks/sidebar/sidebar.js',
+    'resources/js/desktop/common-blocks/coverages/coverages.js',
+    'resources/js/mobile/popup-nav-menu/popup-nav-menu.js',
 ], 'public/assets/js/scripts.js');
 
 

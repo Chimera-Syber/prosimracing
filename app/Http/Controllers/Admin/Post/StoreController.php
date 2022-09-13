@@ -14,6 +14,7 @@ use App\Models\Post;
 
 // Facades
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Controller
 {
@@ -35,12 +36,23 @@ class StoreController extends Controller
                 unset($data['game_ids']);
             }
 
+            if (isset($data['tag_ids'])) {
+                $tagIds = $data['tag_ids'];
+                unset($data['tag_ids']);
+            }
+
             $data['preview_image'] = Post::uploadImage($request, null);
+
+            $data['user_id'] = Auth::user()->id;
 
             $post = Post::firstOrCreate($data);
 
             if (isset($gameIds)) {
                 $post->games()->attach($gameIds);
+            }
+
+            if (isset($tagIds)) {
+                $post->tags()->attach($tagIds);
             }
 
             Db::commit();
