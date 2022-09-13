@@ -66,6 +66,27 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <!-- About user -->
+                                <div class="form-group">
+                                    <label for="about_user">О себе</label>
+                                    <textarea name="about_user" id="about_user" class="form-control" placeholder="О пользователе"></textarea>
+                                    @error('about_user')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <!-- User Avatar -->
+                                <div class="form-group">
+                                    <label for="user_avatar">Аватар пользователя</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="user_avatar" id="user_avatar">
+                                            <label for="user_avatar" class="custom-file-label">Выбрать картинку</label>
+                                        </div>
+                                    </div>
+                                    @error('user_avatar')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <!-- Role input -->
                                 <div class="form-group">
                                     <label>Выберите роль</label>

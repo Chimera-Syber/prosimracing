@@ -1,0 +1,39 @@
+@media screen and (max-width: 992px) {
+
+    .main-section__category-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .main-section__category-post-title-link {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .main-section__category-post-desc {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    .main-section__category-post-date {
+        font-size: 13px;
+        line-height: 8px;
+    }
+
+    .main-section__category-post-cat {
+        font-size: 13px;
+        line-height: 8px;
+    }
+
+    .category_post_icon {
+        width: 20px;
+    }
+
+}

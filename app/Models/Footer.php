@@ -34,6 +34,6 @@ class Footer extends Model
         ];
     }
 
-    protected $fillable = ['title', 'url', 'place'];
+    protected $fillable = ['title', 'orders', 'url', 'place'];
 
 }

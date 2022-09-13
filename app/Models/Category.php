@@ -16,7 +16,7 @@ class Category extends Model
     use Sluggable;
     use SoftDeletes;
 
-    protected $fillable = ['title', 'seo_description', 'seo_keywords'];
+    protected $fillable = ['title', 'description', 'seo_description', 'seo_keywords'];
     protected $table = 'categories';
     protected $guarded = false;
 

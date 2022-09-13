@@ -36,6 +36,7 @@
                                 <thead>
                                     <tr>
                                         <th>Заголовок</th>
+                                        <th>Порядок</th>
                                         <th>Управление</th>
                                     </tr>
                                 </thead>
@@ -44,6 +45,7 @@
                                     <tr>
                                         @if($footer->place == Footer::PLACE_ONE)
                                         <td>{{ $footer->title }}</td>
+                                        <td>{{ $footer->orders }}</td>
                                         <td>
                                             <a href="{{ route('admin.footer.edit', ['footer' => $footer->id]) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                             <form action="{{ route('admin.footer.delete', $footer->id) }}" method="post" class="float-left">
@@ -74,6 +76,7 @@
                                 <thead>
                                     <tr>
                                         <th>Заголовок</th>
+                                        <th>Порядок</th>
                                         <th>Управление</th>
                                     </tr>
                                 </thead>
@@ -82,6 +85,7 @@
                                     <tr>
                                         @if($footer->place == Footer::PLACE_TWO)
                                             <td>{{ $footer->title }}</td>
+                                            <td>{{ $footer->orders }}</td>
                                             <td>
                                                 <a href="{{ route('admin.footer.edit', ['footer' => $footer->id]) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                                 <form action="{{ route('admin.footer.delete', $footer->id) }}" method="post" class="float-left">
@@ -114,6 +118,7 @@
                                 <thead>
                                     <tr>
                                         <th>Заголовок</th>
+                                        <th>Порядок</th>
                                         <th>Управление</th>
                                     </tr>
                                 </thead>
@@ -122,6 +127,7 @@
                                     <tr>
                                         @if($footer->place == Footer::PLACE_THREE)
                                         <td>{{ $footer->title }}</td>
+                                        <td>{{ $footer->orders }}</td>
                                         <td>
                                             <a href="{{ route('admin.footer.edit', ['footer' => $footer->id]) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                             <form action="{{ route('admin.footer.delete', $footer->id) }}" method="post" class="float-left">
@@ -152,6 +158,7 @@
                                 <thead>
                                     <tr>
                                         <th>Заголовок</th>
+                                        <th>Порядок</th>
                                         <th>Управление</th>
                                     </tr>
                                 </thead>
@@ -160,6 +167,7 @@
                                     <tr>
                                         @if($footer->place == Footer::PLACE_FOUR)
                                             <td>{{ $footer->title }}</td>
+                                            <td>{{ $footer->orders }}</td>
                                             <td>
                                                 <a href="{{ route('admin.footer.edit', ['footer' => $footer->id]) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                                 <form action="{{ route('admin.footer.delete', $footer->id) }}" method="post" class="float-left">
@@ -192,6 +200,7 @@
                                 <thead>
                                     <tr>
                                         <th>Заголовок</th>
+                                        <th>Порядок</th>
                                         <th>Управление</th>
                                     </tr>
                                 </thead>
@@ -200,6 +209,7 @@
                                     <tr>
                                         @if($footer->place == Footer::PLACE_FIVE)
                                         <td>{{ $footer->title }}</td>
+                                        <td>{{ $footer->orders }}</td>
                                         <td>
                                             <a href="{{ route('admin.footer.edit', ['footer' => $footer->id]) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>
                                             <form action="{{ route('admin.footer.delete', $footer->id) }}" method="post" class="float-left">

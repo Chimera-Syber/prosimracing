@@ -1,8 +1,4 @@
-/** 
- * Upcoming evets on main page
- */
-
-var widgets = document.getElementsByClassName('widget_item');
+let widgets = document.getElementsByClassName('upcoming-events__widget-item');
 
 if (widgets.length != 0) { // Check element
 
@@ -15,9 +11,10 @@ if (widgets.length != 0) { // Check element
 
     function showWidget(n) {
         let i;
-        let widgets = document.getElementsByClassName('widget_item');
-        let widgetWidth = widgets[0].scrollWidth + 3;
-        let widgetList = document.querySelector('.widget_list');
+        let widgets = document.getElementsByClassName('upcoming-events__widget-item');
+
+        let widgetWidth = widgets[0].offsetWidth;
+        let widgetList = document.querySelector('.upcoming-events__widget-container');
 
         if (n > widgets.length) {
             widgetIndex = 1;
@@ -27,11 +24,9 @@ if (widgets.length != 0) { // Check element
             widgetIndex = widgets.length;
         }
 
-        let x = widgetWidth * (widgetIndex-1);
+        let x = widgetWidth * (widgetIndex-1) + 5 * (widgetIndex-1);
         widgetList.style.transform = "translateX(-" + x + "px)";
-
 
     }
 
 }
-

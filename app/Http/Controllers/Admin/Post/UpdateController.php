@@ -35,12 +35,21 @@ class UpdateController extends Controller
                 unset($data['game_ids']);
             }
 
+            if (isset($data['tag_ids'])) {
+                $tagIds = $data['tag_ids'];
+                unset($data['tag_ids']);
+            }
+
             $data['preview_image'] = Post::uploadImage($request, $post->preview_image);
 
             $post->update($data);
 
             if (isset($gameIds)) {
                 $post->games()->sync($gameIds);
+            }
+
+            if (isset($tagIds)) {
+                $post->tags()->sync($tagIds);
             }
 
             Db::commit();

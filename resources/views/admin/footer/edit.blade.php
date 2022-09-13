@@ -28,7 +28,7 @@
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Создание ссылки</h3>
+                            <h3 class="card-title">Редактирование ссылки</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -37,7 +37,7 @@
                                @method('PATCH')
                                <!-- text input -->
                                 <div class="form-group">
-                                    <label>Название события</label>
+                                    <label>Название ссылки</label>
                                     <input type="text" name="title" id="title" class="form-control" placeholder="Введите заголовок" value="{{ $footer->title }}">
                                     @error('title')
                                         <div class="text-danger">{{ $message }}</div>
@@ -45,9 +45,17 @@
                                 </div>
                                 <!-- text input -->
                                 <div class="form-group">
-                                    <label>Название лиги</label>
+                                    <label>Ссылка</label>
                                     <input type="text" name="url" id="url" class="form-control" placeholder="Введите ссылку" value="{{ $footer->url }}">
                                     @error('url')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Порядок отображения</label>
+                                    <input type="number" min="1" max="10" name="orders" id="orders" class="form-control" placeholder="Введите число порядка (от 1 до 10)" value="{{ $footer->orders }}">
+                                    @error('orders')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>

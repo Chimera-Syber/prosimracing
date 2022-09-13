@@ -1,0 +1,24 @@
+@media screen and (max-width: 1200px) {
+    .page-header__logo_position {
+        margin-left: 10px;
+    }
+
+    .page-header__login-menu_margin {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .page-header__burger {
+        display: block;
+    }
+
+    .page-header__burder_margin {
+        margin-left: 10px;
+    }
+
+    .page-header__nav {
+        display: none;
+    }
+}

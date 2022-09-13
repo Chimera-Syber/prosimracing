@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 // Models
 use App\Models\Game;
 use App\Models\Category;
+use App\Models\Tag;
 
 class CreateController extends Controller
 {
@@ -16,6 +17,7 @@ class CreateController extends Controller
     {
         $games = Game::all();
         $categories = Category::all();
-        return view('admin.post.create', compact('games', 'categories'));
+        $tags = Tag::all();
+        return view('admin.post.create', compact('games', 'categories', 'tags'));
     }
 }

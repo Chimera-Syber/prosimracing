@@ -1,17 +1,142 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/* Prosimracing portal 
+ * Main Sass file
+*/
 
-// Variables
-@import 'variables';
-@import 'fonts';
-@import 'main';
-@import 'header';
-@import 'slider';
-@import 'upcoming-events';
-@import 'main-content';
-@import 'single-post';
-@import 'category';
-@import 'footer';
+/* Z-INDEX MAP
+ * 
+ * page-header__login-submenu-item: 9991
+ * page-header: 9990
+ * sidebar-banner__bg: 50
+ * coverages__post-item-bg: 40
+ * full-width-banner__text-container: 31
+ * full-width-banner__banner_bg: 30
+ * main-section__post_category: 21
+ * main-section__post-game-category: 20
+ * slider__nav-dots: 13
+ * slider__item-info: 12
+ * slider__nav-arrows: 11
+ * slider__image-bg: 10
+ *
+ */
+
+/* Libraries */
+
+@import './libraries/variables.scss';
+@import './libraries/fonts.scss';
+@import './libraries/animations.scss';
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
+
+/**
+ * DESKTOP VERSION
+ */
+
+/* About Us Page */
+
+@import './desktop/aboutus-page/aboutus-page.scss';
+
+/* Common blocks */
+
+// Body
+
+@import './desktop/common-blocks/body/body.scss';
+
+// Author
+
+@import './desktop/common-blocks/author/author.scss';
+
+// Breadcrumbs
+
+@import './desktop/common-blocks/breadcrumbs/breadcrumbs.scss';
+
+// Container
+
+@import './desktop/common-blocks/container/container.scss';
+
+// Page header
+
+@import './desktop/common-blocks/page-header/page-header.scss';
+
+// Slider
+
+@import './desktop/common-blocks/slider/slider.scss';
+
+// Events
+
+@import './desktop/common-blocks/upcoming-events/upcoming-events.scss';
+
+// Main section
+
+@import './desktop/common-blocks/main-section/main-section.scss';
+
+// Full width banner 
+
+@import './desktop/common-blocks/full-width-banner/full-width-banner.scss';
+
+// Sidebar
+
+@import './desktop/common-blocks/sibebar/sidebar.scss';
+
+// Single post
+
+@import './desktop/common-blocks/singlepost/singlepost.scss';
+
+// Single post title
+
+@import './desktop/common-blocks/singlepost-title/singlepost-title.scss';
+
+// Coverages 
+
+@import './desktop/common-blocks/coverages/coverages.scss';
+
+// Footer
+
+@import './desktop/common-blocks/footer/footer.scss';
+
+/* Contacts page */
+
+@import './desktop/contacts-page/contacts-page.scss';
+
+/* Login page */ 
+
+@import './desktop/login/login.scss';
+
+/**
+ * MODILE VERSION
+ */
+
+/* Common block */
+
+// Container 
+
+@import './mobile/common-blocks/container/container.scss';
+
+// Coverages
+
+@import './mobile/common-blocks/coverages/coverages.scss';
+
+// Footer
+
+@import './mobile/common-blocks/footer/footer.scss';
+
+// Main Section
+
+@import './mobile/common-blocks/main-section/main-section.scss';
+
+// Page-header 
+
+@import './mobile/common-blocks/page-header/page-header.scss';
+
+// Singlepost
+
+@import './mobile/common-blocks/singlepost/singlepost.scss';
+
+// Slider 
+
+@import './mobile/common-blocks/slider/slider.scss';
+
+/* Popup Nav Menu */
+
+@import './mobile/popup-nav-menu/popup-nav-menu.scss';
+

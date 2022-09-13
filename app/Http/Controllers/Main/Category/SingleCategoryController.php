@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 // Carbon
 use Carbon\Carbon;
 
+// Helpers
+use Illuminate\Support\Str;
+
 // Models
 use App\Models\Post;
 use App\Models\Category;
@@ -26,7 +29,7 @@ class SingleCategoryController extends Controller
         $events = Event::where('start_date', '>', Carbon::yesterday())->orderBy('start_date', 'ASC')->get();
         $slug = $catSlug;
         $category = Category::where('slug', $slug)->firstOrFail(); 
-        $footers = Footer::all();
+        $footers = Footer::orderBy('orders', 'ASC')->get();
         $bannerBetweenSections = Banner::where('place', '=', Banner::SITE_PLACE_BETWEEN_SECTION)->where('active', '=', Banner::BANNER_ACTIVE)->first();
         $bannerSidebar = Banner::where('place', '=', Banner::SITE_PLACE_SIDEBAR)->where('active', '=', Banner::BANNER_ACTIVE)->first();
         $specialPosts = Post::where('category_id', '=', Category::CAT_VIDEOS)->orWhere('category_id', '=', Category::CAT_COVERAGE)->orderBy('created_at', 'DESC')->with('category')->with('games')->paginate(8);
@@ -39,12 +42,12 @@ class SingleCategoryController extends Controller
             if($request->id > 0)
             {
                 $category = Category::where('slug', $request->slug)->firstOrFail();
-                $data = $category->posts()->where('id', '<', $request->id)->orderBy('id', 'DESC')->with('games')->limit(2)->get();
+                $data = $category->posts()->where('id', '<', $request->id)->orderBy('id', 'DESC')->with('games')->limit(8)->get();
             }
             else
             {
                 $category = Category::where('slug', $request->slug)->firstOrFail();
-                $data = $category->posts()->orderBy('id', 'DESC')->with('games')->limit(2)->get();
+                $data = $category->posts()->orderBy('id', 'DESC')->with('games')->limit(8)->get();
             }
 
              $output = '';
@@ -60,18 +63,20 @@ class SingleCategoryController extends Controller
                         $gamesIcon .= '<img class="category_post_icon" width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
                     }
 
+                    $description = Str::limit($post->description, 140, '...');
+
                     $output .= '
 
-                    <div class="category_post_wrp">
+                    <div class="main-section__category-post-container main-section__category-post-container-margin cards_animation">
                         <a href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">
-                            <img class="category_post_img" src="'.  $post->getImage()  .'">
+                            <img class="main-section__category-post-img" src="'.  $post->getImage()  .'">
                         </a>
-                        <div class="category_post_info_wrp">
-                            <div class="category_post_title"><a class="category_post_title_link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
-                            <div class="category_post_desc">'. $post->description .'</div>
-                            <div class="category_post_info">
-                                <div class="category_post_date">'. $post->dateAsCarbon->translatedFormat('j F Y') .'</div>
-                                <div class="category_post_cat">'. $post->category->title .' | '. $gamesIcon .'</div>
+                        <div class="main-section__category-post-info-wrp main-section__category-post-info-wrp_padding">
+                            <div class="main-section__category-post-title main-section__category-post-title_margin"><a class="main-section__category-post-title-link" href="'. route("main.post.singlepost", ["category" => $post->category, "post" => $post]) .'">'. $post->title .'</div></a>
+                            <div class="main-section__category-post-desc">'. $description .'</div>
+                            <div class="main-section__category-post-info">
+                                <div class="main-section__category-post-date">'. $post->dateAsCarbon->translatedFormat('j F Y') .'</div>
+                                <div class="main-section__category-post-cat">'. $post->category->title .' | '. $gamesIcon .'</div>
                             </div>
                         </div>
                     </div>
@@ -81,7 +86,7 @@ class SingleCategoryController extends Controller
 
                 $output .= '
                     <div id="load_more">
-                        <button type="button" class="button-load-more" name="load_more_button" data-id="'.$last_id.'" id="load_more_button">Загрузить больше</button>
+                        <button type="button" class="main-section__button-load-more" name="load_more_button" data-id="'.$last_id.'" id="load_more_button">Загрузить больше</button>
                     </div>
                 ';
 
@@ -91,7 +96,7 @@ class SingleCategoryController extends Controller
              {
                 $output .= '
                     <div id="load_more">
-                        <button type="button" class="button-load-more" name="load_more_button">Все посты загружены</button>
+                        <button type="button" class="main-section__button-load-more" name="load_more_button">Все посты загружены</button>
                     </div>
 
                 ';

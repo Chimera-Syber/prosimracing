@@ -38,6 +38,7 @@
                                     <th style="width: 10px">ID</th>
                                     <th>Название</th>
                                     <th>Категория</th>
+                                    <th>Создатель</th>
                                     <th>Просмотры</th>
                                     <th>Управление</th>
                                 </tr>
@@ -48,6 +49,7 @@
                                         <td>{{ $post->id }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->category->title }}</td>
+                                        <td>{{ User::find($post->user_id)->name }}</td>
                                         <td>{{ $post->views }}</td>
                                         <td>
                                            <a href="{{ route('admin.post.edit', $post->id) }}" class="btn bg-gradient-success btn-sm float-left mr-1"><i class="fas fa-pencil-alt"></i></a>

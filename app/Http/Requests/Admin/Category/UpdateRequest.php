@@ -25,6 +25,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'description' => 'string|nullable',
             'seo_keywords' => 'string|nullable',
             'seo_description' => 'string|nullable',
         ];
@@ -37,6 +38,7 @@ class UpdateRequest extends FormRequest
         return [
             'title.required' => 'Название необходимо для заполнения',
             'title.string' => 'Название должно быть строчного типа',
+            'description.string' => 'Описание должно быть строкой',
             'seo_keywords.string' => 'Ключевые слова должны быть строчного типа',
             'seo_description' => 'Описание должно быть строчного типа',
         ];

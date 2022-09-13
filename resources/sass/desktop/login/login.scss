@@ -1,0 +1,220 @@
+.login__main-section {
+    margin: 0;
+}
+
+.login__main-section_padding {
+    padding-top: 100px;
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $login-container-background-color;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+}
+
+.login__form-body {
+    display: block;
+    box-sizing: border-box;
+}
+
+.login__form-title {
+    display: flex;
+    justify-content: flex-start;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.login__form-title_margin {
+    margin-bottom: 10px;
+}
+
+
+.login__form-row {
+    display: block;
+}
+
+.login__form-row_margin {
+    margin-bottom: 20px;
+}
+
+.login__form-text {
+    display: block;
+    width: 100%;
+    font-family: 'Jost';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.login__form-text_margin {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.login__form-label {
+    display: block;
+    font-family: 'Jost';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.login__form-label_margin {
+    margin-bottom: 5px;
+}
+
+.login__form-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.login__form-input-container_row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.login__form-control {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-family: 'Jost';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $login-form-control-color;
+    background-color: $login-form-control-background-color;
+    background-clip: padding-box;
+    border: 1px solid $login-form-control-border;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &:focus {
+        color: $login-form-control-focus-color;
+        background-color: $login-form-control-focus-bcolor;
+        border-color: $login-form-control-focus-border;
+        outline: 0;
+        box-shadow: $login-form-control-focus-box-shadow;
+    }
+}
+
+.login_form-control-is-invalid {
+    color: $login-form-control-is-invalid-color;
+    background-color: $login-form-control-is-invalid-bcolor;
+    border-color: $login-form-control-is-invalid-border;
+    outline: 0;
+    box-shadow: $login-form-control-is-invalid-box-shadow;
+    &:focus {
+        color: $login-form-control-is-invalid-focus-color;
+        background-color: $login-form-control-is-invalid-focus-bgcolor;
+        border-color: $login-form-control-is-invalid-focus-border;
+        outline: 0;
+        box-shadow: $login-form-control-is-invalid-focus-box-shadow;
+    }
+}
+
+.login__form-invalid-feedback {
+    display: block;
+    font-family: 'Jost';
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1;
+    color: $login-form-invalid-feedback-color;
+}
+
+.login__form-invalid-feedback_margin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.login__form-check-input {
+    box-sizing: border-box;
+    border: 1px solid $login-form-check-input-border;
+}
+
+.login__form-check-label {
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.login__btn-submit {
+    display: block;
+    cursor: pointer;
+    font-family: 'Jost';
+    font-size: 15px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 0px;
+    padding: 10px 20px;
+    background-color: $login-btn-submit-bcolor;
+    color: $login-btn-submit-color;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: $login-btn-submit-hover-bcolor;
+    }
+}
+
+.login__btn-submit_font-size-change {
+    font-size: 14px;
+}
+
+.login__forgot-password-link {
+    font-family: 'Jost';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    color: $login-forgot-password-link-color;
+    &:hover {
+        color: $login-forgot-password-link-hover-color;
+    }
+}
+
+.login__alert {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: $login-alert-bgcolor;
+    border: 1px solid $login-alert-border-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-family: 'Jost';
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.login__alert_success {
+    color: $login-alert-success-color;
+}
+
+.login__alert_margin {
+    margin-bottom: 20px;
+}

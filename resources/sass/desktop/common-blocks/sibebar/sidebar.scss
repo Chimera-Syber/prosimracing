@@ -1,0 +1,90 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.sidebar__banner {
+    width: 280px;
+    height: 310px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    position: relative;
+}
+
+.sidebar__twitch {
+    width: 280px;
+    height: 310px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sidebar__banner-link {
+    text-decoration: none;
+}
+
+.sidebar__banner-bg {
+    display: block;
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: $sidebar-banner-background;
+}
+
+.sidebar__info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: absolute;
+    z-index: 51;
+}
+
+.sidebar__info_position {
+    left: 10px;
+    bottom: 5%;
+}
+
+.sidebar__banner-title {
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: $sidebar-banner-title;
+    text-transform: uppercase;
+}
+
+.sidebar__banner-title_margin {
+    margin-bottom: 10px;
+}
+
+.sidebar__banner-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 115px;
+    background-color: $sidebar-banner-button-bg;
+    padding: 5px 10px 5px 10px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $sidebar-banner-button-color;
+}
+
+.sidebar__banner-button_margin {
+    margin-bottom: 5px;
+}

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Models
 use App\Models\Category;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
         Route::get('/{game}/edit', 'EditController')->name('admin.game.edit');
         Route::patch('/{game}', 'UpdateController')->name('admin.game.update');
         Route::delete('/{game}', 'DeleteController')->name('admin.game.delete');
+    });
+
+    Route::group(['namespace' => 'Tag', 'prefix' => 'tags', 'middleware' => 'role:0'], function() {
+        Route::get('/', 'IndexController')->name('admin.tag.index');
+        Route::get('/create', 'CreateController')->name('admin.tag.create');
+        Route::post('/', 'StoreController')->name('admin.tag.store');
+        Route::get('/{tag}/edit', 'EditController')->name('admin.tag.edit');
+        Route::patch('/{tag}', 'UpdateController')->name('admin.tag.update');
+        Route::delete('/{tag}', 'DeleteController')->name('admin.tag.delete');
     });
 
     Route::group(['namespace' => 'Carousel', 'prefix' => 'carousel', 'middleware' => 'role:0,1'], function() {
@@ -121,10 +131,35 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'pitbox', 'middleware' => ['au
 });
 
 // This must be before Main group routes
-Auth::routes(['verify' => true]);
+Auth::routes(['register' => false, 'verify' => true]);
+
+Route::group(['namespace' => 'Auth', 'middleware' => 'auth'], function() {
+    Route::get('/register/notify', 'RegisterController@notify')->withoutMiddleware('guest')->name('register.notify');
+
+    Route::get('/register/successverify', 'VerificationController@notifysuccessverify')->withoutMiddleware('guest')->name('register.success.verify');
+});
 
 Route::group(['namespace' => 'Main'], function() {
     Route::get('/', 'IndexController')->name('main.index');
+
+    Route::group(['namespace' => 'Sitemap'], function() {
+        Route::get('/sitemap', 'SitemapController@index')->name('main.sitemap.sitemap');
+        Route::get('/sitemap/posts', 'SitemapController@posts')->name('main.sitemap.posts');
+        Route::get('/sitemap/categories', 'SitemapController@categories')->name('main.sitemap.categories');
+        Route::get('/sitemap/tags', 'SitemapController@tags')->name('main.sitemap.tags');
+    });
+
+    // Static pages
+
+    Route::group(['namespace' => 'StaticPages'], function() {
+        Route::group(['namespace' => 'AboutUs'], function() {
+            Route::get('/about-us', 'AboutUsController@index')->name('main.staticpages.aboutus');
+        });
+        Route::group(['namespace' => 'Contacts'], function() {
+            Route::get('/contacts', 'ContactsController@index')->name('main.staticpages.contacts');
+        });
+    });
+
     Route::post('/posts/load_more', 'IndexController@load_more')->name('main.index.load_more');
 
     Route::group(['namespace' => 'Category'], function() {
@@ -134,9 +169,26 @@ Route::group(['namespace' => 'Main'], function() {
             foreach($categories as $category) {
                 $catSlug = $category->slug;
                 Route::get('/{catSlug}', 'SingleCategoryController')->name('main.category.singlecategory');
-                $loadDataUrl = '/' . $category->slug . '/load_data';
-                Route::post($loadDataUrl, 'SingleCategoryController@load_data')->name('main.category.posts.load_more');
+                $loadDataUrlCat = '/' . $category->slug . '/load_data';
+                Route::post($loadDataUrlCat, 'SingleCategoryController@load_data')->name('main.category.posts.load_more');
             }
+
+        } catch (Exception $e) {
+            echo $e;
+        }
+    });
+
+    Route::group(['namespace' => 'Tag'], function() {
+        try {
+            $tags = Tag::all();
+
+            foreach($tags as $tag) {
+                $tagSlug = $tag->slug;
+                Route::get('/tags/{tagSlug}', 'SingleTagController')->name('main.tag.singletag');
+                $loadDataUrlTag = '/tags/' . $tagSlug . '/load_data';
+                Route::post($loadDataUrlTag, 'SingleTagController@load_data')->name('main.tag.posts.load_more');
+            }
+
 
         } catch (Exception $e) {
             echo $e;
