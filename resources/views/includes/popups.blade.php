@@ -11,8 +11,7 @@
         <nav class="popup-nav-menu__nav popup-nav-menu__nav_margin">
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'news']) }}" class="popup-nav-menu__nav-item">Новости</a>
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'articles']) }}" class="popup-nav-menu__nav-item">Статьи</a>
-            <a href="/category-page.html" class="popup-nav-menu__nav-item">Календарь</a>
-            <a href="/category-page.html" class="popup-nav-menu__nav-item">О нас</a>
+            <a href="{{ route('main.staticpages.aboutus') }}" class="popup-nav-menu__nav-item">О нас</a>
         </nav>
         <div class="popup-nav-menu__separator"></div>
         <div class="popup-nav-menu__pages">
