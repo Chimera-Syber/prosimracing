@@ -11,10 +11,9 @@
         <div class="page-header__logo page-header__logo_position">
             <a href="{{ route('main.index') }}" class="page-header__logo-link">ProSimRacing</a>
         </div>
-        <nav class="page-header__nav">
+        <nav class="page-header__nav">ы
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'news']) }}" class="page-header__nav-item">Новости</a>
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'articles']) }}" class="page-header__nav-item">Статьи</a>
-            <a href="/category-page.html" class="page-header__nav-item">Календарь</a>
             <a href="{{ route('main.staticpages.aboutus') }}" class="page-header__nav-item">О нас</a>
         </nav>
         <div class="page-header__login-menu page-header__login-menu_margin">
