@@ -56,7 +56,7 @@ class Banner extends Model
                 Storage::delete($image);
             }
 
-            return $request->file('image')->store("banners");
+            return $request->file('image')->store("bn");
         } else {
             return $image;
         }
