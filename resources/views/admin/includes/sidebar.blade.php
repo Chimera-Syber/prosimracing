@@ -14,6 +14,12 @@
         </div>
         <div class="info">
             <a href="{{ route('admin.user.edit', auth()->user()->id) }}" class="d-block">{{ auth()->user()->name }}</a>
+            @auth()
+                <form class="page-header__logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input class="page-header__logout-form-input" type="submit" value="Выйти">
+                </form>
+            @endauth()
         </div>
         </div>
 
