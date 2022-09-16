@@ -1,5 +1,5 @@
 <div class="sidebar main-section__sidebar">
-        <div class="sidebar__twitch">123</div>
+        <div class="sidebar__discord sidebar__discord_margin"><iframe src="https://discord.com/widget?id=777325043671629835&theme=dark" width="280" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></div>
         <div class="sidebar__banner main-section__sidebar-banner" data-img="{{ $bannerSidebar->getImage() }}">
             <a class="sidebar__banner-link" href="{{ $bannerSidebar->url }}">
                 <div class="sidebar__banner-bg"></div>

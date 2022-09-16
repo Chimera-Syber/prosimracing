@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     justify-content: flex-start;
+    align-items: center;
     box-sizing: border-box;
 }
 
@@ -12,6 +13,7 @@
     display: block;
     position: relative;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     border-radius: 10px;
     position: relative;
@@ -22,6 +24,14 @@
     height: 310px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.sidebar__discord {
+    display: block;
+}
+
+.sidebar__discord_margin {
+    margin-bottom: 10px;
 }
 
 .sidebar__banner-link {
