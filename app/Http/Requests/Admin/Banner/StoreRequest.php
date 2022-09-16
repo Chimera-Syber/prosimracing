@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'nullable|string|max:255',
             'image' => 'required|image',
             'url' => 'required|string',
             'place' => 'required|integer',
@@ -40,7 +40,6 @@ class StoreRequest extends FormRequest
             'title.required' => 'Название необходимо для заполнения',
             'title.string' => 'Название должно быть строчного типа',
             'title.max' => 'Максимально может быть 255 символов',
-            'subtitle.required' => 'Подзаголовок необходимо для заполнения',
             'subtitle.string' => 'Подзаголовок должно быть строчного типа',
             'subtitle.max' => 'Максимально может быть 255 символов',
             'image.required' => 'Необходимо добавить иконку',
