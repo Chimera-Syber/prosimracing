@@ -94,7 +94,7 @@ class SinglePostController extends Controller
                 case 'embed':
                     switch($block->data->service) {
                         case 'twitch':
-                            $content .= '<div class="singlepost__twitch singlepost__twitch_margin"><iframe src="' . $block->data->embed . '&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="800"></iframe></div>';
+                            $content .= '<div class="singlepost__twitch singlepost__twitch_margin"><iframe src="' . $block->data->embed . '?parent=www.prosimracing.ru&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="800"></iframe></div>';
                             if ($block->data->caption != '') {
                                 $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
                             }

@@ -112,7 +112,7 @@
                                 <!-- SEO Keywords input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="seo_keywords" id="seo_keywords" class="form-control" placeholder="Введите SEO Keywords" value="{{ $post->seo_keywords }}">
+                                    <textarea type="text" name="seo_keywords" id="seo_keywords" class="form-control" placeholder="Введите SEO Keywords">{{ $post->seo_keywords }}</textarea>
                                     @error('seo_keywords')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -120,7 +120,7 @@
                                 <!-- SEO Description input -->
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <input type="text" name="seo_description" id="seo_description" class="form-control" placeholder="Введите SEO описание" value="{{ $post->seo_description }}">
+                                    <textarea type="text" name="seo_description" id="seo_description" class="form-control" placeholder="Введите SEO описание">{{ $post->seo_description }}</textarea>
                                     @error('seo_description')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

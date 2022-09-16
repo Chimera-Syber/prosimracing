@@ -51,7 +51,7 @@
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>Описание категории</label>
-                                    <input type="text" name="description" id="description" class="form-control" value="{{ $category->description }}">
+                                    <textarea type="text" name="description" id="description" class="form-control">{{ $category->description }}</textarea>
                                     @error('description')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -59,7 +59,7 @@
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="seo_keywords" id="seo_keywords" class="form-control" value="{{ $category->seo_keywords }}">
+                                    <textarea type="text" name="seo_keywords" id="seo_keywords" class="form-control">{{ $category->seo_keywords }}</textarea>
                                     @error('keywords')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -67,7 +67,7 @@
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <input type="text" name="seo_description" id="seo_description" class="form-control" value="{{ $category->seo_description }}">
+                                    <textarea type="text" name="seo_description" id="seo_description" class="form-control">{{ $category->seo_description }}</textarea>
                                     @error('seo_description')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

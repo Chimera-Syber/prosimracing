@@ -59,7 +59,7 @@
                                 <!-- Text input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>
-                                    <input type="text" name="seo_keywords" id="seo_keywords" class="form-control" value="{{ $tag->seo_keywords }}">
+                                    <textarea type="text" name="seo_keywords" id="seo_keywords" class="form-control">{{ $tag->seo_keywords }}</textarea>
                                     @error('seo_keywords')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -67,7 +67,7 @@
                                 <!-- Text input -->
                                 <div class="form-group">
                                     <label>SEO Description</label>
-                                    <input type="text" name="seo_description" id="seo_description" class="form-control" value="{{ $tag->seo_description }}">
+                                    <textarea type="text" name="seo_description" id="seo_description" class="form-control">{{ $tag->seo_description }}</textarea>
                                     @error('seo_description')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
