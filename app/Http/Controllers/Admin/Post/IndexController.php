@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::paginate(20);
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(20);
         return view('admin.post.index', compact('posts'));
     }
 }
