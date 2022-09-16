@@ -14,6 +14,9 @@
     <!-- VK Workspace --> 
     <meta name="mailru-domain" content="c7GMSqDNL4TuRVuk" />
 
+    <!-- Yandex WebMaster --> 
+    <meta name="yandex-verification" content="b675b53129b4121c" />
+
     <!-- OG Links -->
     <meta property="og:title" content="@yield('og_title')">
     <meta property="og:description" content="@yield('og_description')">
