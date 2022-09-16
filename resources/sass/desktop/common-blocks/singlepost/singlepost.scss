@@ -25,6 +25,10 @@
     line-height: 24px;
     padding: 0;
     color: $singlepost-text;
+    & a {
+        text-decoration: none;
+        color: $singlepost-link;
+    }
 }
 
 .singlepost__text_margin {
@@ -87,6 +91,10 @@
     font-size: 16px;
     line-height: 24px;
     color: $singlepost-text;
+    & a {
+        text-decoration: none;
+        color: $singlepost-link;
+    }
 }
 
 // Twitch player
@@ -168,12 +176,12 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 19px;
-    color: #8C8C8C;
+    color: $singlepost-tag-color;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 5px;
-    border: 1px solid #CDCCCC;
+    border: 1px solid $singlepost-tag-border-color;
     &:hover {
-        color: #FF0000;
+        color: $singlepost-tag-hover-color;
     }
 }

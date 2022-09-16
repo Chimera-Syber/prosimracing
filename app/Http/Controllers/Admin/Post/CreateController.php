@@ -15,9 +15,9 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        $games = Game::all();
+        $games = Game::orderBy('slug', 'ASC')->get();
         $categories = Category::all();
-        $tags = Tag::all();
+        $tags = Tag::orderBy('slug', 'ASC')->get();
         return view('admin.post.create', compact('games', 'categories', 'tags'));
     }
 }

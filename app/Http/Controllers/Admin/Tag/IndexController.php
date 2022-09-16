@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $tags = Tag::orderBy('id')->paginate(20);
+        $tags = Tag::orderBy('slug', 'ASC')->paginate(20);
         return view('admin.tag.index', compact('tags'));
     }
 }
