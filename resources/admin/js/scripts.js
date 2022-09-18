@@ -41,8 +41,16 @@ function getContentElement() {
 // Route for upload image
 
 function uploadFileRoute() {
-    var uploadFile = document.location.origin + '/pitbox/posts/uploadimage';
+    let uploadFile = document.location.origin + '/pitbox/posts/uploadimage';
     return uploadFile;
+}
+
+// Hostname
+
+function pageHostName() {
+    let hostName = window.location.hostname;
+    console.log(hostName);
+    return hostName;
 }
 
 var _token = $('input[name="_token"]').val();
@@ -116,7 +124,7 @@ if (getContentElement()) {
                         vimeo: true,
                         twitch: { 
                             regex: /https?:\/\/www.twitch.tv\/([^\/\?\&]*)/,
-                            embedUrl: 'https://player.twitch.tv/?channel=<%= remote_id %>&parent=prosimracing.dev',
+                            embedUrl: 'https://player.twitch.tv/?channel=<%= remote_id %>&parent=' + pageHostName(),
                             html: "<iframe frameborder='0' allowfullscreen='true' scrolling='no' height='378' width='620'></iframe>",
                             height: 480,
                             width: 848,
