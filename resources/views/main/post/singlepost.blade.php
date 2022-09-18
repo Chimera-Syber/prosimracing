@@ -16,12 +16,12 @@
     </div>
     
     <div class="singlepost__title">
-        <h1 class="singlepost__title-h1 singlepost__title-h1_margin">{{ $post->title }}</h1>
+        <h1 class="singlepost__title-h1 singlepost__title-h1_margin-padding">{{ $post->title }}</h1>
     </div>
     <!-- Posts -->
     <div class="singlepost singlepost-container">
         <div class="singlepost__content singlepost__content_padding">
-            <div class="singlepost__post-info">
+            <div class="singlepost__post-info singlepost__post-info-margin">
                 <div class="singlepost__post-games">
                     <span class="singlepost__post-games-title">Игра: </span>
                     {!! $gamesIcon !!}

@@ -31,8 +31,9 @@
     text-transform: uppercase;
 }
 
-.singlepost__title-h1_margin {
-    margin-left: 1em;
+.singlepost__title-h1_margin-padding {
+    padding-left: 25px;
+    padding-right: 25px;
     margin-top: 0.1em;
     margin-bottom: 0.5em;
 }
@@ -42,6 +43,10 @@
     box-sizing: border-box;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.singlepost__post-info-margin {
+    margin-bottom: 10px;
 }
 
 .singlepost__post-games {
