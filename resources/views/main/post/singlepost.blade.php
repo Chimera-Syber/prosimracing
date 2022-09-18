@@ -15,12 +15,19 @@
         </p>
     </div>
     
-    <div class="singlepost-title">
-        <h1 class="singlepost-title__h1 singlepost-title__h1_margin">{{ $post->title }}</h1>
+    <div class="singlepost__title">
+        <h1 class="singlepost__title-h1 singlepost__title-h1_margin">{{ $post->title }}</h1>
     </div>
     <!-- Posts -->
     <div class="singlepost singlepost-container">
         <div class="singlepost__content singlepost__content_padding">
+            <div class="singlepost__post-info">
+                <div class="singlepost__post-games">
+                    <span class="singlepost__post-games-title">Игра: </span>
+                    {!! $gamesIcon !!}
+                </div>
+                <span class="singlepost__post-date">{!! $post->dateAsCarbon->translatedFormat("j F Y") !!}</span>
+            </div>
             {!! $content !!}
             @include('main.post.includes.author-display')
             <div class="singlepost__tags singlepost__tags_margin">{!! $tagsHTML !!}</div>

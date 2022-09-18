@@ -25,7 +25,7 @@ class SinglePostController extends Controller
     {
         $carousel = Carousel::orderBy('id', 'DESC')->paginate(4);
         $events = Event::where('start_date', '>', Carbon::yesterday())->orderBy('start_date', 'ASC')->get();
-        $post = Post::where('slug', $post->slug)->with('category')->firstOrFail();
+        $post = Post::where('slug', $post->slug)->with('category')->with('games')->firstOrFail();
         $content = self::render($post->content);
         //$content2 = $post->content; // for test
         $bannerBetweenSections = Banner::where('place', '=', Banner::SITE_PLACE_BETWEEN_SECTION)->where('active', '=', Banner::BANNER_ACTIVE)->first();
@@ -45,7 +45,15 @@ class SinglePostController extends Controller
             $tagsHTML .= '<a href="'. $route . '" class="singlepost__tag">' . $tag->title . '</a>';
         } 
 
-        return view('main.post.singlepost', compact('author', 'post', 'content', 'bannerBetweenSections', 'bannerSidebar', 'carousel', 'events', 'tagsHTML', 'footers'));
+        // Games Icons
+
+        $gamesIcon = '';
+
+        foreach($post->games as $game) {
+            $gamesIcon .= '<img width="22" src="'. $game->getImage() .'" alt="'. $game->title .'">';
+        }
+
+        return view('main.post.singlepost', compact('author', 'post', 'content', 'bannerBetweenSections', 'bannerSidebar', 'carousel', 'events', 'tagsHTML', 'gamesIcon', 'footers'));
     }
 
     /**

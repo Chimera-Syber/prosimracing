@@ -17,6 +17,59 @@
     padding-right: 10px;
 }
 
+.singlepost__title {
+    display: block;
+    width: 100%;
+}
+
+.singlepost__title-h1 {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+.singlepost__title-h1_margin {
+    margin-left: 1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
+}
+
+.singlepost__post-info {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.singlepost__post-games {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.singlepost__post-games-title {
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #817979;
+}
+
+.singlepost__post-date {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #817979;
+}
+
 .singlepost__text {
     font-family: 'Jost', sans-serif;
     font-style: normal;
