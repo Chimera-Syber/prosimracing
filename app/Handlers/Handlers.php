@@ -50,13 +50,13 @@ class Handlers {
                 case 'embed':
                     switch($block->data->service) {
                         case 'twitch':
-                            $content .= '<div class="singlepost__twitch singlepost__twitch_margin"><iframe src="' . $block->data->embed . '&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="800"></iframe></div>';
+                            $content .= '<div class="singlepost__twitch singlepost__twitch_margin"><iframe class="singlepost__iframe" src="' . $block->data->embed . '&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="480" width="800"></iframe></div>';
                             if ($block->data->caption != '') {
                                 $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
                             }
                             break;
                         case 'youtube':
-                            $content .= '<div class="singlepost__youtube singlepost__youtube_margin"><iframe width="800" height="480" src="' . $block->data->embed . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+                            $content .= '<div class="singlepost__youtube singlepost__youtube_margin"><iframe class="singlepost__iframe" width="800" height="480" src="' . $block->data->embed . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
                             if ($block->data->caption != '') {
                                 $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
                             }

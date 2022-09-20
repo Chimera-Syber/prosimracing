@@ -1,7 +1,19 @@
 @media screen and (max-width: 768px) {
 
+    .slider__item-info-title {
+        font-size: 26px;
+        line-height: 25px;
+        &::before {
+            top: -6px;
+        }
+    }
+
     .slider__nav-dots {
         left: 95%;
+    }
+
+    .slider__item-info-button {
+        top: 82%;
     }
 
 }

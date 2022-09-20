@@ -78,4 +78,6 @@ function resizeSlider() {
 
 }
 
+resizeSlider();
+
 window.addEventListener('resize', resizeSlider);

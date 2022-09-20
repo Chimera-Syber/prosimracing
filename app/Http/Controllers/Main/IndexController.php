@@ -63,7 +63,7 @@ class IndexController extends Controller
                         <a href="' . route("main.post.singlepost", ["category" => $post->category, "post" => $post]) . '" class="main-section__post-info-container main-section__post-info-container_margin">
                             <div class="main-section__post-item-link">
                                 <div class="main-section__post-info-title main-section__post-info-title_margin">' . $post->title . '</div>
-                                <div class="main-section__post-info-desc"> ' . $post->description . '</div>
+                                <div class="main-section__post-info-desc main-section__post-info-desc_margin"> ' . $post->description . '</div>
                             </div>
                             <div class="main-section__post-info-date-link-container">
                                 <span class="main-section__post-date">' . $post->dateAsCarbon->translatedFormat("j F Y") . '</span>

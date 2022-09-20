@@ -1,4 +1,4 @@
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
 
     .singlepost {
         grid-template-columns: 1fr;
@@ -8,4 +8,58 @@
         display: none;
     }
 
+    .singlepost__iframe {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        height: 100%;
+    }
+
 }
+
+@media screen and (max-width: 992px) {
+    .image__img {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .image__img {
+        max-width: 550px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .image__img {
+        max-width: 300px;
+    }
+
+    .author__image {
+        width: 64px;
+        height: 64px;
+    }
+
+    .author__name {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    .author__about {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .full-width-banner__title {
+        font-size: 20px;
+    }
+
+    .full-width-banner__desc {
+        font-size: 16px;
+    }
+
+    .full-width-banner__desc_margin {
+        margin-top: 4px;
+        margin-bottom: 8px;
+    }
+}
+
