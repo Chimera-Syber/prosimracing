@@ -109,6 +109,21 @@
                                             <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <!-- Source input -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Название источника</label>
+                                            <input type="text" class="form-control" id="source_name" name="source_name" placeholder="Название источника" value="{{ $post->source_name }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Ссылка на источник</label>
+                                            <input type="text" class="form-control" id="source_link" name="source_link" placeholder="Ссылка на источник" value="{{ $post->source_link }}">
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- SEO Keywords input -->
                                 <div class="form-group">
                                     <label>SEO Keywords</label>

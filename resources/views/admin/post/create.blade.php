@@ -86,7 +86,7 @@
                                  <!-- Content textarea -->
                                  <div class="form-group">
                                     <label for="content">Текст публикации</label>
-                                    <div id="contentEditorJs" style="display: block; min-height: 450px;"></div>
+                                    <div id="contentEditorJs" style="display: block; min-height: 450px; border: 1px solid #ccc;"></div>
                                     <input type="hidden" name="content" id="content" class="form-control" value="{{ old('content') }}">
                                     @error('content')
                                         <div class="text-danger">{{ $message }}</div>
@@ -104,6 +104,21 @@
                                     @error('preview_image')
                                             <div class="text-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+                                <!-- Source input -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Название источника</label>
+                                            <input type="text" class="form-control" id="source_name" name="source_name" placeholder="Название источника" value="{{ old('source_name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Ссылка на источник</label>
+                                            <input type="text" class="form-control" id="source_link" name="source_link" placeholder="Ссылка на источник" value="{{ old('source_link') }}">
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- SEO Keywords input -->
                                 <div class="form-group">
