@@ -32,8 +32,43 @@
         line-height: 8px;
     }
 
+    .main-section__category-post-img {
+        width: 163px;
+    }
+
     .category_post_icon {
         width: 20px;
     }
 
+}
+
+@media screen and (max-width: 500px) {
+
+    .main-section__category-post-info-wrp {
+        justify-content: space-evenly;
+    }
+
+    .main-section__category-post-title-link {
+        font-size: 15px;
+    }
+
+    .main-section__category-post-desc {
+        font-size: 14px;
+    }
+
+    .main-section__category-post-img {
+        width: 120px;
+    } 
+
+    .main-section__category-post-info {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    .main-section__category-post-img {
+        display: none;
+    }
+    
 }
