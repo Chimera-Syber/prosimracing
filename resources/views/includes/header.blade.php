@@ -14,6 +14,8 @@
         <nav class="page-header__nav">ы
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'news']) }}" class="page-header__nav-item">Новости</a>
             <a href="{{ route('main.category.singlecategory', ['catSlug' => 'articles']) }}" class="page-header__nav-item">Статьи</a>
+            <a href="{{ route('main.category.singlecategory', ['catSlug' => 'videos']) }}" class="page-header__nav-item">Видео</a>
+            <a href="{{ route('main.category.singlecategory', ['catSlug' => 'coverages']) }}" class="page-header__nav-item">Репортажи</a>
             <a href="{{ route('main.staticpages.aboutus') }}" class="page-header__nav-item">О нас</a>
         </nav>
         <div class="page-header__login-menu page-header__login-menu_margin">
