@@ -61,6 +61,12 @@ class Handlers {
                                 $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
                             }
                             break;
+                        case 'vkvideo':
+                            $content .= '<iframe src="' . $block->data->embed . '" width="800" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>';
+                            if ($block->data->caption != '') {
+                                $content .= '<div class="singlepost__caption singlepost__caption_margin">' .$block->data->caption . '</div>';
+                            }
+                            break;
                     }
                     break;
 

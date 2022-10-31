@@ -55,7 +55,7 @@ class UpdateController extends Controller
             Db::commit();
         } catch (\Exception $exception) {
             Db::rollback();
-           abort(500);
+            abort(500);
        }
         return redirect()->route('admin.post.index');
     }

@@ -130,6 +130,14 @@ if (getContentElement()) {
                             width: 848,
                             id: (groups) => groups.join('/embed/'),
                         },
+                        vkvideo: {
+                            regex: /https?:\/\/vk.com\/(video_ext.php\?oid.*)/,
+                            embedUrl: 'https://vk.com/<%= remote_id %>',
+                            html: "<iframe width='640' height='360' allow='autoplay; encrypted-media; fullscreen; picture-in-picture;' frameborder='0' allowfullscreen></iframe>",
+                            height: 360,
+                            width: 640,
+                            id: (groups) => groups.join('/embed/'),
+                        },
                     },
                 }
             }

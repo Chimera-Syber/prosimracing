@@ -1,3 +1,19 @@
-@charset "UTF-8";.custom-file-input:lang(en)~.custom-file-label:after{content:"Открыть"}.display-comments{border-left:1px solid #eaeaea;display:block}.comment{background-color:#fafafa;border:1px solid #e4e4e4;border-radius:5px;box-shadow:0 8px 8px -4px #a4a4a4;margin-bottom:10px;margin-left:5px;padding-left:5px}
+@charset "UTF-8";
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Открыть";
+}
 
-/*# sourceMappingURL=app.css.map*/
+.display-comments {
+  display: block;
+  border-left: 1px solid #eaeaea;
+}
+
+.comment {
+  margin-left: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  background-color: #fafafa;
+  box-shadow: 0 8px 8px -4px #a4a4a4;
+}
