@@ -2,6 +2,8 @@
 
 ProSimRacing - simracing portal, where you can see articles, reviews, coverages about simracing, virtual autosport, etc. 
 
+**The project is currently frozen**.
+
 # Installation and required packages
 
 ## cviebrock/eloquent-sluggable package
